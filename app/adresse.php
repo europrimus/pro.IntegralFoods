@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class adresse extends Model
 {
   // nom de la table
-  protected $table = 'adresses';
+  protected $table = 'adresse';
 
   /**
    * liste des attributs renseignable
@@ -16,7 +16,7 @@ class adresse extends Model
    */
   protected $fillable = [
       'adresse',
-      'codepostal',
+      'code postal',
       'ville',
   ];
 

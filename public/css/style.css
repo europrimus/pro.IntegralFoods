@@ -15,3 +15,7 @@
   height: 4rem;
   width: 4rem;
 }
+
+.is-invalid{
+  color:red;
+}

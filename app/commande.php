@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class commande extends Model
 {
   // nom de la table
-  protected $table = 'commandes';
+  protected $table = 'commande';
 
   /**
    * liste des attributs renseignable
@@ -15,8 +15,8 @@ class commande extends Model
    * @var array
    */
   protected $fillable = [
-      'produitUserID',
-      'adresseLivraisonID',
-      'ville',
+      'numero de commande',
+      'adresse de livraison',
+      'adresse de facturation',
   ];
 }
