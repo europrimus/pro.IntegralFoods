@@ -1,6 +1,6 @@
 @include("layouts/head")
 @include("layouts/nav")
-
+<h2>Identification</h2>
 <form method="POST" action="{{ route('login') }}">
     @csrf
 
@@ -57,5 +57,6 @@
         </div>
     </div>
 </form>
+<a href="/inscription">Inscription</a>
 
 @include("layouts/footer")
