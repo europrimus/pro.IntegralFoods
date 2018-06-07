@@ -16,6 +16,10 @@
   width: 4rem;
 }
 
-.is-invalid{
+span.invalid{
   color:red;
+}
+
+input.invalid{
+  box-shadow: 0 0 1rem red;
 }
