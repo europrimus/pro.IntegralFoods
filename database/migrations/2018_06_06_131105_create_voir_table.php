@@ -15,8 +15,9 @@ class CreateVoirTable extends Migration
     {
         Schema::create('voir', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('article');
-            $table->integer('prix');
+            $table->integer('produit_id')->unsigned();
+            $table->integer('users_id')->unsigned();
+            $table->float('prix');
             $table->timestamps();
         });
     }
