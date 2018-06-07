@@ -11,11 +11,15 @@
 |
 */
 
+// Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
-
+Route::get('/preinscription', function () { return view('auth/preinscription'); });
+Route::get('/inscription', function () { return view('auth/register'); });
+Route::get('/monCompte', function () { return view('auth/compte'); });
 Auth::routes();
 
-Route::get('/inscription', function () { return view('auth/register'); });
+// produits
 Route::get('/produits', function () { return view('produit/index'); });
+
+// commandes
 Route::get('/panier', function () { return view('panier'); });
-Route::get('/monCompte', function () { return view('auth/compte'); });

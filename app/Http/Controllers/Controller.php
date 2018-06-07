@@ -11,7 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // nom de la table
-    protected $table = 'produits';
 
 }
