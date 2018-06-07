@@ -23,6 +23,7 @@ class CreateUtilisateurTable extends Migration
             $table->string('email')->unique();
             $table->string('siret')->unique();
             $table->string('kbis');
+            $table->string('login');
             $table->string('password');
             $table->timestamps();
         });
