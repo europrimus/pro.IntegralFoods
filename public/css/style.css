@@ -1,0 +1,21 @@
+#FFFFFF
+#FF9900
+#CC0033
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('/fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('/fonts/raleway-regular-webfont.woff') format('woff'),
+         url('/fonts/raleway-regular-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#logo{
+  height: 4rem;
+  width: 4rem;
+}
+
+.is-invalid{
+  color:red;
+}

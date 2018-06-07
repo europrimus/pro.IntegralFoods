@@ -15,11 +15,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nom',
-        'prenom',
-        'entreprise',
-        'email',
-        'password',
+      'nom',
+      'prenom',
+      'entreprise',
+      'tel1',
+      'tel2',
+      'email',
+      'siret',
+      'kbis'
     ];
 
     /**
@@ -30,4 +33,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function adresse()
+      {
+        return $this->hasMany('adresse');
+      }
 }
