@@ -4,5 +4,5 @@
     <a href="https://www.integralfoods.fr/" >Integral foods</a>
     <a href="/produits">Produits</a>
     <a href="">Mon compte</a>
-    <a href="/panier">articles</a>
+    <a href="/panier">3 articles</a>
 </nav>
