@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/produits', function () { return view('produit/index'); });
 
 // commandes
-Route::get('/panier', function () { return view('panier'); });
-
-//article
-Route::resource('articles','ArticleController');
+Route::get('/panier',     'commandeController@create' );
+//Route::get('/commandes',  'commandeController@index');
+//Route::get('/commandes/{n}', 'commandeController@show')->where('id','[0-9]+');
+Route::resource('commande', 'commandeController');

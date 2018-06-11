@@ -13,7 +13,7 @@ class commandeController extends Controller
      */
     public function index()
     {
-        //
+        return view( 'commande/index' );
     }
 
     /**
@@ -21,9 +21,29 @@ class commandeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      // on récupère le contenu du panier de la session
+      //$panier = $request->session()->get('panier');
+      // on utilise des données bidons
+      $panier = ["2"=>5,"4"=>2 ];
+
+      // on charge la liste des produits (nom, prix, ..)
+      $produits = ["2"=>["nom"=>"Paprika","prix"=>"15.25"],
+      "4"=>["nom"=>"Mousse","prix"=>"10.50"]];
+
+      $lignes=[];
+      foreach ($panier as $id => $quantitie) {
+        $lignes[]=[
+          "id"=>$id,
+          "img"=>@$produits[$id]["img"],
+          "produit"=>$produits[$id]["nom"],
+          "prix"=>$produits[$id]["prix"],
+          "Quantité"=>$quantitie,
+        ];
+      }
+      // on affiche le panier
+      return view( 'commande/create' )->with('lignes', $lignes);
     }
 
     /**
@@ -34,7 +54,10 @@ class commandeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // on verifie la commande
+        // on l'enregistre
+        // on affiche la commande
+        $this->show($id);
     }
 
     /**
@@ -45,7 +68,8 @@ class commandeController extends Controller
      */
     public function show($id)
     {
-        //
+        $commande=array();
+        return view( 'commande/show' )->with('commande', $commande);
     }
 
     /**
@@ -56,7 +80,9 @@ class commandeController extends Controller
      */
     public function edit($id)
     {
-        //
+        // si la commande n'est pas expédié
+        // on peu la modidier
+        return view( 'commande/edit' );
     }
 
     /**
@@ -68,7 +94,9 @@ class commandeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // si la commande n'est pas expédié
+      // on enregistre les modidification
+      $this->show($id);
     }
 
     /**
@@ -79,6 +107,17 @@ class commandeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // si la commande n'est pas expédier
+        // on annule la commande
+    }
+
+    /**
+     * Compte le nombre d'article du panier.
+     *
+     * @return integer
+     */
+    public function panierCount()
+    {
+        return 1;
     }
 }
