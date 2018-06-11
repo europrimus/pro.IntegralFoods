@@ -23,3 +23,6 @@ Route::get('/produits', function () { return view('produit/index'); });
 
 // commandes
 Route::get('/panier', function () { return view('panier'); });
+
+//article
+Route::resource('articles','ArticleController');
