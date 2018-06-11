@@ -1,8 +1,8 @@
 <nav class="">
     <img src="/img/Logo-integralFoods.png" alt="logo" id="logo">
-    {{ config('app.name', 'Laravel') }}
+    Integral Foods Pro
     <a href="https://www.integralfoods.fr/" >Integral foods</a>
-    <a href="/produits">Produits</a>
+    <a href="/articles">Produits</a>
     <a href="">Mon compte</a>
-    <a href="/panier">articles</a>
+    <a href="/panier">Mon panier</a>
 </nav>

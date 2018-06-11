@@ -1,3 +1,6 @@
+@include("layouts/head")
+@include("layouts/nav")
+
 @extends('layout')
 
 @section('content')
