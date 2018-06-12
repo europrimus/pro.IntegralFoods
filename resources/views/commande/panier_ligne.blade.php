@@ -14,7 +14,7 @@
   </td>
 
   <td class="" data-title="Prix">
-    <span class="">{{ $ligne["prix"] }}<span class="">&euro;</span></span>
+    <span class="prix">{{ $ligne["prix"] }}</span><span class="">&euro;</span>
   </td>
 
   <td class="" data-title="Quantité">
@@ -23,11 +23,11 @@
       <input id="quantity_{{ $ligne["id"] }}" name="quantity_{{ $ligne["id"] }}"
         aria-labelledby="quantité de {{ $ligne["produit"] }}"
        class="" step="1" min="0" max="50" value="{{ $ligne["Quantité"] }}" title="Qté" size="2" pattern="[0-9]*"
-       type="number" inputmode="numeric" />
+       type="number" inputmode="numeric" data-prixUnitaire="{{ $ligne["prix"] }}"/>
     </div>
   </td>
 
   <td class="" data-title="Total">
-    <span class="">{{ $ligne["Quantité"]*$ligne["prix"] }}<span class="">&euro;</span></span>
+    <span class="prix" >{{ number_format( $ligne["Quantité"]*$ligne["prix"], 2 ) }}</span><span class="">&euro;</span>
   </td>
 </tr>

@@ -7,5 +7,4 @@
 
     <a href="/panier">Mon panier</a>
 
-
 </nav>

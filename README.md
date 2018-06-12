@@ -37,6 +37,12 @@ lancer le serveur
 
 Dans votre navigateur, ouvrir [http://127.0.0.1:8000](http://127.0.0.1:8000) pour voir le site
 
+## Fonctionnement
+
+### Panier
+Ajouter un article au panier. Renvois un **json** {"message":"contenu du message"}
+>/panier/ajouter/{idArticle}x{quantite}
+
 
 ## Ressources
 [model avec table intermédiaire](https://openclassrooms.com/forum/sujet/les-relations-sur-laravel?page=1#message-92310433)
