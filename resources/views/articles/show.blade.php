@@ -10,13 +10,13 @@
 
             <div class="pull-left">
 
-                <h2> Show Article</h2>
+                <h2> Produit </h2>
 
             </div>
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
 
             </div>
 
@@ -31,7 +31,7 @@
 
             <div class="form-group">
 
-                <strong>Title:</strong>
+                <strong>Nom du produit :</strong>
 
                 {{ $article->title}}
 
@@ -43,7 +43,7 @@
 
             <div class="form-group">
 
-                <strong>Body:</strong>
+                <strong>Description :</strong>
 
                 {{ $article->body}}
 

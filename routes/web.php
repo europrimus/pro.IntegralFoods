@@ -28,3 +28,5 @@ Route::get('/panier',     'commandeController@create' );
 Route::resource('commande', 'commandeController');
 
 Route::resource('articles','ArticleController');
+
+Route::resource('articlesclient','ArticleClientController');

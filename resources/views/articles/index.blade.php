@@ -25,7 +25,7 @@
     <table class="table table-bordered">
         <tr>
             <th>N°</th>
-            <th>Titre</th>
+            <th>Nom du produit</th>
             <th>Description</th>
             <th width="280px">Action</th>
         </tr>

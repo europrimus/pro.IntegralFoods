@@ -9,13 +9,13 @@
 
             <div class="pull-left">
 
-                <h2>Edit Article</h2>
+                <h2>Modification de l'article</h2>
 
             </div>
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
 
             </div>
 
