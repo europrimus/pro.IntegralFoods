@@ -26,3 +26,5 @@ Route::get('/panier',     'commandeController@create' );
 //Route::get('/commandes',  'commandeController@index');
 //Route::get('/commandes/{n}', 'commandeController@show')->where('id','[0-9]+');
 Route::resource('commande', 'commandeController');
+
+Route::resource('articles','ArticleController');
