@@ -58,7 +58,7 @@ class PanierController extends Controller
     {
       $panierObj = new panier;
       $panierObj->supprimer( $idArticle );
-      return $this->index();
+      return redirect()->action('PanierController@index');
     }
 
     /**

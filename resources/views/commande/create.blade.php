@@ -7,7 +7,7 @@
 @empty($lignes)
   <p>Le panier est vide</p>
 @else
-  <table>
+  <table id="panier">
   <tr class="">
     <th class="">
       sup
