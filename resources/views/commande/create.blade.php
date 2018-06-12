@@ -36,7 +36,11 @@
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
   <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a> |
+<<<<<<< HEAD
   <!-- <a href="{{ URL::to('/panier') }}">Recalculer</a>-->
+=======
+  <!--<a href="{{ URL::to('/panier') }}">Recalculer</a>-->
+>>>>>>> 5af974f4ab2eda180179447ff46eddf655f321f9
 @endempty
 <h3>Nouvelle commande</h3>
 
