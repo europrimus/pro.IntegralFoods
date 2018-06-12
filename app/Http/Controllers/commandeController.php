@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Panier;
 
 class commandeController extends Controller
 {
@@ -21,27 +22,33 @@ class commandeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
       // on récupère le contenu du panier de la session
-      //$panier = $request->session()->get('panier');
-      // on utilise des données bidons
-      $panier = ["2"=>5,"4"=>2 ];
+      $panierObj = new Panier;
+      $panier = $panierObj->get();
 
       // on charge la liste des produits (nom, prix, ..)
-      $produits = ["2"=>["nom"=>"Paprika","prix"=>"15.25"],
-      "4"=>["nom"=>"Mousse","prix"=>"10.50"]];
+      $produits = [
+        "2"=>["nom"=>"Paprika","prix"=>"15.25"],
+        "4"=>["nom"=>"Mousse","prix"=>"10.50"],
+        "1"=>["nom"=>"prod1","prix"=>"1.50"],
+      ];
 
       $lignes=[];
-      foreach ($panier as $id => $quantitie) {
-        $lignes[]=[
-          "id"=>$id,
-          "img"=>@$produits[$id]["img"],
-          "produit"=>$produits[$id]["nom"],
-          "prix"=>$produits[$id]["prix"],
-          "Quantité"=>$quantitie,
-        ];
-      }
+      if($panier){
+        foreach ($panier as $id => $quantitie) {
+          if( isset($produits[$id]) ){
+            $lignes[]=[
+              "id"=>$id,
+              "img"=>@$produits[$id]["img"],
+              "produit"=>$produits[$id]["nom"],
+              "prix"=>$produits[$id]["prix"],
+              "Quantité"=>$quantitie,
+            ];
+          };
+        }
+      };
       // on affiche le panier
       return view( 'commande/create' )->with('lignes', $lignes);
     }
@@ -111,13 +118,4 @@ class commandeController extends Controller
         // on annule la commande
     }
 
-    /**
-     * Compte le nombre d'article du panier.
-     *
-     * @return integer
-     */
-    public function panierCount()
-    {
-        return 1;
-    }
 }

@@ -22,8 +22,20 @@ Auth::routes();
 Route::get('/produits', function () { return view('produit/index'); });
 Route::get('/articles', function () { return view('produit/index'); });
 
-// commandes
-Route::get('/panier',     'commandeController@create' );
+// panier
+Route::prefix('/panier')->group(function () {
+  Route::get('/',                         'PanierController@index' );
+  Route::get('/ajouter/{idArticle}x{quantite}', 'PanierController@store' )
+    ->where('idArticle','[0-9]+')
+    ->where('quantite','[0-9]+');
+  Route::get('/modifier/{idArticle}x{quantite}', 'PanierController@update' )
+    ->where('idArticle','[0-9]+')
+    ->where('quantite','[0-9]+');
+
+  Route::get('/supprimer/{idArticle}',    'PanierController@supprimer' )
+    ->where('idArticle','[0-9]+');
+  Route::get('/toutSupprimer',            'PanierController@destroy' );
+});
 //Route::get('/commandes',  'commandeController@index');
 //Route::get('/commandes/{n}', 'commandeController@show')->where('id','[0-9]+');
 Route::resource('commande', 'commandeController');

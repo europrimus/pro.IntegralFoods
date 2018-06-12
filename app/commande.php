@@ -19,4 +19,5 @@ class commande extends Model
       'adresse de livraison',
       'adresse de facturation',
   ];
+
 }
