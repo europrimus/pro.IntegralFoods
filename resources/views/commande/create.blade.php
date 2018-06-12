@@ -36,7 +36,7 @@
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
   <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a> |
-  <a href="{{ URL::to('/panier') }}">Recalculer</a>
+  <!-- <a href="{{ URL::to('/panier') }}">Recalculer</a>-->
 @endempty
 <h3>Nouvelle commande</h3>
 
