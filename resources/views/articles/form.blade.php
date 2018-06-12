@@ -7,7 +7,7 @@
 
             <strong>Nom du produit:</strong>
 
-            {!! Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+            {!! Form::text('title', null, array('placeholder' => 'Produit','class' => 'form-control')) !!}
 
         </div>
 
@@ -19,7 +19,7 @@
 
             <strong>Description :</strong>
 
-            {!! Form::textarea('body', null, array('placeholder' => 'Body','class' => 'form-control','style'=>'height:150px')) !!}
+            {!! Form::textarea('body', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:150px')) !!}
 
         </div>
 
