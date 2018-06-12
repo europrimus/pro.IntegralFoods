@@ -20,6 +20,7 @@ Auth::routes();
 
 // produits
 Route::get('/produits', function () { return view('produit/index'); });
+Route::get('/articles', function () { return view('produit/index'); });
 
 // commandes
 Route::get('/panier',     'commandeController@create' );
