@@ -15,6 +15,7 @@ class CreatePrixTable extends Migration
     {
         Schema::create('prix', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('prix');
             $table->timestamps();
         });
     }

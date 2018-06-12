@@ -1,3 +1,6 @@
+@include("layouts/head")
+@include("layouts/nav")
+
 @extends('layout')
 
 
@@ -9,7 +12,7 @@
 
             <div class="pull-left">
 
-                <h2>Ajout nouvelle article</h2>
+                <h2>Ajout du produit</h2>
 
             </div>
 
