@@ -35,14 +35,22 @@
   </tr>
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
-  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a> |
-<<<<<<< HEAD
+  <p>Total: <span id="prixTotal">{{ number_format( $prixTotal, 2, "," , " " ) }}</span>&euro;</p>
+  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a>
   <!-- <a href="{{ URL::to('/panier') }}">Recalculer</a>-->
-=======
-  <!--<a href="{{ URL::to('/panier') }}">Recalculer</a>-->
->>>>>>> 5af974f4ab2eda180179447ff46eddf655f321f9
 @endempty
 <h3>Nouvelle commande</h3>
+
+<h4>Adresse de livraison</h4>
+@empty($adresses)
+  <p>Pas d'adresse enregistrer. Ajouter une adresse.</p>
+@else
+  <select id="adresseLivraison">
+@foreach($adresses as $id => $adresse)
+    <option value="{{ $id }}">{{ $adresse["nom"] }}</option>
+@endforeach
+  </select>
+@endempty
 
 <a href="">Valider</a>
 
