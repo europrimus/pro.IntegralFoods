@@ -15,16 +15,18 @@ class CreateUtilisateurTable extends Migration
     {
         Schema::create('utilisateur', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('civilite',['Monsieur','Madame']);
             $table->string('nom');
             $table->string('prenom');
             $table->string('entreprise')->unique();
-            $table->integer('tel1');
-            $table->integer('tel2');
+            $table->enum('etablisement',['distributeurs','restaurant independant','chaine de restaurants','epicerie','collectivites','traiteur','industrie','autres']);
+            $table->integer('tel');
             $table->string('email')->unique();
             $table->string('siret')->unique();
             $table->string('kbis');
             $table->string('login');
             $table->string('password');
+            $table->text('commentaire');
             $table->timestamps();
         });
     }
