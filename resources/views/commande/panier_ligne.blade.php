@@ -20,14 +20,14 @@
   <td class="" data-title="Quantité">
     <div class="quantity">
       <label class="screen-reader-text" for="quantity_{{ $ligne["id"] }}"></label>
-      <input id="quantity_{{ $ligne["id"] }}" name="quantity_{{ $ligne["id"] }}"
+      <input id="quantity[{{ $ligne["id"] }}]" name="quantity[{{ $ligne["id"] }}]"
         aria-labelledby="quantité de {{ $ligne["produit"] }}"
-       class="" step="1" min="0" max="50" value="{{ $ligne["Quantité"] }}" title="Qté" size="2" pattern="[0-9]*"
+       class="" step="1" min="0" value="{{ $ligne["Quantité"] }}" title="Qté" size="2" pattern="[0-9]*"
        type="number" inputmode="numeric" data-prixUnitaire="{{ $ligne["prix"] }}"/>
     </div>
   </td>
 
   <td class="" data-title="Total">
-    <span class="prix" >{{ number_format( $ligne["Quantité"]*$ligne["prix"], 2 ) }}</span><span class="">&euro;</span>
+    <span class="prix" >{{ number_format( $ligne["Quantité"]*$ligne["prix"], 2 , "," , " " ) }}</span><span class="">&euro;</span>
   </td>
 </tr>

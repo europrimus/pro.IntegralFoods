@@ -15,9 +15,9 @@ class commande extends Model
    * @var array
    */
   protected $fillable = [
-      'numero de commande',
-      'adresse de livraison',
-      'adresse de facturation',
+      'quantity',
+      'adresseLivraison',
+      'adresseFacturation',
   ];
 
 }
