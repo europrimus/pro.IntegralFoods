@@ -3,7 +3,7 @@
         <div class="form-group">
             <strong>Nom du produit:</strong>
 
-            {!! Form::text('title', null, array('placeholder' => 'Produit','class' => 'form-control')) !!}
+            {!! Form::text('titre', null, array('placeholder' => 'Produit','class' => 'form-control')) !!}
 
         </div>
     </div>
@@ -12,7 +12,7 @@
         <div class="form-group">
             <strong>Description :</strong>
 
-            {!! Form::textarea('body', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:150px')) !!}
+            {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:150px')) !!}
 
         </div>
     </div>

@@ -32,8 +32,8 @@
     @foreach ($articles as $article)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $article->title }}</td>
-            <td>{{ $article->body }}</td>
+            <td>{{ $article->titre }}</td>
+            <td>{{ $article->description }}</td>
             <td>
                 <a href="{{ route('articles.show', $article->id) }}" class="btn btn-info">Voir</a>
                 <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-primary">Éditer</a>

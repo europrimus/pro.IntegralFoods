@@ -25,8 +25,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'titre' => 'required',
+            'description' => 'required',
         ]);
         Article::create($request->all());
         return redirect()->route('articles.index')
@@ -51,8 +51,8 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         request()->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'titre' => 'required',
+            'description' => 'required',
         ]);
         Article::find($id)->update($request->all());
         return redirect()->route('articles.index')
