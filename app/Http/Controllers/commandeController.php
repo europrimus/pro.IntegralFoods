@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Panier;
 use App\Article;
+use App\commande;
 use App\Http\Requests\NouvelleCommandeRequest;
 
 class commandeController extends Controller
@@ -16,7 +17,10 @@ class commandeController extends Controller
      */
     public function index()
     {
-        return view( 'commande/index' );
+      $commandeObj = new commande;
+      $listeCommande = $commandeObj->getListe();
+      return view( 'commande/index' )
+        ->with('listeCommande', $listeCommande);
     }
 
     /**
@@ -80,10 +84,10 @@ class commandeController extends Controller
     public function store(NouvelleCommandeRequest $request)
     {
         // on envois la commande au model
-        $commande = new NouvelleCommande;
-        $id = $commande->new($request);
+        $commandeObj = new commande;
+        $id = $commandeObj->new($request);
         // on affiche la commande
-        $this->show($id);
+        return $this->show($id);
     }
 
     /**
@@ -95,7 +99,9 @@ class commandeController extends Controller
     public function show($id)
     {
         $commande=array();
-        return view( 'commande/show' )->with('commande', $commande);
+        return view( 'commande/show' )
+          ->with('id', $id)
+          ->with('commande', $commande);
     }
 
     /**
