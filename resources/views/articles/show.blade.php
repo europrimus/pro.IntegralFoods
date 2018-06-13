@@ -19,7 +19,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('produits.index') }}"> Retour</a>
 
             </div>
 

@@ -16,9 +16,9 @@
 
 <details>
     <summary>
-       <label id="nom"> Nom de l'article : {{ $articleclient->titre }}</label>
+       <label id="nom"> Nom du produit : {{ $articleclient->titre }}</label>
     </summary>
-<p>Description de l'article : {!!nl2br($articleclient->description)  !!}</p>
+<p>Description du produit : {!!nl2br($articleclient->description)  !!}</p>
 </details>
 
 <label id="qte">Quantité :<input aria-labelledby="quantité de  {{ $articleclient->titre }}" 
