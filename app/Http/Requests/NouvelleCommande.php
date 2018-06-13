@@ -13,6 +13,7 @@ class NouvelleCommande extends FormRequest
      */
     public function authorize()
     {
+        // verifier si l'utilisateur est enregistrer
         return true;
     }
 

@@ -79,10 +79,9 @@ class commandeController extends Controller
      */
     public function store(Request $request)
     {
-      dd($request);
-        // on verifie la commande
-
-        // on l'enregistre
+        // on envois la commande au model
+        $commande = new NouvelleCommande;
+        $id = $commande->new($request);
         // on affiche la commande
         $this->show($id);
     }

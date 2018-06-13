@@ -35,10 +35,8 @@
   </tr>
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
-  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a> |
-
-  <!--<a href="{{ URL::to('/panier') }}">Recalculer</a>-->
-  
+  <p>Total : <span id="prixTotal">{{ number_format( $prixTotal, 2 , "," , " " ) }}</span>€</p>
+  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a>
 @endempty
 <h3>Nouvelle commande</h3>
 
