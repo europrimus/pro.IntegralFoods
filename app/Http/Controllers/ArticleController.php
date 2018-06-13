@@ -10,15 +10,16 @@ class ArticleController extends Controller
 
     public function index()
     {
+        
         $articles = Article::latest()->paginate(5);
         return view('articles.index',compact('articles'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);dd('debug');
     }
 
 
     public function create()
     {
-        return view('articles.create');
+         return view('articles.create');
     }
 
 

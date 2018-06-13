@@ -11,7 +11,7 @@
                 <h2>Les produits</h2>
             </div>
             <div class="pull-right">
-                <a href="{{ route('articles.create') }}" class="btn btn-sucess">Créer un nouvel article</a>
+                <a href="{{ route('produits.create') }}" class="btn btn-sucess">Créer un nouveau produit</a>
             </div>
         </div>
     </div>
@@ -35,9 +35,9 @@
             <td>{{ $article->titre }}</td>
             <td>{{ $article->description }}</td>
             <td>
-                <a href="{{ route('articles.show', $article->id) }}" class="btn btn-info">Voir</a>
-                <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-primary">Éditer</a>
-                {!! Form::open(['method' => 'DELETE','route' => ['articles.destroy', $article->id],'style'=>'display:inline']) !!}
+                <a href="{{ route('produits.show', $article->id) }}" class="btn btn-info">Voir</a>
+                <a href="{{ route('produits.edit', $article->id) }}" class="btn btn-primary">Éditer</a>
+                {!! Form::open(['method' => 'DELETE','route' => ['produits.destroy', $article->id],'style'=>'display:inline']) !!}
                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
             </td>
