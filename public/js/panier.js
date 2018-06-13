@@ -8,7 +8,7 @@ jQuery("#panier").on("change", "input", function(event){
   //console.log(event);
   let $article = jQuery( this );
   let quantite = $article.val();
-  let idArticle = $article.attr("id").split("_",2)[1];
+  //let idArticle = $article.attr("id").split("_",2)[1];
   let prixUnitaire = $article.attr("data-prixUnitaire");
   let prixTotal = prixUnitaire * quantite;
   //let prixUnitaire = $article.parents("tr").find('[data-title="Prix"]');
@@ -18,7 +18,7 @@ jQuery("#panier").on("change", "input", function(event){
   $article.parents("tr").addClass('modifie');
   jQuery("#prixTotal").text( new Intl.NumberFormat('fr-FR',{ minimumFractionDigits: 2 }).format( SumPrixTotal() ) );
   //  si rien dans x seconde on sauvegarde
-  timeout = setTimeout(modifPanier, 5000);
+  timeout = setTimeout(modifPanier, 2000);
 })
 
 // calcul le total du panier
@@ -37,9 +37,10 @@ function SumPrixTotal(){
 function modifPanier(){
   //console.warn("modifPanier");
   let $liste = jQuery(".modifie");
+  let rechercheId = new RegExp('[0-9]+');
   $liste.removeClass("modifie");
   $liste.each(function(){
-    let idArticle = jQuery(this).find("input").attr("id").split("_",2)[1];
+    let idArticle = jQuery(this).find("input").attr("id").match( rechercheId )[0] ;
     let quantite = jQuery(this).find("input").val();
     //console.log( "quantite : ", quantite, "idArticle : ", idArticle );
     jQuery.get( "/panier/modifier/"+idArticle+"x"+quantite );

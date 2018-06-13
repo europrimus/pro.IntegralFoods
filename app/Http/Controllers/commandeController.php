@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Panier;
 use App\Article;
+use App\Http\Requests\NouvelleCommande;
 
 class commandeController extends Controller
 {
@@ -19,7 +20,8 @@ class commandeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Formulaire de commande.
+     * Correspond à la validation du panier.
      *
      * @return \Illuminate\Http\Response
      */
@@ -77,7 +79,9 @@ class commandeController extends Controller
      */
     public function store(Request $request)
     {
+      dd($request);
         // on verifie la commande
+
         // on l'enregistre
         // on affiche la commande
         $this->show($id);

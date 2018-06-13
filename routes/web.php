@@ -39,6 +39,8 @@ Route::prefix('/panier')->group(function () {
 //Route::get('/commandes',  'commandeController@index');
 //Route::get('/commandes/{n}', 'commandeController@show')->where('id','[0-9]+');
 Route::resource('commande', 'commandeController');
+Route::post('/commande',  'commandeController@store');
+
 
 Route::resource('articles','ArticleController');
 
