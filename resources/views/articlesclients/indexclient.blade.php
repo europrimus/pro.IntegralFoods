@@ -13,14 +13,15 @@
 @foreach($articleclients as $articleclient)
 
 <article>
+
 <details>
     <summary>
-       <label id="nom"> Nom de l'article : {{ $articleclient->title }}</label>
+       <label id="nom"> Nom de l'article : {{ $articleclient->titre }}</label>
     </summary>
-<p>Description de l'article : {!!nl2br($articleclient->body)  !!}</p>
+<p>Description de l'article : {!!nl2br($articleclient->description)  !!}</p>
 </details>
 
-<label id="qte">Quantité :<input aria-labelledby="quantité de  {{ $articleclient->title }}" 
+<label id="qte">Quantité :<input aria-labelledby="quantité de  {{ $articleclient->titre }}" 
        class="" step="1" min="0" value="" title="Qté" size="2" pattern="[0-9]*"
        type="number" inputmode="numeric" data-id="{{ $articleclient->id }}"/></label></br>
 Prix unitaire :   €  </br>

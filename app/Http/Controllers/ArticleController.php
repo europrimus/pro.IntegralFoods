@@ -10,23 +10,24 @@ class ArticleController extends Controller
 
     public function index()
     {
+        
         $articles = Article::latest()->paginate(5);
         return view('articles.index',compact('articles'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);dd('debug');
     }
 
 
     public function create()
     {
-        return view('articles.create');
+         return view('articles.create');
     }
 
 
     public function store(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'titre' => 'required',
+            'description' => 'required',
         ]);
         Article::create($request->all());
         return redirect()->route('articles.index')
@@ -51,8 +52,8 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         request()->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'titre' => 'required',
+            'description' => 'required',
         ]);
         Article::find($id)->update($request->all());
         return redirect()->route('articles.index')

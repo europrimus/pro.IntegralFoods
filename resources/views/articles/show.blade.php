@@ -36,7 +36,7 @@
 
                 <strong>Nom du produit :</strong>
 
-                {{ $article->title}}
+                {{ $article->titre}}
 
             </div>
 
@@ -48,7 +48,7 @@
 
                 <strong>Description :</strong>
 
-                {{ $article->body}}
+                {{ $article->description}}
 
             </div>
 
