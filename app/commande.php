@@ -20,4 +20,12 @@ class commande extends Model
       'adresseFacturation',
   ];
 
+  public function new($request){
+    // on verifie la commande
+    $requeteValide = $request->validated();
+    dd($requeteValide);
+    // on l'enregistre
+
+  }
+
 }

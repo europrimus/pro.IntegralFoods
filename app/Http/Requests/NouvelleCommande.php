@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NouvelleCommande extends FormRequest
+class NouvelleCommandeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,6 +13,7 @@ class NouvelleCommande extends FormRequest
      */
     public function authorize()
     {
+        // verifier si l'utilisateur est enregistrer
         return true;
     }
 

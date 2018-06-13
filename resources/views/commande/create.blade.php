@@ -7,6 +7,8 @@
 @empty($lignes)
   <p>Le panier est vide</p>
 @else
+<form action="/commande" method="post">
+  @csrf
   <table id="panier">
   <tr class="">
     <th class="">
@@ -35,13 +37,19 @@
   </tr>
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
-  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a> |
-
-  <!--<a href="{{ URL::to('/panier') }}">Recalculer</a>-->
-  
+  <p>Total : <span id="prixTotal">{{ number_format( $prixTotal, 2 , "," , " " ) }}</span>&euro;</p>
+  <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a>
 @endempty
-<h3>Nouvelle commande</h3>
+<h3>Commandez</h3>
 
-<a href="">Valider</a>
-
+  <label for="adresseLivraison"></label>
+  <select name="adresseLivraison" id="adresseLivraison">
+    <option value="" selected disabled>Choissir une adresse</option>
+  @foreach( $adresses as $id => $adresse)
+    <option value="{{ $id }}">{{ $adresse["nom"] }}</option>
+  @endforeach
+  </select>
+  <br>
+  <input type="submit" name="valider" value="Valider">
+</form>
 @include("layouts/footer")
