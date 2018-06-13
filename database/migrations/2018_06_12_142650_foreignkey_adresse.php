@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMigrationTable extends Migration
+class ForeignkeyAdresse extends Migration
 {
     /**
      * Run the migrations.
@@ -16,11 +16,6 @@ class CreateMigrationTable extends Migration
         Schema::table('adresse', function (Blueprint $table) {
             $table->foreign('users_id')->references('id')->on('utilisateur');
         });
-
-        Schema::table('voir', function (Blueprint $table) {
-            $table->foreign('users_id')->references('id')->on('utilisateur');
-            $table->foreign('produit_id')->references('id')->on('produit');
-        });
     }
 
     /**
@@ -30,6 +25,8 @@ class CreateMigrationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('migration');
+        Schema::table('adresse', function (Blueprint $table) {
+            $table->foreign('users_id')->references('id')->on('utilisateur');
+        });
     }
 }

@@ -1,0 +1,4 @@
+function ajouterpanier (nom, quantite)
+    {
+
+    }

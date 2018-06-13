@@ -11,7 +11,6 @@ class ArticleClientController extends Controller
     {    
         $articleclients = Article::all();
         return view('articlesclients/indexclient',compact('articleclients'));
-
     }
 
     public function show()

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrixTable extends Migration
+class CreateCatalogueproduit extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreatePrixTable extends Migration
      */
     public function up()
     {
-        Schema::create('prix', function (Blueprint $table) {
+        Schema::create('catalogueproduit', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('prix');
+            $table->integer('produit_id')->unsigned();
+            $table->integer('users_id')->unsigned();
+            $table->float('prix');
+            $table->string('conditionnement');
             $table->timestamps();
         });
+    
     }
 
     /**
@@ -27,6 +31,6 @@ class CreatePrixTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prix');
+        //
     }
 }
