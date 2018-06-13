@@ -27,6 +27,7 @@
             <th>N°</th>
             <th>Nom du produit</th>
             <th>Description</th>
+            <th>Réference</th>
             <th width="280px">Action</th>
         </tr>
     @foreach ($articles as $article)
@@ -34,6 +35,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $article->titre }}</td>
             <td>{{ $article->description }}</td>
+            <td>{{ $article->reference }}</td>
             <td>
                 <a href="{{ route('produits.show', $article->id) }}" class="btn btn-info">Voir</a>
                 <a href="{{ route('produits.edit', $article->id) }}" class="btn btn-primary">Éditer</a>
