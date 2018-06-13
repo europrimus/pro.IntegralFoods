@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Panier;
 use App\Article;
-use App\Http\Requests\NouvelleCommande;
+use App\Http\Requests\NouvelleCommandeRequest;
 
 class commandeController extends Controller
 {
@@ -77,7 +77,7 @@ class commandeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NouvelleCommandeRequest $request)
     {
         // on envois la commande au model
         $commande = new NouvelleCommande;
