@@ -37,7 +37,7 @@ class commandeController extends Controller
 
       // on charge la liste des produits (nom, prix, ..)
       $produits = Article::all();
-      //dd($produits);
+      dd($produits);
 
       // données fictives
       $produits = [

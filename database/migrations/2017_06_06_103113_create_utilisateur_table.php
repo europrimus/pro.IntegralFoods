@@ -19,7 +19,8 @@ class CreateUtilisateurTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('entreprise')->unique();
-            $table->enum('etablisement',['distributeurs','restaurant independant','chaine de restaurants','epicerie','collectivites','traiteur','industrie','autres']);
+            $table->enum('etablissement',['distributeur','restaurant indépendant','chaîne de restaurants','épicerie','collectivité','traiteur','industrie','autre']);
+            $table->enum('role',['administrateur','inscription en attente','client']);
             $table->integer('tel');
             $table->string('email')->unique();
             $table->string('siret')->unique();

@@ -21,7 +21,7 @@ class CreateCatalogueproduit extends Migration
             $table->string('conditionnement');
             $table->timestamps();
         });
-    
+
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateCatalogueproduit extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('catalogueproduit');
     }
 }
