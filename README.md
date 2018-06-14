@@ -26,10 +26,13 @@ Créer la base de donnée, puis éditer le fichier .env pour modifier les inform
 >DB_PASSWORD=      <= mot de passe
 
 
-Créer les table avec la commande suivante
+Créer les tables avec la commande suivante
 
-    php artisan migrate:install
-    php artisan migrate:fresh
+    php artisan migrate:refresh
+
+Éventuellement des données fictives pour les testes.
+
+    php artisan db:seed
 
 lancer le serveur
 
