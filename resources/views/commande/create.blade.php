@@ -11,29 +11,14 @@
   @csrf
   <table id="panier">
   <tr class="">
-    <th class="">
-      sup
-    </th>
-
-    <th class="">
-      img
-    </th>
-
-    <th class="" >
-      produit
-    </th>
-
-    <th class="" >
-      prix
-    </th>
-
-    <th class="">
-      Quantité
-    </th>
-
-    <th class="" >
-      total
-    </th>
+    <th class="" >sup</th>
+    <th class="" >img</th>
+    <th class="" >Produit</th>
+    <th class="" >Conditionnement</th>
+    <th class="" >Référence</th>
+    <th class="" >Prix</th>
+    <th class="" >Quantité</th>
+    <th class="" >Total</th>
   </tr>
   @each('commande/panier_ligne', $lignes, 'ligne')
   </table>
@@ -45,8 +30,8 @@
   <label for="adresseLivraison"></label>
   <select name="adresseLivraison" id="adresseLivraison">
     <option value="" selected disabled>Choissir une adresse</option>
-  @foreach( $adresses as $id => $adresse)
-    <option value="{{ $id }}">{{ $adresse["nom"] }}</option>
+  @foreach( $adresses as $adresse)
+    <option value="{{ $adresse->id }}">{{ $adresse->adresse }}</option>
   @endforeach
   </select>
   <br>

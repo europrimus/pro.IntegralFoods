@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Panier;
 use App\Article;
 use App\commande;
+use App\CatalogueProduits;
 use App\Http\Requests\NouvelleCommandeRequest;
+use Illuminate\Support\Facades\DB;
 
 class commandeController extends Controller
 {
@@ -35,39 +37,76 @@ class commandeController extends Controller
       $panierObj = new Panier;
       $panier = $panierObj->get();
 
+      // on recupère l'idClient dans la session
+      //$idClient = session("idClient");
+      $idClient = 2;
       // on charge la liste des produits (nom, prix, ..)
-      $produits = Article::all();
-      dd($produits);
+      // eloquent ne fonctione pas "Property [article] does not exist on this collection instance."
+      //$produits = CatalogueProduits::all()->article;
+      //$produits = DB::select(
+/*
+SELECT catalogueproduit.id as catalogue_id,
+  produit_id,
+  prix,
+  conditionnement,
+  titre as nom,
+  description,
+  reference
+FROM catalogueproduit
+JOIN articles ON catalogueproduit.produit_id = articles.id AND catalogueproduit.users_id = 2
+*/
+      $produits = DB::table('catalogueproduit')
+        ->select('catalogueproduit.id as catalogue_id',
+          'produit_id',
+          'prix',
+          'conditionnement',
+          'titre as nom',
+          'description',
+          'reference')
+        ->where('users_id', $idClient)
+        ->join('articles', 'catalogueproduit.produit_id', '=', 'articles.id')
+        ->get();
+      $produits = $produits->keyBy('catalogue_id');
+      //dd($produits);
 
       // données fictives
+/*
       $produits = [
         "2"=>["nom"=>"Paprika","prix"=>"15.25"],
         "4"=>["nom"=>"Mousse","prix"=>"10.50"],
         "1"=>["nom"=>"prod1","prix"=>"1.50"],
       ];
-
-      $adresses = [
-        "1"=>["adresse"=>"9 rue du Meh","codePostal"=>"21000","ville"=>"Dijon","nom"=>"Magasin Dijon"],
-        "2"=>["adresse"=>"2 rue du Arrgg","codePostal"=>"21110","ville"=>"Genlis","nom"=>"Resto Genlis"],
-        "3"=>["adresse"=>"3 rue SadiCarnot","codePostal"=>"21600","ville"=>"Longvic","nom"=>"Epicerie Longvic"],
-
-      ];
+*/
       $lignes=[];
       $prixTotal=0;
       if($panier){
         foreach ($panier as $id => $quantitie) {
           if( isset($produits[$id]) ){
             $lignes[]=[
-              "id"=>$id,
-              "img"=>@$produits[$id]["img"],
-              "produit"=>$produits[$id]["nom"],
-              "prix"=>$produits[$id]["prix"],
+              "catalogue_id"=>$id,
+              "produit_id"=>$produits[$id]->produit_id,
+              "prix"=>$produits[$id]->prix,
+              "conditionnement"=>$produits[$id]->conditionnement,
+              "produit"=>$produits[$id]->nom,
+              "description"=>$produits[$id]->description,
+              "reference"=>$produits[$id]->reference,
               "Quantité"=>$quantitie,
             ];
-            $prixTotal+=$produits[$id]["prix"]*$quantitie;
+            $prixTotal+=$produits[$id]->prix*$quantitie;
           };
         }
       };
+      //dd($lignes);
+
+      // les adresses de livraisons
+      // données fictives
+      // SELECT * FROM `adresse` WHERE `users_id` = 2 AND `type` = 'livraison'
+      $adresses = DB::table('adresse')
+        ->where('users_id', $idClient)
+        ->where('type', 'livraison')
+        ->get();
+      //dd($adresses);
+
       // on affiche le panier
       return view( 'commande/create' )
         ->with('lignes', $lignes)

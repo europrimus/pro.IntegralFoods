@@ -42,6 +42,21 @@ class donneesFictives extends Seeder
         'commentaire' => 'Notre premier client !',
         'role' => 'client', //['administrateur','inscription en attente','client']
       ]);
+      DB::table('utilisateur')->insert([
+        'civilite'=> 'Madame',  //['Monsieur','Madame']);
+        'nom' => str_random(10),
+        'prenom' => str_random(6),
+        'entreprise' => str_random(15),
+        'etablissement'=> 'distributeur', //['distributeur','restaurant indépendant','chaîne de restaurants','épicerie','collectivité','traiteur','industrie','autre']
+        'tel' => str_pad(mt_rand(), 10, "0", STR_PAD_LEFT),
+        'email' => str_random(5).'@gmail.com',
+        'siret' => str_random(16),
+        'kbis' => '',
+        'login' => str_random(6),
+        'password' => bcrypt(str_random(6)),
+        'commentaire' => str_random(30),
+        'role' => 'client', //['administrateur','inscription en attente','client']
+      ]);
 
 // Adresses
       DB::table('adresse')->insert([
@@ -54,6 +69,13 @@ class donneesFictives extends Seeder
       DB::table('adresse')->insert([
         'users_id'=> 2,
         'adresse' => '15 rue du Couteau',
+        'code postal' => "21000",
+        'ville' => "Dijon",
+        'type'=> 'livraison', //['livraison','facturation','contact'])
+      ]);
+      DB::table('adresse')->insert([
+        'users_id'=> 2,
+        'adresse' => '2 rue de la Fourchette',
         'code postal' => "21000",
         'ville' => "Dijon",
         'type'=> 'livraison', //['livraison','facturation','contact'])
