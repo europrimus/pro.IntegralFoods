@@ -15,15 +15,15 @@ dans le répertoire, lancer la commande
 
 Créer la base de donnée, puis éditer le fichier .env pour modifier les informations de la base de données
 
->APP_DEBUG=false   <= false pour la production
->APP_URL=http://localhost
-
->DB_CONNECTION=mysql   <= Type de base
->DB_HOST=127.0.0.1
->DB_PORT=3306
->DB_DATABASE=proIntegralFoods    <= Nom de la bse de donnée
-> DB_USERNAME=      <= utilisateur
->DB_PASSWORD=      <= mot de passe
+>APP_DEBUG=false   <= false pour la production  
+>APP_URL=http://localhost  
+>  
+>DB_CONNECTION=mysql   <= Type de base  
+>DB_HOST=127.0.0.1  
+>DB_PORT=3306  
+>DB_DATABASE=proIntegralFoods    <= Nom de la bse de donnée  
+>DB_USERNAME=      <= utilisateur  
+>DB_PASSWORD=      <= mot de passe 
 
 
 Créer les tables avec la commande suivante

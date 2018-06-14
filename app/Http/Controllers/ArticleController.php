@@ -12,7 +12,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        
+
         $articles = Article::latest()->paginate(5);
         return view('articles.index',compact('articles'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -31,17 +31,18 @@ class ArticleController extends Controller
             'titre' => 'required',
             'description' => 'required',
             'reference' => 'required',
-            'photo' => 'required,'
-        ]); 
+            //'photo' => 'required'
+        ]);
+
         Article::create($request->all());
-        $request->photo->storeAs('public/photo',$request->reference);
-        // storage::put('public/photo/'.$request->reference, $request->file ); 
+        $request->photo->storeAs('public/photo',$request->reference.".".$request->photo->extension());
+        // storage::put('public/photo/'.$request->reference, $request->file );
         // dd($request->file);
         return redirect()->route('produits.index')
                         ->with('success','Article created successfully');
 
 
-        
+
     }
 
 

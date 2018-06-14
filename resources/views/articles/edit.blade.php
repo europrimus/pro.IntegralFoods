@@ -48,11 +48,9 @@
     @endif
 
 
-    {!! Form::model($article, ['method' => 'PATCH','route' => ['produits.update', $article->id]]) !!}
 
         @include('articles.form')
 
-    {!! Form::close() !!}
 
 
 @endsection

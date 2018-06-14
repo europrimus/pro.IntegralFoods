@@ -48,11 +48,9 @@
     @endif
 
 
-    {!! Form::open(array('route' => 'produits.store','method'=>'POST')) !!}
 
          @include('articles.form')
 
-    {!! Form::close() !!}
 
 
 @endsection
