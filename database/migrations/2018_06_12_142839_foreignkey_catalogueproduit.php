@@ -27,8 +27,8 @@ class ForeignkeyCatalogueproduit extends Migration
     public function down()
     {
         Schema::table('catalogueproduit', function (Blueprint $table) {
-            $table->foreign('users_id')->references('id')->on('utilisateur');
-            $table->foreign('produit_id')->references('id')->on('articles');
+            $table->dropForeign('catalogueproduit_users_id_foreign');
+            $table->dropForeign('catalogueproduit_produit_id_foreign');
         });
     }
 }
