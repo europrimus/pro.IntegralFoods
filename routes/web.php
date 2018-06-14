@@ -11,6 +11,9 @@
 |
 */
 
+// un id de client fictif
+session(["idClient"=>2]);
+
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
 Route::get('/preinscription', function () { return view('auth/preinscription'); });

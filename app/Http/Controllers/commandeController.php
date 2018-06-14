@@ -19,7 +19,7 @@ class commandeController extends Controller
      */
     public function index()
     {
-      $idClient = 2;
+      $idClient = session("idClient");
       $listeCommande = commande::getListe($idClient);
       return view( 'commande/index' )
         ->with('listeCommande', $listeCommande);
@@ -37,8 +37,7 @@ class commandeController extends Controller
       $panier = Panier::get();
 
       // on recupère l'idClient dans la session
-      //$idClient = session("idClient");
-      $idClient = 2;
+      $idClient = session("idClient");
 
       $produits = Article::getCatalogue($idClient);
 

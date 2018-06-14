@@ -50,7 +50,7 @@ class Panier extends Model
   public static function panierCount()
   {
     if( null !== session("panier") )  {
-      return count(session("panier"));
+      return array_sum(session("panier"));
     }else{
       return 0;
     }

@@ -4,7 +4,7 @@
 <h3>Liste des Commandes</h3>
 <ul>
   @foreach($listeCommande as $commande)
-    <li>{{$commande}}</li>
+    <li>{{$commande["date"]}} - {{$commande["facture"]}}</li>
   @endforeach
 </ul>
 </ul>
