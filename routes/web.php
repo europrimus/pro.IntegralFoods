@@ -14,13 +14,17 @@
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
 Route::get('/preinscription', function () { return view('auth/preinscription'); });
-Route::get('/inscription', function () { return view('auth/register'); });
+Route::get('/inscription', function () { return view('auth/login'); });
 Route::get('/monCompte', function () { return view('auth/compte'); });
+
+Route::resource('preinscription', 'PreinscriptionController');
+Route::post('preinscription', 'PreinscriptionController@store');
+
 Auth::routes();
 
 // produits
-// Route::get('/produits', function () { return view('produit/index'); });
-// Route::get('/articles', function () { return view('produit/index'); });
+Route::get('/produits', function () { return view('produit/index'); });
+Route::get('/articles', function () { return view('produit/index'); });
 
 // panier
 Route::prefix('/panier')->group(function () {
@@ -42,6 +46,6 @@ Route::resource('commande', 'commandeController');
 Route::post('/commande',  'commandeController@store');
 
 
-Route::resource('produits','ArticleController');
+Route::resource('articles','ArticleController');
 
-Route::resource('produitsclient','ArticleClientController');
+Route::resource('articlesclient','ArticleClientController');

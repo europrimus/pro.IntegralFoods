@@ -1,7 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
-<h2>Pre Incription</h2>
-  <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+<h2>Pre Inscription</h2>
+  <form method="POST" action="{{ action('PreinscriptionController@store') }}" enctype="multipart/form-data">
     @csrf
     <fieldset>
 		<legend>Formulaire de premier contact :</legend>
@@ -9,8 +9,8 @@
 		<label for="civilite" class="">Civilité</label>
 		<select id="civilite" name="civilite" value="{{ old('civilite') }}" required
 		    class="{{ $errors->has('civilite') ? 'invalid' : '' }}">
-			<option value="monsieur">Monsieur</option>
-			<option value="madame">Madame</option>
+			<option value="Monsieur">Monsieur</option>
+			<option value="Madame">Madame</option>
 		</select>
 		@if ($errors->has('civilite'))
 		  <span class="invalid">{{ $errors->first('civilite') }}</span>
@@ -42,21 +42,29 @@
 		<br>
 		
 		<label for="telephone" class="">Votre téléphone</label>
-		<input id="telephone" type="tel"  name="telephone" value="{{ old('telephone') }}" required
-		class="{{ $errors->has('telephone') ? 'invalid' : '' }}">
-		@if ($errors->has('telephone'))
-		<span class="">{{ $errors->first('telephone') }}</span>
+		<input id="tel" type="tel"  name="tel" value="{{ old('tel') }}" required
+		class="{{ $errors->has('tel') ? 'invalid' : '' }}">
+		@if ($errors->has('tel'))
+		<span class="">{{ $errors->first('tel') }}</span>
 		@endif
 		<br>
 		
-		<label for="etablissement" class="">Votre établissement</label>
+		<label for="entreprise" class="">Votre entreprise</label>
+		<input id="entreprise" type="entreprise"  name="entreprise" value="{{ old('entreprise') }}" required
+		class="{{ $errors->has('entreprise') ? 'invalid' : '' }}">
+		@if ($errors->has('entreprise'))
+		<span class="">{{ $errors->first('entreprise') }}</span>
+		@endif
+		<br>
+		
+		<label for="etablissement" class="">Votre type d'établissement</label>
 		<select id="etablissement" name="etablissement" value="{{ old('etablissement') }}" required
 		    class="{{ $errors->has('etablissement') ? 'invalid' : '' }}">
 			<option value="distributeur">Distributeur</option>
-			<option value="independant">Restaurant indépendant</option>
-			<option value="chaine">Chaîne de restaurants ou franchise</option>
-			<option value="epicerie">Epicerie fine</option>
-			<option value="collectivite">Collectivité</option>
+			<option value="restaurant indépendant">Restaurant indépendant</option>
+			<option value="chaîne de restaurants">Chaîne de restaurants ou franchise</option>
+			<option value="épicerie">Epicerie fine</option>
+			<option value="collectivité">Collectivité</option>
 			<option value="traiteur">Traiteur</option>
 			<option value="industrie">Industrie agroalimentaire</option>
 			<option value="autre">Autre</option>
