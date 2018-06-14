@@ -25,6 +25,7 @@
     <table class="table table-bordered">
         <tr>
             <th>N°</th>
+            <th>Photo</th>
             <th>Nom du produit</th>
             <th>Description</th>
             <th>Réference</th>
@@ -33,6 +34,7 @@
     @foreach ($articles as $article)
         <tr>
             <td>{{ ++$i }}</td>
+            <td></td>
             <td>{{ $article->titre }}</td>
             <td>{{ $article->description }}</td>
             <td>{{ $article->reference }}</td>

@@ -13,13 +13,4 @@ class ArticleClientController extends Controller
         return view('articlesclients/indexclient',compact('articleclients'));
     }
 
-    public function show()
-    {
-
-    }
-
-    public function ajoutboutique()
-    {
-        
-    }
 }
