@@ -5,8 +5,7 @@
   </td>
 
   <td class="">
-    <a href="">
-      <img width="400" height="400" src="img/produit/mini{{ $ligne["reference"] }}.jpg" class="" alt="" /></a>
+      <img width="200" height="200" src="/storage/photo/{{ $ligne["reference"] }}.png" class="" alt="" />
   </td>
 
   <td class="" data-title="Produit">

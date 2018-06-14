@@ -19,8 +19,8 @@ class commandeController extends Controller
      */
     public function index()
     {
-      $commandeObj = new commande;
-      $listeCommande = $commandeObj->getListe();
+      $idClient = 2;
+      $listeCommande = commande::getListe($idClient);
       return view( 'commande/index' )
         ->with('listeCommande', $listeCommande);
     }
@@ -34,40 +34,13 @@ class commandeController extends Controller
     public function create()
     {
       // on récupère le contenu du panier de la session
-      $panierObj = new Panier;
-      $panier = $panierObj->get();
+      $panier = Panier::get();
 
       // on recupère l'idClient dans la session
       //$idClient = session("idClient");
       $idClient = 2;
-      // on charge la liste des produits (nom, prix, ..)
-      // eloquent ne fonctione pas "Property [article] does not exist on this collection instance."
-      //$produits = CatalogueProduits::all()->article;
-      //$produits = DB::select(
-/*
-SELECT catalogueproduit.id as catalogue_id,
-  produit_id,
-  prix,
-  conditionnement,
-  titre as nom,
-  description,
-  reference
-FROM catalogueproduit
-JOIN articles ON catalogueproduit.produit_id = articles.id AND catalogueproduit.users_id = 2
-*/
-      $produits = DB::table('catalogueproduit')
-        ->select('catalogueproduit.id as catalogue_id',
-          'produit_id',
-          'prix',
-          'conditionnement',
-          'titre as nom',
-          'description',
-          'reference')
-        ->where('users_id', $idClient)
-        ->join('articles', 'catalogueproduit.produit_id', '=', 'articles.id')
-        ->get();
-      $produits = $produits->keyBy('catalogue_id');
-      //dd($produits);
+
+      $produits = Article::getCatalogue($idClient);
 
       // données fictives
 /*

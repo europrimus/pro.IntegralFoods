@@ -7,12 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Panier extends Model
 {
 
-  // pour tester, on crèer un panier par default
-  public function __construct(){
-    //$this->ajouter(2  ,1 );
-    //$this->ajouter(4  ,4 );
-  }
-
   /**
    * Ajoute un article au panier.
    *
@@ -20,7 +14,7 @@ class Panier extends Model
    * si ok : le contenu du panier
    * si erreur:  false
    */
-  public function ajouter(int $idArticle  ,int $quantite ){
+  public static function ajouter(int $idArticle  ,int $quantite ){
     $panier=session("panier");
     if( isset($panier[$idArticle]) ) {
       $panier[$idArticle] += $quantite;
@@ -40,7 +34,7 @@ class Panier extends Model
    *
    * @return array le contenu du panier
    */
-  public function get( ){
+  public static function get( ){
     if( null !== session("panier") ) {
       return session("panier");
     }else{
@@ -53,7 +47,7 @@ class Panier extends Model
    *
    * @return integer
    */
-  public function panierCount()
+  public static function panierCount()
   {
     if( null !== session("panier") )  {
       return count(session("panier"));
@@ -69,7 +63,7 @@ class Panier extends Model
    * si ok : le contenu du panier
    * si erreur:  false
    */
-  public function modifier(int $idArticle  ,int $quantite ){
+  public static function modifier(int $idArticle  ,int $quantite ){
     $panier=session("panier");
     if( isset($panier[$idArticle]) ) {
       $panier[$idArticle] = $quantite;
@@ -88,7 +82,7 @@ class Panier extends Model
    *
    * @return void
    */
-  public function supprimer($idArticle)
+  public static function supprimer($idArticle)
   {
     $panier=session("panier");
     unset($panier[$idArticle]);
@@ -101,7 +95,7 @@ class Panier extends Model
    *
    * @return void
    */
-  public function vider()
+  public static function vider()
   {
     session()->forget('panier');
   }

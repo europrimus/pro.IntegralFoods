@@ -61,9 +61,7 @@ class commande extends Model
     return $xml;
   }
 
-  public function getListe(){
-    // identification client
-    $idClient = "12345";
+  public static function getListe($idClient){
     $ListeFacture = Storage::files("commandes/".$idClient."/");
     return $ListeFacture;
   }

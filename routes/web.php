@@ -22,10 +22,6 @@ Route::post('preinscription', 'PreinscriptionController@store');
 
 Auth::routes();
 
-// produits
-Route::get('/produits', function () { return view('produit/index'); });
-Route::get('/articles', function () { return view('produit/index'); });
-
 // panier
 Route::prefix('/panier')->group(function () {
   Route::get('/',                         'PanierController@index' );
@@ -46,6 +42,6 @@ Route::resource('commande', 'commandeController');
 Route::post('/commande',  'commandeController@store');
 
 
-Route::resource('articles','ArticleController');
+Route::resource('produits','ArticleController');
 
-Route::resource('articlesclient','ArticleClientController');
+Route::resource('produitsclient','ArticleClientController');
