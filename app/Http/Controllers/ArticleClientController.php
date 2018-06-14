@@ -8,8 +8,12 @@ use App\Article;
 class ArticleClientController extends Controller
 {
     public function index()
-    {    
-        $articleclients = Article::all();
+    {
+        // client identifié
+        //$idClient = session("idClient");
+        $idClient = 2;
+        //$articleclients = Article::all();
+        $articleclients = Article::getCatalogue($idClient);
         return view('articlesclients/indexclient',compact('articleclients'));
     }
 

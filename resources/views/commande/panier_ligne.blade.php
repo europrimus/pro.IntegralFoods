@@ -23,7 +23,7 @@
   </td>
 
   <td class="" data-title="Prix">
-    <span class="prix">{{ $ligne["prix"] }}</span><span class="">&euro;</span>
+    <span class="prix">{{ number_format( $ligne["prix"], 2 , "," , " " ) }}</span><span class="">&euro;</span>
   </td>
 
   <td class="" data-title="Quantité">

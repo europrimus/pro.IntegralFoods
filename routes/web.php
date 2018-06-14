@@ -15,7 +15,7 @@
 Route::get('/', function () { return view('auth/login'); });
 Route::get('/preinscription', function () { return view('auth/preinscription'); });
 Route::get('/inscription', function () { return view('auth/login'); });
-Route::get('/monCompte', function () { return view('auth/compte'); });
+Route::get('/monCompte', function () { return view('auth/compte'); })->name("monCompte");
 
 Route::resource('preinscription', 'PreinscriptionController');
 Route::post('preinscription', 'PreinscriptionController@store');
@@ -24,7 +24,8 @@ Auth::routes();
 
 // panier
 Route::prefix('/panier')->group(function () {
-  Route::get('/',                         'PanierController@index' );
+  Route::get('/',                         'PanierController@index' )
+    ->name("panier");
   Route::get('/ajouter/{idArticle}x{quantite}', 'PanierController@store' )
     ->where('idArticle','[0-9]+')
     ->where('quantite','[0-9]+');
