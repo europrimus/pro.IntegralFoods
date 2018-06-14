@@ -34,6 +34,10 @@ Créer les tables avec la commande suivante
 
     php artisan db:seed
 
+Créer un lien entre le Storage de laravel et le dossier public
+
+    php artisan storage:link
+
 lancer le serveur
 
     php artisan serve
