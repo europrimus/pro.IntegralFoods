@@ -3,9 +3,9 @@ Site de vente en ligne pour grossiste et distributeur.
 Projet de fin de formation webforce3 Dijon2 réalisé par Didier, Julien et Henry.
 
 ## Dépendance
-Laravel 5.6
-PHP 7.2
-composer
+Laravel 5.6  
+PHP 7.2  
+composer  
 
 ## Installation
 télécharger le contenu du dépôt
@@ -15,15 +15,15 @@ dans le répertoire, lancer la commande
 
 Créer la base de donnée, puis éditer le fichier .env pour modifier les informations de la base de données
 
-    APP_DEBUG=false   <= false pour la production
-    APP_URL=http://localhost
+>APP_DEBUG=false   <= false pour la production
+>APP_URL=http://localhost
 
-    DB_CONNECTION=mysql   <= Type de base
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=proIntegralFoods    <= Nom de la bse de donnée
-    DB_USERNAME=      <= utilisateur
-    DB_PASSWORD=      <= mot de passe
+>DB_CONNECTION=mysql   <= Type de base
+>DB_HOST=127.0.0.1
+>DB_PORT=3306
+>DB_DATABASE=proIntegralFoods    <= Nom de la bse de donnée
+> DB_USERNAME=      <= utilisateur
+>DB_PASSWORD=      <= mot de passe
 
 
 Créer les table avec la commande suivante
