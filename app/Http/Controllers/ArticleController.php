@@ -13,7 +13,7 @@ class ArticleController extends Controller
         
         $articles = Article::latest()->paginate(5);
         return view('articles.index',compact('articles'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);dd('debug');
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
 
@@ -30,7 +30,7 @@ class ArticleController extends Controller
             'description' => 'required',
         ]);
         Article::create($request->all());
-        return redirect()->route('articles.index')
+        return redirect()->route('produits.index')
                         ->with('success','Article created successfully');
     }
 
@@ -56,7 +56,7 @@ class ArticleController extends Controller
             'description' => 'required',
         ]);
         Article::find($id)->update($request->all());
-        return redirect()->route('articles.index')
+        return redirect()->route('produits.index')
                         ->with('success','Article updated successfully');
     }
 
@@ -64,7 +64,7 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         Article::find($id)->delete();
-        return redirect()->route('articles.index')
+        return redirect()->route('produits.index')
                         ->with('success','Article deleted successfully');
     }
 }

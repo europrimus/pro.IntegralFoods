@@ -19,7 +19,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('produits.index') }}"> Retour</a>
 
             </div>
 
@@ -46,13 +46,25 @@
 
             <div class="form-group">
 
-                <strong>Description :</strong>
+                <strong>Réference :</strong>
 
-                {{ $article->description}}
+                {{ $article->reference}}
 
             </div>
 
         </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+<div class="form-group">
+
+    <strong>Description :</strong>
+
+    {{ $article->description}}
+
+</div>
+
+</div>
 
     </div>
 

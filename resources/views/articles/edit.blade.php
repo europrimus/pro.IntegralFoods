@@ -18,7 +18,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('produits.index') }}"> Retour</a>
 
             </div>
 
@@ -48,7 +48,7 @@
     @endif
 
 
-    {!! Form::model($article, ['method' => 'PATCH','route' => ['articles.update', $article->id]]) !!}
+    {!! Form::model($article, ['method' => 'PATCH','route' => ['produits.update', $article->id]]) !!}
 
         @include('articles.form')
 

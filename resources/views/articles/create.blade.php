@@ -18,7 +18,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('articles.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('produits.index') }}"> Retour</a>
 
             </div>
 
@@ -48,7 +48,7 @@
     @endif
 
 
-    {!! Form::open(array('route' => 'articles.store','method'=>'POST')) !!}
+    {!! Form::open(array('route' => 'produits.store','method'=>'POST')) !!}
 
          @include('articles.form')
 
