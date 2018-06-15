@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 class donneesFictives extends Seeder
 {
-  
+
     /**
      * Run the database seeds.
      *
@@ -90,6 +90,7 @@ Ingrédients: Lait entier en poudre, Paprika AOP (doux 16% et piquant 8%), Sel, 
 Recette pour une sauce crémeuse: Diluer 20 à 30 grammes de Sauce de la Brigade dans 1 L de crème liquide, Porter le mélange à ébullition, Remuer jusqu’à obtention de la texture souhaitée
 Suggestion d’utilisation: Sauce, beurre composé, panure et assaisonnement',
         'reference'=>'SauceBrigade500g',
+        'ean'=>str_pad(mt_rand(), 13, "0", STR_PAD_LEFT),
       ]);
       DB::table('articles')->insert([
         'titre'=> 'Paprika doux AOP',
@@ -98,6 +99,7 @@ Le Paprika délicieusement Fumé de manière artisanale possède des arômes pui
 Ingrédients: 100 % paprika (Variantes: Piquant ou Doux)
 Utilisation: Assaisonnements pour viande et poissons, sauce, saupoudrage…',
         'reference'=>'PaprikaDouxAOP250g',
+        'ean'=>str_pad(mt_rand(), 13, "0", STR_PAD_LEFT),
       ]);
       DB::table('articles')->insert([
         'titre'=> 'Paprika piquant AOP',
@@ -106,6 +108,7 @@ Le Paprika délicieusement Fumé de manière artisanale possède des arômes pui
 Ingrédients: 100 % paprika (Variantes: Piquant ou Doux)
 Utilisation: Assaisonnements pour viande et poissons, sauce, saupoudrage…',
         'reference'=>'PaprikaPiquantAOP250g',
+        'ean'=>str_pad(mt_rand(), 13, "0", STR_PAD_LEFT),
       ]);
       DB::table('articles')->insert([
         'titre'=> 'Huile de Paprika doux',
@@ -113,50 +116,44 @@ Utilisation: Assaisonnements pour viande et poissons, sauce, saupoudrage…',
 Ingrédients: 100 % huile de paprika (variantes: Piquant ou Doux)
 Conseils d’utilisation: Elle peut être utilisée pour la cuisson, la friture ou l’assaisonnement de soupe, pizzas, sauces, marinades…',
         'reference'=>'HuilePaprikaDoux100ml',
+        'ean'=>str_pad(mt_rand(), 13, "0", STR_PAD_LEFT),
       ]);
 
 // Catalogue
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 1,
         'users_id'=> 2,
-        'prix'=> "19.50",
-        'conditionnement'=>'Carton de 6 boites',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 2,
         'users_id'=> 2,
-        'prix'=> "9.50",
-        'conditionnement'=>'1 sachet',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 1,
         'users_id'=> 2,
-        'prix'=> "0.00",
-        'conditionnement'=>'1 bouteil offerte',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> "22.50",
-        'conditionnement'=>'Carton de 6 boites',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> "22.50",
-        'conditionnement'=>'Carton de 6 boites',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> "22.50",
-        'conditionnement'=>'Carton de 6 boites',
+        'prix'=> mt_rand(0.5,50),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> "22.50",
-        'conditionnement'=>'Carton de 6 boites',
+        'prix'=> mt_rand(0.5,50),
       ]);
     }
 }
