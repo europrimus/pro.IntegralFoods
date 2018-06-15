@@ -4,7 +4,7 @@
   </td>
 
   <td class="">
-      <img width="200" height="200" src="/storage/photo/{{ $ligne["reference"] }}.png" class="" alt="" />
+      <img height="200" src="/storage/photo/{{ $ligne["reference"] }}.png" class="" alt="" />
   </td>
 
   <th class="" data-title="Produit" scope="row">
@@ -13,8 +13,8 @@
     </details>
   </th>
 
-  <td class="" data-title="Conditionnement">
-    {{ $ligne["conditionnement"] }}
+  <td class="" data-title="Code bare EAN">
+    {{ $ligne["ean"] }}
   </td>
 
   <td class="" data-title="Référence">

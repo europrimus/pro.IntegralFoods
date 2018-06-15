@@ -16,7 +16,7 @@
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col">Produit</th>
-        <th scope="col">Conditionnement</th>
+        <th scope="col">Code bare EAN</th>
         <th scope="col">Référence</th>
         <th scope="col">Prix</th>
         <th scope="col">Quantité</th>
