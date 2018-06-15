@@ -101,19 +101,24 @@ main.login h1{
   color: var(--color-blanc);
   background-color: var(--color-gris);
 }
-#panier input{
+.quantite{
   width: 3.5rem;
 }
 
-#panier .remove{
-  color: var(--color-rouge);
-  width: 2rem;
-  height: 2rem;
-}
 
-#panier .remove:hover{
+#panier a.remove{
+  color: var(--color-rouge);
+  display: block;
+  font-size: 1.5em;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+}
+#panier a.remove:hover{
   color: var(--color-gris);
-  border-radius: 1rem;
+  text-decoration: none;
   background-color: var(--color-orange);
 }
 

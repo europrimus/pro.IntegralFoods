@@ -1,5 +1,5 @@
 <tr class="">
-  <td class="">
+  <td >
     <a href="/panier/supprimer/{{ $ligne["catalogue_id"] }}" class="remove" aria-label="Enlever cet élément" >×</a>
   </td>
 
@@ -31,7 +31,7 @@
       <input id="quantity[{{ $ligne["catalogue_id"] }}]" name="quantity[{{ $ligne["catalogue_id"] }}]"
         aria-labelledby="quantité de {{ $ligne["produit"] }}" title="Qté"
         type="number" inputmode="numeric" step="1" min="0" value="{{ $ligne["Quantité"] }}" size="2" pattern="[0-9]*"
-        data-prixUnitaire="{{ $ligne["prix"] }}" class="" />
+        data-prixUnitaire="{{ $ligne["prix"] }}" class="quantite" />
     </div>
   </td>
 
