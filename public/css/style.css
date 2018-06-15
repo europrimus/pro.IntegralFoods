@@ -81,7 +81,14 @@ input.invalid{
   color :#FF9900;
 }
 
-<<<<<<< HEAD
+i{
+  text-align: center;
+}
+
+summary{
+  text-align: center;
+}
+
 main.login h1{
   color: var(--color-blanc);
   background-color: var(--color-gris-transparent);
@@ -108,13 +115,6 @@ main.login h1{
   color: var(--color-gris);
   border-radius: 1rem;
   background-color: var(--color-orange);
-=======
-i{
-  text-align: center;
-}
-summary{
-  text-align: center;
->>>>>>> a4af35c352f06dfc3f6f65ca9ea6c5eaf11e4ffd
 }
 
 p{
@@ -145,4 +145,3 @@ article{
 .ajout{
   text-align: center;
 }
-
