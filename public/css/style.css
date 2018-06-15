@@ -5,6 +5,7 @@
   --color-orange: #FF9900;
   --color-rouge:  #CC0033;
   --color-gris:   #a9a9a9;
+  --color-gris-transparent:   #a9a9a970;
 }
 
 @font-face {
@@ -36,7 +37,7 @@ body{
 }
 
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'amatic_sc',handwriting;
   font-weight: 700;
 }
@@ -45,6 +46,7 @@ h1 {
 }
 h2 {
   font-size: 4rem;
+  text-align: center;
 }
 
 /* la nav bar */
@@ -55,9 +57,11 @@ nav h1{
 nav.bg-light {
   background-color: var(--color-gris) !important;
 }
+nav a.nav-link{
+  color: var(--color-blanc) !important;
+}
 
 /* les erreurs */
-
 span.invalid{
   color:red;
 }
@@ -73,4 +77,28 @@ main.login{
 
 main.login h1{
   color: var(--color-blanc);
+  background-color: var(--color-gris-transparent);
+  box-shadow: 0 0 2rem var(--color-gris);
+}
+
+
+/* La page panier */
+#panier .thead-light th{
+  color: var(--color-blanc);
+  background-color: var(--color-gris);
+}
+#panier input{
+  width: 3.5rem;
+}
+
+#panier .remove{
+  color: var(--color-rouge);
+  width: 2rem;
+  height: 2rem;
+}
+
+#panier .remove:hover{
+  color: var(--color-gris);
+  border-radius: 1rem;
+  background-color: var(--color-orange);
 }

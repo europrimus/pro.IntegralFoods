@@ -10,18 +10,22 @@
   @else
   <form action="/commande" method="post">
     @csrf
-    <table id="panier">
-    <tr class="">
-      <th class="" >sup</th>
-      <th class="" >img</th>
-      <th class="" >Produit</th>
-      <th class="" >Conditionnement</th>
-      <th class="" >Référence</th>
-      <th class="" >Prix</th>
-      <th class="" >Quantité</th>
-      <th class="" >Total</th>
-    </tr>
-    @each('commande/panier_ligne', $lignes, 'ligne')
+    <table id="panier" class="table table-hover">
+    <thead class="thead-light">
+      <tr >
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Produit</th>
+        <th scope="col">Conditionnement</th>
+        <th scope="col">Référence</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @each('commande/panier_ligne', $lignes, 'ligne')
+    </tbody>
     </table>
     <p>Total : <span id="prixTotal">{{ number_format( $prixTotal, 2 , "," , " " ) }}</span>&euro;</p>
     <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a>

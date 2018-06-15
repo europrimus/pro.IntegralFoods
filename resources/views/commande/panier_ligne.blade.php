@@ -1,18 +1,17 @@
 <tr class="">
   <td class="">
-    <a href="/panier/supprimer/{{ $ligne["catalogue_id"] }}" class="" aria-label="Enlever cet élément"
-    data-product_id="905" data-product_sku="">&times;</a>
+    <a href="/panier/supprimer/{{ $ligne["catalogue_id"] }}" class="remove" aria-label="Enlever cet élément" >×</a>
   </td>
 
   <td class="">
       <img width="200" height="200" src="/storage/photo/{{ $ligne["reference"] }}.png" class="" alt="" />
   </td>
 
-  <td class="" data-title="Produit">
+  <th class="" data-title="Produit" scope="row">
     <details><summary>{{ $ligne["produit"] }}</summary>
       {{ $ligne["description"] }}
     </details>
-  </td>
+  </th>
 
   <td class="" data-title="Conditionnement">
     {{ $ligne["conditionnement"] }}
@@ -30,9 +29,9 @@
     <div class="quantity">
       <label class="screen-reader-text" for="quantity_{{ $ligne["catalogue_id"] }}"></label>
       <input id="quantity[{{ $ligne["catalogue_id"] }}]" name="quantity[{{ $ligne["catalogue_id"] }}]"
-        aria-labelledby="quantité de {{ $ligne["produit"] }}"
-       class="" step="1" min="0" value="{{ $ligne["Quantité"] }}" title="Qté" size="2" pattern="[0-9]*"
-       type="number" inputmode="numeric" data-prixUnitaire="{{ $ligne["prix"] }}"/>
+        aria-labelledby="quantité de {{ $ligne["produit"] }}" title="Qté"
+        type="number" inputmode="numeric" step="1" min="0" value="{{ $ligne["Quantité"] }}" size="2" pattern="[0-9]*"
+        data-prixUnitaire="{{ $ligne["prix"] }}" class="" />
     </div>
   </td>
 
