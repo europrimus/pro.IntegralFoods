@@ -31,7 +31,7 @@ class Article extends Model
       ->select('catalogueproduit.id as catalogue_id',
         'produit_id',
         'prix',
-        'conditionnement',
+        'ean',
         'titre as nom',
         'description',
         'reference')
