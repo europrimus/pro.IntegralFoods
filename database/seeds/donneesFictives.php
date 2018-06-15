@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 class donneesFictives extends Seeder
 {
+  
     /**
      * Run the database seeds.
      *

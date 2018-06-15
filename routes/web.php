@@ -18,7 +18,8 @@ session(["idClient"=>2]);
 Route::get('/', function () { return view('auth/login'); });
 Route::get('/preinscription', function () { return view('auth/preinscription'); });
 Route::get('/inscription', function () { return view('auth/login'); });
-Route::get('/monCompte', function () { return view('auth/compte'); })->name("monCompte");
+//Route::get('/monCompte', function () { return view('auth/compte'); })->name("monCompte");
+Route::get('/monCompte','commandeController@index' )->name("monCompte");
 
 Route::resource('preinscription', 'PreinscriptionController');
 Route::post('preinscription', 'PreinscriptionController@store');
