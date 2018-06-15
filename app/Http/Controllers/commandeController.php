@@ -58,7 +58,7 @@ class commandeController extends Controller
               "catalogue_id"=>$id,
               "produit_id"=>$produits[$id]->produit_id,
               "prix"=>$produits[$id]->prix,
-              "conditionnement"=>$produits[$id]->conditionnement,
+              "ean"=>$produits[$id]->ean,
               "produit"=>$produits[$id]->nom,
               "description"=>$produits[$id]->description,
               "reference"=>$produits[$id]->reference,
