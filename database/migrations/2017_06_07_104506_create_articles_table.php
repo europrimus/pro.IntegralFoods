@@ -17,7 +17,9 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('titre');
             $table->text('description');
-            $table->string('reference')->unique();
+            $table->string('conditionnement');
+            $table->string('reference');
+            $table->string('ean')->unique();
             $table->timestamps();
         });
     }
