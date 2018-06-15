@@ -81,7 +81,14 @@ input.invalid{
   color :#FF9900;
 }
 
-<<<<<<< HEAD
+i{
+  text-align: center;
+}
+
+summary{
+  text-align: center;
+}
+
 main.login h1{
   color: var(--color-blanc);
   background-color: var(--color-gris-transparent);
@@ -94,27 +101,25 @@ main.login h1{
   color: var(--color-blanc);
   background-color: var(--color-gris);
 }
-#panier input{
+.quantite{
   width: 3.5rem;
 }
 
-#panier .remove{
-  color: var(--color-rouge);
-  width: 2rem;
-  height: 2rem;
-}
 
-#panier .remove:hover{
-  color: var(--color-gris);
-  border-radius: 1rem;
-  background-color: var(--color-orange);
-=======
-i{
+#panier a.remove{
+  color: var(--color-rouge);
+  display: block;
+  font-size: 1.5em;
+  height: 1em;
+  width: 1em;
   text-align: center;
+  line-height: 1;
+  border-radius: 100%;
 }
-summary{
-  text-align: center;
->>>>>>> a4af35c352f06dfc3f6f65ca9ea6c5eaf11e4ffd
+#panier a.remove:hover{
+  color: var(--color-gris);
+  text-decoration: none;
+  background-color: var(--color-orange);
 }
 
 p{
@@ -145,4 +150,3 @@ article{
 .ajout{
   text-align: center;
 }
-
