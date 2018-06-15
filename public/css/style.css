@@ -23,3 +23,21 @@ span.invalid{
 input.invalid{
   box-shadow: 0 0 1rem red;
 }
+
+
+p{
+  font-family: 'ralewayregular';
+}
+
+article{
+  text-align: center;
+  vertical-align: top;
+  max-width: 500px;
+  padding: 5px 10px;
+  margin: 50px;
+  display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	background: #999;
+}
+

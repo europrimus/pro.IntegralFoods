@@ -134,5 +134,11 @@ Conseils d’utilisation: Elle peut être utilisée pour la cuisson, la friture 
         'prix'=> "0.00",
         'conditionnement'=>'1 bouteil offerte',
       ]);
+      DB::table('catalogueproduit')->insert([
+        'produit_id'=> 3,
+        'users_id'=> 2,
+        'prix'=> "22.50",
+        'conditionnement'=>'Carton de 6 boites',
+      ]);
     }
 }
