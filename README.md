@@ -23,7 +23,7 @@ Créer la base de donnée, puis éditer le fichier .env pour modifier les inform
 >DB_PORT=3306  
 >DB_DATABASE=proIntegralFoods    <= Nom de la bse de donnée  
 >DB_USERNAME=      <= utilisateur  
->DB_PASSWORD=      <= mot de passe 
+>DB_PASSWORD=      <= mot de passe
 
 
 Créer les tables avec la commande suivante
@@ -33,6 +33,10 @@ Créer les tables avec la commande suivante
 Éventuellement des données fictives pour les testes.
 
     php artisan db:seed
+
+Si il ne trouve pas la class donneesFictives, lancer la commande:  
+
+    composer dump-autoload
 
 Créer un lien entre le Storage de laravel et le dossier public
 

@@ -1,6 +1,11 @@
-#FFFFFF
-#FF9900
-#CC0033
+/* couleurs client */
+
+:root{
+  --color-blanc:  #FFFFFF;
+  --color-orange: #FF9900;
+  --color-rouge:  #CC0033;
+  --color-gris:   #a9a9a9;
+}
 
 @font-face {
     font-family: 'ralewayregular';
@@ -11,10 +16,47 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'amatic_sc';
+    src: url('/fonts/amaticsc-regular-webfont.woff2') format('woff2'),
+         url('/fonts/amaticsc-regular-webfont.woff') format('woff'),
+         url('/fonts/amaticsc-regular-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #logo{
   height: 4rem;
   width: 4rem;
 }
+
+body{
+  font-family: ralewayregular;
+}
+
+
+h1, h2 {
+  font-family: 'amatic_sc',handwriting;
+  font-weight: 700;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 4rem;
+}
+
+/* la nav bar */
+nav h1{
+  color: var(--color-rouge);
+  font-size: 1.5rem;
+}
+nav.bg-light {
+  background-color: var(--color-gris) !important;
+}
+
+/* les erreurs */
 
 span.invalid{
   color:red;
@@ -22,4 +64,13 @@ span.invalid{
 
 input.invalid{
   box-shadow: 0 0 1rem red;
+}
+
+/* la page de login */
+main.login{
+  background-image: url("/img/food-kitchenspices-spoon-wood.jpg");
+}
+
+main.login h1{
+  color: var(--color-blanc);
 }

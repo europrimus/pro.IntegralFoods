@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+//use database\seeds\donneesFictives;
 
 class DatabaseSeeder extends Seeder
 {
