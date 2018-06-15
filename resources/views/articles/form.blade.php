@@ -26,7 +26,7 @@
 <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Selectionner une image :</strong>
-            <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="4000000" />
             <input type="file" name="photo" id="photo" accept="image/*" >
         </div>
 </div>

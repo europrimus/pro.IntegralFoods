@@ -34,7 +34,7 @@
     @foreach ($articles as $article)
         <tr>
             <td>{{ ++$i }}</td>
-            <td></td>
+            <td><img width="100" height="100" src="/storage/photo/{{ $article->reference }}.png" class="" alt="" /></td>
             <td>{{ $article->titre }}</td>
             <td>{{ $article->description }}</td>
             <td>{{ $article->reference }}</td>
