@@ -57,3 +57,6 @@ Ajouter un article au panier. Renvois un **json** {"message":"contenu du message
 
 ## Ressources
 [model avec table intermédiaire](https://openclassrooms.com/forum/sujet/les-relations-sur-laravel?page=1#message-92310433)
+
+## ce qu'il reste a faire
+[Todo](todo.md)

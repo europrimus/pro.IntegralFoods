@@ -18,7 +18,6 @@ class CreateCatalogueproduit extends Migration
             $table->integer('produit_id')->unsigned();
             $table->integer('users_id')->unsigned();
             $table->float('prix');
-            $table->string('conditionnement');
             $table->timestamps();
         });
 
