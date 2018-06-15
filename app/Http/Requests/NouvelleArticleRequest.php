@@ -27,6 +27,7 @@ class NouvelleArticleRequest extends FormRequest
                 'titre' => 'required|min:5|max:191',
                 'description' => 'required|min:5',
                 'reference' => 'required',
+                'ean' => 'required',
                 'photo' => 'required'
             ];
     }
@@ -37,6 +38,7 @@ class NouvelleArticleRequest extends FormRequest
           'titre.required' => 'Vous devez ajouter un nom de produit',
           'description.required' => 'Vous devez ajouter un déscription du produit',
           'reference.required' => 'Vous devez ajouter une référence',
+          'ean.required' => 'Vous devez ajouter un EAN',
           'photo.required' => 'Vous devez ajouter une photo',
       ];
     }
