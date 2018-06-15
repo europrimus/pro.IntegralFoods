@@ -49,6 +49,7 @@ h2 {
   text-align: center;
 }
 
+
 /* la nav bar */
 nav h1{
   color: var(--color-rouge);
@@ -70,11 +71,17 @@ input.invalid{
   box-shadow: 0 0 1rem red;
 }
 
-/* la page de login */
-main.login{
-  background-image: url("/img/food-kitchenspices-spoon-wood.jpg");
+/*produit*/
+.nom{
+  font-family: 'amatic_sc',handwriting;
+  font-size: 2.5rem;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  color :#FF9900;
 }
 
+<<<<<<< HEAD
 main.login h1{
   color: var(--color-blanc);
   background-color: var(--color-gris-transparent);
@@ -101,4 +108,41 @@ main.login h1{
   color: var(--color-gris);
   border-radius: 1rem;
   background-color: var(--color-orange);
+=======
+i{
+  text-align: center;
 }
+summary{
+  text-align: center;
+>>>>>>> a4af35c352f06dfc3f6f65ca9ea6c5eaf11e4ffd
+}
+
+p{
+  font-family: 'ralewayregular';
+  display: block;
+
+}
+
+.ref{
+  text-align: center;
+}
+
+article{
+  vertical-align: top;
+  width: 500px;
+  margin: 5px 20px 50px;
+  display: inline-block;
+
+}
+
+
+
+.imgarticle{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ajout{
+  text-align: center;
+}
+
