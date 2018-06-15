@@ -10,6 +10,7 @@
 
         <h3 class="nom">{{ $articleclient->nom }}</h3>
             <p class="ref"><i>Réf : {{ $articleclient->reference }}</i></p>
+            <p class="ref"><i>EAN : {{ $articleclient->ean }}</i></p>
     <details>
 
         <summary>Voir detail</summary>
@@ -24,6 +25,7 @@
         <label id="qte">Quantité : <input class="quantite" aria-labelledby="quantité de  {{ $articleclient->nom }}"
             class="" step="1" min="0" value="" title="Qté" size="2" pattern="[0-9]*"
             type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}"/></label></br>
+        
         Prix unitaire : {{ number_format( $articleclient->prix, 2 , "," , " " ) }} €  </br>
 
         <button class="btn btn-light">Ajouter au pannier</button>
