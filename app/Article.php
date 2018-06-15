@@ -11,7 +11,7 @@ class Article extends Model
 {
 
     protected $fillable = [
-        'titre', 'description','reference'
+        'titre', 'description','reference','ean'
     ];
 
 

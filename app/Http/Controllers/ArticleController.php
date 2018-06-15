@@ -54,6 +54,8 @@ class ArticleController extends Controller
         request()->validate([
             'titre' => 'required',
             'description' => 'required',
+            'ean' => 'required',
+            'reference' => 'required',
         ]);
         Article::find($id)->update($request->all());
         return redirect()->route('produits.index')
