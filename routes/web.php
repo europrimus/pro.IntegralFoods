@@ -28,7 +28,7 @@ Auth::routes();
 
 // panier
 Route::prefix('/panier')->group(function () {
-  Route::get('/',                         'PanierController@index' )
+  Route::get('/', 'PanierController@index' )
     ->name("panier");
   Route::get('/ajouter/{idArticle}x{quantite}', 'PanierController@store' )
     ->where('idArticle','[0-9]+')
@@ -37,9 +37,9 @@ Route::prefix('/panier')->group(function () {
     ->where('idArticle','[0-9]+')
     ->where('quantite','[0-9]+');
 
-  Route::get('/supprimer/{idArticle}',    'PanierController@supprimer' )
+  Route::get('/supprimer/{idArticle}','PanierController@supprimer' )
     ->where('idArticle','[0-9]+');
-  Route::get('/toutSupprimer',            'PanierController@destroy' );
+  Route::get('/toutSupprimer', 'PanierController@destroy' );
 });
 //Route::get('/commandes',  'commandeController@index');
 //Route::get('/commandes/{n}', 'commandeController@show')->where('id','[0-9]+');
@@ -50,3 +50,15 @@ Route::post('/commande',  'commandeController@store');
 Route::resource('produits','ArticleController');
 
 Route::resource('produitsclient','ArticleClientController');
+
+// espace d'administration
+Route::prefix('/admin')->group(function () {
+  Route::prefix('/client')->group(function () {
+    Route::get('liste','AdminController@listeClients')
+      ->name('admin.client.liste');
+    Route::get('details/{idClient}','AdminController@detailClient')->where('idClient','[0-9]+')
+      ->name('admin.client.details');;
+    Route::get('valider/{idClient}','AdminController@validerClient')->where('idClient','[0-9]+')
+      ->name('admin.client.valider');;
+  });
+});
