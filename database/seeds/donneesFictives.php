@@ -140,5 +140,23 @@ Conseils d’utilisation: Elle peut être utilisée pour la cuisson, la friture 
         'prix'=> "22.50",
         'conditionnement'=>'Carton de 6 boites',
       ]);
+      DB::table('catalogueproduit')->insert([
+        'produit_id'=> 3,
+        'users_id'=> 2,
+        'prix'=> "22.50",
+        'conditionnement'=>'Carton de 6 boites',
+      ]);
+      DB::table('catalogueproduit')->insert([
+        'produit_id'=> 3,
+        'users_id'=> 2,
+        'prix'=> "22.50",
+        'conditionnement'=>'Carton de 6 boites',
+      ]);
+      DB::table('catalogueproduit')->insert([
+        'produit_id'=> 3,
+        'users_id'=> 2,
+        'prix'=> "22.50",
+        'conditionnement'=>'Carton de 6 boites',
+      ]);
     }
 }

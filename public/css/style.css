@@ -1,6 +1,14 @@
 #FFFFFF
 #FF9900
 #CC0033
+/* couleurs client */
+
+:root{
+  --color-blanc:  #FFFFFF;
+  --color-orange: #FF9900;
+  --color-rouge:  #CC0033;
+  --color-gris:   #a9a9a9;
+}
 
 @font-face {
     font-family: 'ralewayregular';
@@ -11,10 +19,48 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'amatic_sc';
+    src: url('/fonts/amaticsc-regular-webfont.woff2') format('woff2'),
+         url('/fonts/amaticsc-regular-webfont.woff') format('woff'),
+         url('/fonts/amaticsc-regular-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #logo{
   height: 4rem;
   width: 4rem;
 }
+
+body{
+  font-family: ralewayregular;
+}
+
+
+h1, h2 {
+  font-family: 'amatic_sc',handwriting;
+  font-weight: 700;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 4rem;
+}
+
+
+/* la nav bar */
+nav h1{
+  color: var(--color-rouge);
+  font-size: 1.5rem;
+}
+nav.bg-light {
+  background-color: var(--color-gris) !important;
+}
+
+/* les erreurs */
 
 span.invalid{
   color:red;
@@ -24,20 +70,48 @@ input.invalid{
   box-shadow: 0 0 1rem red;
 }
 
+/*produit*/
+.nom{
+  font-family: 'amatic_sc',handwriting;
+  font-size: 2.5rem;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  color :#FF9900;
+}
+
+i{
+  text-align: center;
+}
+summary{
+  text-align: center;
+}
 
 p{
   font-family: 'ralewayregular';
+  display: block;
+
 }
 
 article{
+.ref{
   text-align: center;
+}
+
+article{
   vertical-align: top;
-  max-width: 500px;
-  padding: 5px 10px;
-  margin: 50px;
   display: inline-block;
-	color: #fff;
-	font-weight: bold;
-	background: #999;
+
+}
+
+
+
+.imgarticle{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ajout{
+  text-align: center;
 }
 
