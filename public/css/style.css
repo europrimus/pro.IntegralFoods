@@ -150,3 +150,8 @@ article{
 .ajout{
   text-align: center;
 }
+footer{
+  height: 100px;
+  width: 100px;
+  color: red;
+}
