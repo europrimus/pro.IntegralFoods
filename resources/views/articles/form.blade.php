@@ -18,7 +18,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Réference :</strong>
-            {!! Form::text('reference', null, array('placeholder' => 'Reference','class' => 'form-control',)) !!}
+            {!! Form::text('reference', '376028145' , array('class' => 'form-control',)) !!}
         </div>
     </div>
 
