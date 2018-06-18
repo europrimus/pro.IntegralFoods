@@ -3,6 +3,15 @@
 
 <main class="container">
   <h2 class="admin>">Espace d'administration</h2>
+
+  @if ($errors->any())
+      <p class="invalid">
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br>
+            @endforeach
+      </p>
+  @endif
+
   <form method="post" name="creerCatalogue" action="{{ URL::route('admin.client.validerPrix') }}">
     <h3>Validation d'un client</h3>
     <p>Client : {{ $client["entreprise"] }}</p>

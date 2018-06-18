@@ -5,6 +5,14 @@
   <h2>Commande</h2>
   <h3>Contenu du panier</h3>
 
+  @if ($errors->any())
+      <p class="invalid">
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br>
+            @endforeach
+      </p>
+  @endif
+
   @empty($lignes)
     <p>Le panier est vide</p>
   @else

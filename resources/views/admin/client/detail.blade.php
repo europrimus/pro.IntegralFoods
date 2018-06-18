@@ -3,6 +3,15 @@
 
 <main class="container">
   <h2 class="admin>">Espace d'administration</h2>
+
+  @if ($errors->any())
+      <p class="invalid">
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br>
+            @endforeach
+      </p>
+  @endif
+
   <h3>{{ $client["entreprise"] }}</h3>
   <dl>
     <dt>Type d'établissement</dt>
@@ -80,7 +89,8 @@
             <label class="screen-reader-text" for="prix[{{ $produit->produit_id }}]"></label>
             <input id="prix[{{ $produit->produit_id }}]" name="prix[{{ $produit->produit_id }}]"
               aria-labelledby="prix de {{ $produit->nom }}" title="prix"
-              type="number" inputmode="numeric" step="0.01" min="0" value="{{ $produit->prix }}" class="prix" />€
+              type="number" inputmode="numeric" step="0.01" min="0" value="{{ $produit->prix }}"
+              class="prix" /> €
           </td>
         </tr>
         @endforeach

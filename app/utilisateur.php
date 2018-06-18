@@ -43,8 +43,9 @@ class utilisateur extends Model
         return $this->hasMany('adresse');
       }
 
-			public static function getEntreprise($id) {
-				$info = utilisateur::find($id);
-				return $info->entreprise;
-			}
+		public static function getEntreprise($id) {
+			$info = utilisateur::find($id);
+			return $info->entreprise;
+		}
+
 }

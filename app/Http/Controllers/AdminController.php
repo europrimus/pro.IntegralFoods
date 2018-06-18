@@ -7,6 +7,7 @@ use App\utilisateur;
 use App\Article;
 use App\CatalogueProduits;
 use App\Http\Requests\ValiderPrixRequest;
+use App\Http\Requests\ModifierPrixRequest;
 
 class AdminController extends Controller
 {
@@ -61,7 +62,7 @@ class AdminController extends Controller
     }
 
 // modifier les prix dans le catalogue client
-    public function modifierPrix(ValiderPrixRequest $request){
+    public function modifierPrix(ModifierPrixRequest $request){
       $idClient = session("idClient");
       $validated = $request->validated();
       foreach ($validated["prix"] as $id => $prix) {

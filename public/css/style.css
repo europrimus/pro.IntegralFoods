@@ -67,6 +67,13 @@ span.invalid{
   color:red;
 }
 
+p.invalid{
+  padding:1rem;
+  border-radius: 0.5rem;
+  color:red;
+  background-color: #ff00000f;
+}
+
 input.invalid{
   box-shadow: 0 0 1rem red;
 }
@@ -156,6 +163,7 @@ article{
 .ajout{
   text-align: center;
 }
+
 footer{
   height: 100px;
   width: 100px;
