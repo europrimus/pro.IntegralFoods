@@ -69,3 +69,5 @@ Route::prefix('/admin')->group(function () {
       ->name('admin.client.modifierPrix');
   });
 });
+
+Route::resource('profil','ProfilController');
