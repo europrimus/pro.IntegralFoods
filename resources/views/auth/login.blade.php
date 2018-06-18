@@ -7,7 +7,7 @@
   <img src="/img/Logo-integralFoods.png" alt="logo integral food" >
 
   <h2>Identification</h2>
-  <form method="POST" action="{{ route('login') }}">
+  <form method="POST" action="{{ action('CoController@check') }}" enctype="multipart/form-data">
     @csrf
 
     <label for="id" class="">Identifiant</label>
@@ -32,7 +32,7 @@
 
     <button type="submit" class="">Se connecter</button>
   <br>
-    <a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>
+    <!--<a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>-->
   </form>
   <a href="/preinscription">Inscription</a>
 </div>
