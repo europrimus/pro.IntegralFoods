@@ -1,3 +1,4 @@
+//ajouter l'article au panier
 jQuery( ".catalogueclient button" ).click(function() {
     let idArticle = $(this).parent().find('input').data("id");
     let quantite = $(this).parent().find('input').val();
@@ -6,26 +7,9 @@ jQuery( ".catalogueclient button" ).click(function() {
     $(this).parent().find('input').val(''); 
 })
 
-
-
-
-
-    $(".catalogueclient button").click(function () {
-        if ($("#qte").val().length > 0) {
-            $("#message")
-                .text("test reussi")
-                .fadeIn(3000, function () {
-                    $(this).fadeOut(3000, function () {
-                        sendMail();
-                    });
-                });
-        }
-        else {
-            $("#nom")
-                .next(".error-message")
-                .fadeIn(800)
-                .text("Entrer un nom");
-        }
-        return false;
+//ajouter un message quand on ajout un article
+jQuery(function(){
+    $('.catalogueclient button').click(function(){
+       $('#message').show(0).delay(3000).hide(0);
     });
-
+ });

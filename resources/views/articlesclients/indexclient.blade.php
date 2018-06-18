@@ -11,10 +11,10 @@
 </div>
 
 <input type = 'submit' value = 'Rechercher' OnClick="recherche()"> -->
-
+<div id='message'>Article ajouter</div>
 
 @foreach($articleclients as $articleclient)
-<div id='message'></div>
+
 <article class="catalogueclient">
 
         <h3 class="nom">{{ $articleclient->nom }}</h3>
@@ -32,7 +32,7 @@
     <div class="ajout">
         <label id="qte">Quantité : <input class="quantite" placeholder="Qté" aria-labelledby="quantité de {{ $articleclient->nom }}"
             class="" step="1" min="0"  title="Qté" pattern="[0-9]*"
-            type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}"/></label></br>
+            type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}" required="required"/></label></br>
         
         Prix unitaire : {{ number_format( $articleclient->prix, 2 , "," , " " ) }} €  </br>
 

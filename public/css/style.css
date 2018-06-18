@@ -161,3 +161,15 @@ footer{
   width: 100px;
   color: red;
 }
+
+#message{
+  display: none;
+  position: fixed;
+  background-color: green;
+  color:  white;
+  left: 650px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'amatic_sc';
+  font-size: xx-large;
+}
