@@ -19,7 +19,7 @@
     <dd>
       {{ $client["role"] }}
       @if( $client["role"] == "inscription en attente" )
-        <a href="/admin/client/valider/{{ $client["id"] }}">Valider l'inscription</a>
+        <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Valider l'inscription</a>
       @elseif( $client["role"] == "client" )
         <a href="">Résilier l'inscription</a>
       @endif
@@ -35,6 +35,59 @@
     <dt>Commantaire</dt>
     <dd>{{ $client["commentaire"] }}</dd>
   </dl>
+  <h3>Liste des produits disponible pour ce client</h3>
+
+  @if( count($listeProduits) <= 0 )
+    <p>Pas de produit.
+    <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Ajouter des produits</a></p>
+  @else
+    <form method="post" name="creerCatalogue" action="{{ URL::route('admin.client.modifierPrix') }}">
+      @csrf
+      <table id="creerCatalogue" class="table table-hover">
+      <thead class="thead-light">
+        <tr >
+          <th scope="col"></th>
+          <th scope="col">Produit</th>
+          <th scope="col">Code bare EAN</th>
+          <th scope="col">Référence</th>
+          <th scope="col">Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @foreach ($listeProduits as $produit)
+        <tr class="">
+          <td class="">
+              <img height="100" src="/storage/photo/{{ $produit->reference }}.png" class="" alt="" />
+          </td>
+
+          <th class="" data-title="Produit" scope="row">
+            <details><summary>{{ $produit->nom }}</summary>
+              {{ $produit->description }}
+            </details>
+          </th>
+
+          <td class="" data-title="Code bare EAN">
+            {{ $produit->ean }}
+          </td>
+
+          <td class="" data-title="Référence">
+            {{ $produit->reference }}
+          </td>
+
+
+          <td class="" data-title="Prix">
+            <label class="screen-reader-text" for="prix[{{ $produit->produit_id }}]"></label>
+            <input id="prix[{{ $produit->produit_id }}]" name="prix[{{ $produit->produit_id }}]"
+              aria-labelledby="prix de {{ $produit->nom }}" title="prix"
+              type="number" inputmode="numeric" step="0.01" min="0" value="{{ $produit->prix }}" class="prix" />€
+          </td>
+        </tr>
+        @endforeach
+      </table>
+      <input type="submit" name="valider" value="Valider">
+    </form>
+  @endif
 </main>
 
 @include("layouts/footer")

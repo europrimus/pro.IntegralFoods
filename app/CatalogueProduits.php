@@ -11,7 +11,7 @@ class CatalogueProduits extends Model
   protected $table = 'catalogueproduit';
 
   protected $fillable = [
-      'prix', 'produit_id'
+      'prix', 'produit_id', 'users_id'
   ];
 
   public function article()

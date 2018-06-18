@@ -12,7 +12,7 @@
 */
 
 // un id de client fictif
-session(["idClient"=>2]);
+//session(["idClient"=>2]);
 
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
@@ -22,7 +22,10 @@ Route::get('/inscription', function () { return view('auth/login'); });
 Route::get('/monCompte','commandeController@index' )->name("monCompte");
 
 Route::resource('preinscription', 'PreinscriptionController');
-Route::post('preinscription', 'PreinscriptionController@store');
+Route::post('/preinscription', 'PreinscriptionController@store');
+
+Route::resource('co', 'CoController');
+Route::post('/co', 'CoController@check');
 
 Auth::routes();
 
@@ -57,8 +60,12 @@ Route::prefix('/admin')->group(function () {
     Route::get('liste','AdminController@listeClients')
       ->name('admin.client.liste');
     Route::get('details/{idClient}','AdminController@detailClient')->where('idClient','[0-9]+')
-      ->name('admin.client.details');;
+      ->name('admin.client.details');
     Route::get('valider/{idClient}','AdminController@validerClient')->where('idClient','[0-9]+')
-      ->name('admin.client.valider');;
+      ->name('admin.client.valider');
+    Route::post('valider','AdminController@validerPrix')
+      ->name('admin.client.validerPrix');
+    Route::post('valider','AdminController@modifierPrix')
+      ->name('admin.client.modifierPrix');
   });
 });

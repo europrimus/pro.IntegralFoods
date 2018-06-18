@@ -1,7 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 <h2>Pre Inscription</h2>
-  <form method="POST" action="{{ action('PreinscriptionController@store') }}" enctype="multipart/form-data">
+  <form method="POST" action="{{ action('PreinscriptionController@store') }}" enctype="multipart/form-data" class="inscrForm">
     @csrf
     <fieldset>
 		<legend>Formulaire de premier contact :</legend>
@@ -58,8 +58,9 @@
 		<br>
 		
 		<label for="etablissement" class="">Votre type d'établissement</label>
-		<select id="etablissement" name="etablissement" value="{{ old('etablissement') }}" required
+		<select onchange="ToggleVisibility()" id="etablissement" name="etablissement" value="{{ old('etablissement') }}" required
 		    class="{{ $errors->has('etablissement') ? 'invalid' : '' }}">
+		    <option value = "" default selected disabled hidden>Sélectionner</option>
 			<option value="distributeur">Distributeur</option>
 			<option value="restaurant indépendant">Restaurant indépendant</option>
 			<option value="chaîne de restaurants">Chaîne de restaurants ou franchise</option>
@@ -74,9 +75,17 @@
 		@endif
 		<br>
 		
+		<label id="etabAutreLabel" for="etablissementautre" class="" style="visibility:hidden;">Précisez</label>
+		<input id="etablissementautre" type="text"  name="etablissementautre" value="{{ old('etablissementautre') }}"
+		class="{{ $errors->has('etablissementautre') ? 'invalid' : '' }}" style="visibility:hidden;">
+		@if ($errors->has('etablissementautre'))
+		<span class="">{{ $errors->first('etablissementautre') }}</span>
+		@endif
+		<br>
+		
 		<label for="adresse" class="">Votre adresse</label>
 		<input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}" required
-		class="{{ $errors->has('adresse') ? 'invalid' : '' }}"></textarea>
+		class="{{ $errors->has('adresse') ? 'invalid' : '' }}">
 		@if ($errors->has('adresse'))
 		<span class="">{{ $errors->first('adresse') }}</span>
 		@endif
@@ -84,7 +93,7 @@
 		
 		<label for="codePostal" class="">Code postal</label>
 		<input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}" required
-		class="{{ $errors->has('codePostal') ? 'invalid' : '' }}"></textarea>
+		class="{{ $errors->has('codePostal') ? 'invalid' : '' }}">
 		@if ($errors->has('codePostal'))
 		<span class="">{{ $errors->first('codePostal') }}</span>
 		@endif
@@ -92,23 +101,39 @@
 		
 		<label for="ville" class="">Ville</label>
 		<input id="ville" type="text"  name="ville" value="{{ old('ville') }}" required
-		class="{{ $errors->has('ville') ? 'invalid' : '' }}"></textarea>
+		class="{{ $errors->has('ville') ? 'invalid' : '' }}">
 		@if ($errors->has('ville'))
 		<span class="">{{ $errors->first('ville') }}</span>
 		@endif
 		<br>
-				
+		
 		<label for="commentaire" class="">Commentaire</label>
 		<textarea id="commentaire" type="commentaire"  name="commentaire" value="{{ old('commentaire') }}"
-		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}"></textarea>
+		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}" required></textarea>
 		@if ($errors->has('commentaire'))
 		<span class="">{{ $errors->first('commentaire') }}</span>
 		@endif
 		<br>
 		
 		<button type="submit" class="">Envoyer</button>
-		</fieldset>
-
+	</fieldset>
 
 
   </form>
+
+<script>
+	
+	function ToggleVisibility()
+	{
+		if(document.getElementById('etablissement').value!='autre')
+		{
+			document.getElementById('etablissementautre').style.visibility = "hidden";
+			document.getElementById('etabAutreLabel').style.visibility = "hidden";
+		}
+		else
+		{
+			document.getElementById('etablissementautre').style.visibility = "visible";
+			document.getElementById('etabAutreLabel').style.visibility = "visible";
+		}
+	}
+</script>

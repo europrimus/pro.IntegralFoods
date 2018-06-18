@@ -122,6 +122,12 @@ main.login h1{
   background-color: var(--color-orange);
 }
 
+/* Crer des prix  */
+#creerCatalogue input.prix{
+  width: 4rem;
+}
+
+/* */
 p{
   font-family: 'ralewayregular';
   display: block;
