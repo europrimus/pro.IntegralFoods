@@ -31,6 +31,9 @@
         <a href="{{ URL::route('produits.index') }}" class="nav-link">Produits (admin)</a>
       </li>
       <li class="nav-item">
+        <a href="{{ URL::route('admin.client.liste') }}" class="nav-link">clients (admin)</a>
+      </li>
+      <li class="nav-item">
         <a href="{{ URL::route('produitsclient.index') }}" class="nav-link">Produits</a>
       </li>
       <li class="nav-item">
