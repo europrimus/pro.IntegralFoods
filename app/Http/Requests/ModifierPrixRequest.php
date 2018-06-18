@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValiderPrixRequest extends FormRequest
+class ModifierPrixRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,6 @@ class ValiderPrixRequest extends FormRequest
     {
         return [
             "prix" => 'bail|required|array',
-            "loginClient" => 'bail|required|string|min:6',
-            "mdpClient" => 'bail|required|string|min:6',
         ];
     }
 
@@ -35,10 +33,6 @@ class ValiderPrixRequest extends FormRequest
     {
       return [
           'prix.required' => 'Vous devez choisir au moins un prix',
-          'loginClient.required' => 'Vous devez définir un login client',
-          'loginClient.min' => 'Le login doit faire au moin :min caractères',
-          'mdpClient.required' => 'Vous devez définir un mot de passe client',
-          'mdpClient.min' => 'Le mot de passe doit faire au moin :min caractères',
       ];
     }
 }

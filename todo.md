@@ -6,7 +6,6 @@ champ tel, code postale: vérifier nombre
 commentaire vide
 L'enregistrement dans la BDD ce fait même si il y a des erreurs!
 ## Connexion
-vérifier si la connexion fonctionne
 tester mot de passe oublié
 ### première connexion
 Ajouter adresse facturation
@@ -16,7 +15,6 @@ Ajouter adresse livraison
 vérifier si admin  
 gestion du menu si admin ou non
 ### Validation inscription
-créer les prix du client  
 envoyer le login et mot de passe
 ### Commandes
 liste des commandes
@@ -49,4 +47,3 @@ pouvoir supprimer et ajouter des adresses de livraisons
 pouvoir modifier l'adresse de contact et de facturation
 
 ## gestion des erreurs
-modifier la page d'erreur 404

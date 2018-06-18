@@ -34,14 +34,18 @@ class utilisateur extends Model
      *
      * @var array
      */
-    //protected $hidden = [
-    //    'password', 'remember_token',
-    //];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     public function adresse()
       {
         return $this->hasMany('adresse');
       }
+
+		public static function getEntreprise($id) {
+			$info = utilisateur::find($id);
+			return $info->entreprise;
+		}
+
 }
-
-
