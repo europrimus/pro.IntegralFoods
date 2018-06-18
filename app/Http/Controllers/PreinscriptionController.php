@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class PreinscriptionController extends Controller
 {
-    
-	    
+
+
 
     /**
      * Where to redirect users after registration.
@@ -22,16 +22,16 @@ class PreinscriptionController extends Controller
     {
 		return view('auth/preinscription');
 	}
-	
+
 	public function create()
     {
 	}
-    
-    
+
+
     public function store(Request $request)
     {
-		
-		
+
+
 		DB::table('utilisateur')->insert([
 			'civilite'=> $request->civilite,
 			'nom' => $request->nom,
@@ -52,13 +52,13 @@ class PreinscriptionController extends Controller
 		//print_r($id);
 		DB::table('adresse')->insert([
 			'adresse'=>$request->adresse,
-			'code postal'=>$request->codePostal,
+			'codePostal'=>$request->codePostal,
 			'ville'=>$request->ville,
 			'type'=>'contact',
 			'users_id' => $id[0]->id,
 		]);
 		return view('auth/preinscriptionAttente');
 	}
-	
-	
+
+
 }
