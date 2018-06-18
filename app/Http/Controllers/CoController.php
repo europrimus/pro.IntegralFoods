@@ -33,12 +33,13 @@ class CoController extends Controller
 		$userCo = DB::select('select id, login, password from utilisateur where login = ?', array($request->id));
 		if(!empty($userCo) && $userCo[0]->login == $request->id && password_verify($request->password,$userCo[0]->password))
 		{
-			session(["idClient"=>$userCo[0]->id]);
+			session()->flush();
+			session(["UserId"=>$userCo[0]->id]);
 			return redirect()->action('ArticleClientController@index');
 		}
 		else
 		{
-			echo "phô";
+			return view('auth/errlogin');
 		}
 		
 	}
