@@ -38,6 +38,7 @@ class PreinscriptionController extends Controller
 			'prenom' => $request->prenom,
 			'entreprise' => $request->entreprise,
 			'etablissement'=> $request->etablissement,
+			'etabliementautre'=> $request->etablissementautre,
 			'tel' => str_pad($request->tel, 10, "0", STR_PAD_LEFT),
 			'email' => $request->email,
 			'siret' => 'FAKE_NUMBER_'.str_random(20),

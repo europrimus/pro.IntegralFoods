@@ -60,6 +60,7 @@
 		<label for="etablissement" class="">Votre type d'établissement</label>
 		<select onchange="ToggleVisibility()" id="etablissement" name="etablissement" value="{{ old('etablissement') }}" required
 		    class="{{ $errors->has('etablissement') ? 'invalid' : '' }}">
+		    <option value = "" default selected disabled hidden>Sélectionner</option>
 			<option value="distributeur">Distributeur</option>
 			<option value="restaurant indépendant">Restaurant indépendant</option>
 			<option value="chaîne de restaurants">Chaîne de restaurants ou franchise</option>
@@ -108,7 +109,7 @@
 		
 		<label for="commentaire" class="">Commentaire</label>
 		<textarea id="commentaire" type="commentaire"  name="commentaire" value="{{ old('commentaire') }}"
-		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}"></textarea>
+		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}" required></textarea>
 		@if ($errors->has('commentaire'))
 		<span class="">{{ $errors->first('commentaire') }}</span>
 		@endif
