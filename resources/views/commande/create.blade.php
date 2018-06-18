@@ -42,36 +42,31 @@
 
     <label for="adresseLivraison">Adresse de livraison</label><br>
     <select name="adresseLivraison" id="adresseLivraison">
-      <option value="" selected disabled hidden>Choissir une adresse</option>
+      <option value="false" selected disabled hidden>Choissir une adresse</option>
     @foreach( $adresses as $adresse)
-      <option value="{{ $adresse->id }}">{{ $adresse->adresse }}</option>
+      <option value="{{ $adresse->id }}"
+        {{ ( $adresse->id == old("adresseLivraison") ) ? " selected" :'' }}
+        >{{ $adresse->adresse }}</option>
     @endforeach
-      <option value="nouvelleAdresse" >Nouvelle adresse</option>
+      <option value="nouvelleAdresse"
+        {{ ( "nouvelleAdresse" == old("adresseLivraison") )? " selected":"" }}
+        >Nouvelle adresse</option>
     </select>
     <br>
-<div id="nouvelleAdresse" class="cacher">
+<div id="nouvelleAdresse" class="{{ ( "nouvelleAdresse" != old("adresseLivraison") )? " cacher":"" }}">
   <label for="adresse" class="">Votre adresse</label>
-  <input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}" required
+  <input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}"
   class="{{ $errors->has('adresse') ? 'invalid' : '' }}">
-  @if ($errors->has('adresse'))
-  <span class="">{{ $errors->first('adresse') }}</span>
-  @endif
   <br>
 
   <label for="codePostal" class="">Code postal</label>
-  <input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}" required
+  <input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}"
   class="{{ $errors->has('codePostal') ? 'invalid' : '' }}">
-  @if ($errors->has('codePostal'))
-  <span class="">{{ $errors->first('codePostal') }}</span>
-  @endif
   <br>
 
   <label for="ville" class="">Ville</label>
-  <input id="ville" type="text"  name="ville" value="{{ old('ville') }}" required
+  <input id="ville" type="text"  name="ville" value="{{ old('ville') }}"
   class="{{ $errors->has('ville') ? 'invalid' : '' }}">
-  @if ($errors->has('ville'))
-  <span class="">{{ $errors->first('ville') }}</span>
-  @endif
   <br>
 </div>
 

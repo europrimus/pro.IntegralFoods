@@ -52,10 +52,10 @@ jQuery("#adresseLivraison").on("change", function() {
   console.log("nouvelleAdresse on Change")
   if(jQuery("#adresseLivraison").val() != 'nouvelleAdresse') {
     console.log("cacher");
-    jQuery("#nouvelleAdresse").addClass( "cacher" );
+    jQuery("#nouvelleAdresse").addClass( "cacher" ).find("input").prop('required',false);
   } else {
     console.log("afficher");
-    jQuery("#nouvelleAdresse").removeClass( "cacher" );
+    jQuery("#nouvelleAdresse").removeClass( "cacher" ).find("input").prop('required',true);
 
   }
 })

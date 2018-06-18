@@ -27,6 +27,9 @@ class NouvelleCommandeRequest extends FormRequest
          return [
              "quantity" => 'bail|required|array',
              "adresseLivraison" => 'bail|required|alpha_num',
+             "adresse" => 'bail|string|present',
+             "codePostal" => 'bail|numeric|present|digits:5',
+             "ville" => 'bail|string|present',
          ];
      }
 
@@ -36,6 +39,7 @@ class NouvelleCommandeRequest extends FormRequest
            'quantity.required' => 'Vous devez ajouter des produits au panier',
            'adresseLivraison.alpha_num' => 'Vous devez choisir une adresse de livraison',
            'adresseLivraison.required' => 'Vous devez choisir une adresse de livraison',
+           'codePostal.numeric' => 'Le code postale doit etre un nombre',
        ];
      }
 

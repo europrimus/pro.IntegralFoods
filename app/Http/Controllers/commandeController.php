@@ -7,6 +7,7 @@ use App\Panier;
 use App\Article;
 use App\commande;
 use App\CatalogueProduits;
+use App\adresse;
 use App\Http\Requests\NouvelleCommandeRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -95,8 +96,18 @@ class commandeController extends Controller
     public function store(NouvelleCommandeRequest $request)
     {
         // on envois la commande au model
+        $valid = $request->validated();
+        //dd($valid);
+        if( $valid["adresseLivraison"] == "nouvelleAdresse" ){
+          $adresse = new adresse;
+          $adresse->users_id = session("UserId");
+          $adresse->adresse = $valid["adresse"];
+          $adresse->codePostal = $valid["codePostal"];
+          $adresse->ville = $valid["ville"];
+          $adresse->save();
+        }
         $commandeObj = new commande;
-        $id = $commandeObj->new($request);
+        $id = $commandeObj->new($valid);
         // on affiche la commande
         return $this->show($id);
     }

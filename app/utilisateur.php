@@ -45,7 +45,11 @@ class utilisateur extends Model
 
 		public static function getEntreprise($id) {
 			$info = utilisateur::find($id);
-			return $info->entreprise;
+			if( !empty($info) ){
+				return $info->entreprise;
+			}else{
+				return "non connecté";
+			}
 		}
 
 }
