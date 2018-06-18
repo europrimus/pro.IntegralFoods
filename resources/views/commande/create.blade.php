@@ -40,14 +40,36 @@
 
   <h3>Commandez</h3>
 
-    <label for="adresseLivraison"></label>
+    <label for="adresseLivraison">Adresse de livraison</label><br>
     <select name="adresseLivraison" id="adresseLivraison">
-      <option value="" selected disabled>Choissir une adresse</option>
+      <option value="false" selected disabled hidden>Choissir une adresse</option>
     @foreach( $adresses as $adresse)
-      <option value="{{ $adresse->id }}">{{ $adresse->adresse }}</option>
+      <option value="{{ $adresse->id }}"
+        {{ ( $adresse->id == old("adresseLivraison") ) ? " selected" :'' }}
+        >{{ $adresse->adresse }}</option>
     @endforeach
+      <option value="nouvelleAdresse"
+        {{ ( "nouvelleAdresse" == old("adresseLivraison") )? " selected":"" }}
+        >Nouvelle adresse</option>
     </select>
     <br>
+<div id="nouvelleAdresse" class="{{ ( "nouvelleAdresse" != old("adresseLivraison") )? " cacher":"" }}">
+  <label for="adresse" class="">Votre adresse</label>
+  <input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}"
+  class="{{ $errors->has('adresse') ? 'invalid' : '' }}">
+  <br>
+
+  <label for="codePostal" class="">Code postal</label>
+  <input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}"
+  class="{{ $errors->has('codePostal') ? 'invalid' : '' }}">
+  <br>
+
+  <label for="ville" class="">Ville</label>
+  <input id="ville" type="text"  name="ville" value="{{ old('ville') }}"
+  class="{{ $errors->has('ville') ? 'invalid' : '' }}">
+  <br>
+</div>
+
     <input type="submit" name="valider" value="Valider">
   </form>
   @endempty

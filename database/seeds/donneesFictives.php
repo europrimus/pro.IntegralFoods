@@ -63,21 +63,21 @@ class donneesFictives extends Seeder
       DB::table('adresse')->insert([
         'users_id'=> 2,
         'adresse' => '2 rue de la Fourchette',
-        'code postal' => "21000",
+        'codePostal' => "21000",
         'ville' => "Dijon",
         'type'=> 'facturation', //['livraison','facturation','contact'])
       ]);
       DB::table('adresse')->insert([
         'users_id'=> 2,
         'adresse' => '15 rue du Couteau',
-        'code postal' => "21000",
+        'codePostal' => "21000",
         'ville' => "Dijon",
         'type'=> 'livraison', //['livraison','facturation','contact'])
       ]);
       DB::table('adresse')->insert([
         'users_id'=> 2,
         'adresse' => '2 rue de la Fourchette',
-        'code postal' => "21000",
+        'codePostal' => "21000",
         'ville' => "Dijon",
         'type'=> 'livraison', //['livraison','facturation','contact'])
       ]);

@@ -30,7 +30,7 @@ class commande extends Model
 // créer une commande
   public function new($request){
     // on verifie la commande
-    $requeteValide = $request->validated();
+    // déjà fait coté Controller
 
     // on l'enregistre dans un array
     $commande = $this->infoGeneral;
@@ -41,7 +41,7 @@ class commande extends Model
     $commande["idClient"]=$idClient;
 
     // les produits
-    array_push($commande, $requeteValide);
+    array_push($commande, $request);
 
     // on créer le xml de la commande
     //$xml = new SimpleXMLElement("<xml/>");

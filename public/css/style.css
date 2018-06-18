@@ -49,6 +49,9 @@ h2 {
   text-align: center;
 }
 
+.cacher{
+  display: none;
+}
 
 /* la nav bar */
 nav h1{
@@ -78,7 +81,7 @@ input.invalid{
   box-shadow: 0 0 1rem red;
 }
 
-/*produit*/
+/* produit */
 .nom{
   font-family: 'amatic_sc',handwriting;
   font-size: 2.5rem;
@@ -131,7 +134,7 @@ main.login h1{
 
 /* Crer des prix  */
 #creerCatalogue input.prix{
-  width: 4rem;
+  width: 5rem;
 }
 
 /* */
@@ -168,16 +171,4 @@ footer{
   height: 100px;
   width: 100px;
   color: red;
-}
-
-#message{
-  display: none;
-  position: fixed;
-  background-color: green;
-  color:  white;
-  right: 50px;
-  padding: 10px;
-  border-radius: 10px;
-  font-family: 'amatic_sc';
-  font-size: xx-large;
 }

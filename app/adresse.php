@@ -16,7 +16,7 @@ class adresse extends Model
    */
   protected $fillable = [
       'adresse',
-      'code postal',
+      'codePostal',
       'ville',
   ];
 

@@ -17,7 +17,7 @@ class CreateAdresseTable extends Migration
             $table->increments('id');
             $table->integer('users_id')->unsigned();
             $table->string('adresse');
-            $table->integer('code postal');
+            $table->integer('codePostal');
             $table->string('ville');
             $table->enum('type',['livraison','facturation','contact']);
             $table->timestamps();
