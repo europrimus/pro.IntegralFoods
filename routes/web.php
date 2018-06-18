@@ -12,7 +12,7 @@
 */
 
 // un id de client fictif
-session(["UserId"=>3]);
+//session(["idClient"=>2]);
 
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
@@ -22,7 +22,10 @@ Route::get('/inscription', function () { return view('auth/login'); });
 Route::get('/monCompte','commandeController@index' )->name("monCompte");
 
 Route::resource('preinscription', 'PreinscriptionController');
-Route::post('preinscription', 'PreinscriptionController@store');
+Route::post('/preinscription', 'PreinscriptionController@store');
+
+Route::resource('co', 'CoController');
+Route::post('/co', 'CoController@check');
 
 Auth::routes();
 
