@@ -54,6 +54,8 @@ class AdminController extends Controller
       }
       $user = utilisateur::find($idClient);
       $user->role="client";
+      $user->login= $validated["loginClient"];
+      $user->password= password_hash ( $validated["mdpClient"] , PASSWORD_DEFAULT );
       $user->save();
       return $this->detailClient($idClient);
     }

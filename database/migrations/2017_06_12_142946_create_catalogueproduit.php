@@ -19,6 +19,7 @@ class CreateCatalogueproduit extends Migration
             $table->integer('users_id')->unsigned();
             $table->float('prix');
             $table->timestamps();
+            $table->unique(['produit_id', 'users_id']);
         });
 
     }
