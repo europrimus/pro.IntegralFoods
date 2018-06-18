@@ -12,7 +12,7 @@
 */
 
 // un id de client fictif
-//session(["idClient"=>2]);
+session(["UserId"=>2]);
 
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });
@@ -65,7 +65,7 @@ Route::prefix('/admin')->group(function () {
       ->name('admin.client.valider');
     Route::post('valider','AdminController@validerPrix')
       ->name('admin.client.validerPrix');
-    Route::post('valider','AdminController@modifierPrix')
+    Route::post('modifierPrix','AdminController@modifierPrix')
       ->name('admin.client.modifierPrix');
   });
 });

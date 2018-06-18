@@ -1,6 +1,10 @@
 # todo
 ## Pre-inscription
 Amélioré le visuelle
+gérer les erreurs
+champ tel, code postale: vérifier nombre
+commentaire vide
+L'enregistrement dans la BDD ce fait même si il y a des erreurs!
 ## Connexion
 vérifier si la connexion fonctionne
 tester mot de passe oublié
