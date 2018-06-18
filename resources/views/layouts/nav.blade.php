@@ -43,5 +43,6 @@
         <a href="{{ URL::route('panier') }}" class="nav-link">Mon panier ({{ App\Panier::panierCount() }})</a>
       </li>
     </ul>
+    connecté en id {{ session("UserId") }}
   </div>
 </nav>

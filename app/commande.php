@@ -37,7 +37,7 @@ class commande extends Model
     // numéro de commande
     $numCommande = date("Y-m-d")."_".str_pad(dechex(mt_rand()), 8, "0", STR_PAD_LEFT);
     // identification client
-    $idClient = session("idClient");
+    $idClient = session("UserId");
     $commande["idClient"]=$idClient;
 
     // les produits

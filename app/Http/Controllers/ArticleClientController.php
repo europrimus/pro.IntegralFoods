@@ -10,7 +10,7 @@ class ArticleClientController extends Controller
     public function index()
     {
         // client identifié
-        $idClient = session("idClient");
+        $idClient = session("UserId");
 
         //$articleclients = Article::all();
         $articleclients = Article::getCatalogue($idClient);

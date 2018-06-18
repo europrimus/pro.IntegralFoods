@@ -123,37 +123,37 @@ Conseils d’utilisation: Elle peut être utilisée pour la cuisson, la friture 
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 1,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 2,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 1,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
       DB::table('catalogueproduit')->insert([
         'produit_id'=> 3,
         'users_id'=> 2,
-        'prix'=> mt_rand(0.5,50),
+        'prix'=> round( mt_rand(1,5000)/100,2 ),
       ]);
     }
 }

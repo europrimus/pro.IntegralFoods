@@ -29,7 +29,7 @@
     </table>
     <p>Total : <span id="prixTotal">{{ number_format( $prixTotal, 2 , "," , " " ) }}</span>&euro;</p>
     <a href="{{ URL::to('/panier/toutSupprimer') }}">Vider le panier</a>
-  @endempty
+
   <h3>Commandez</h3>
 
     <label for="adresseLivraison"></label>
@@ -42,5 +42,6 @@
     <br>
     <input type="submit" name="valider" value="Valider">
   </form>
+  @endempty
 </div>
 @include("layouts/footer")
