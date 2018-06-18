@@ -32,7 +32,7 @@
     <div class="ajout">
         <label id="qte">Quantité : <input class="quantite" placeholder="Qté" aria-labelledby="quantité de {{ $articleclient->nom }}"
             class="" step="1" min="0"  title="Qté" pattern="[0-9]*"
-            type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}" required="required"/></label></br>
+            type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}"/></label></br>
         
         Prix unitaire : {{ number_format( $articleclient->prix, 2 , "," , " " ) }} €  </br>
 
