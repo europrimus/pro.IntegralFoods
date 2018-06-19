@@ -42,14 +42,6 @@ class commandeController extends Controller
 
       $produits = Article::getCatalogue($idClient);
 
-      // données fictives
-/*
-      $produits = [
-        "2"=>["nom"=>"Paprika","prix"=>"15.25"],
-        "4"=>["nom"=>"Mousse","prix"=>"10.50"],
-        "1"=>["nom"=>"prod1","prix"=>"1.50"],
-      ];
-*/
       $lignes=[];
       $prixTotal=0;
       if($panier){
@@ -69,22 +61,22 @@ class commandeController extends Controller
           };
         }
       };
-      //dd($lignes);
 
       // les adresses de livraisons
-      // données fictives
       // SELECT * FROM `adresse` WHERE `users_id` = 2 AND `type` = 'livraison'
-      $adresses = DB::table('adresse')
-        ->where('users_id', $idClient)
+      $adresses = adresse::where('users_id', $idClient)
         ->where('type', 'livraison')
         ->get();
-      //dd($adresses);
+      $adresseFacturation = adresse::where('users_id', $idClient)
+        ->where('type', 'facturation')
+        ->first();
 
       // on affiche le panier
       return view( 'commande/create' )
         ->with('lignes', $lignes)
         ->with('prixTotal', $prixTotal)
-        ->with('adresses', $adresses);
+        ->with('adresses', $adresses)
+        ->with('adresseFacturation', $adresseFacturation);
     }
 
     /**
@@ -105,11 +97,16 @@ class commandeController extends Controller
           $adresse->codePostal = $valid["codePostal"];
           $adresse->ville = $valid["ville"];
           $adresse->save();
-        }
+          $valid["adresseLivraison"] = $adresse->id;
+        };
         $commandeObj = new commande;
         $id = $commandeObj->new($valid);
-        // on affiche la commande
-        return $this->show($id);
+        if(is_array($id)){
+          return view('commande.erreurs')->with('erreurs', $id);
+        }else{
+          // on affiche la commande
+          return $this->show($id);
+        }
     }
 
     /**

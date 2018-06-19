@@ -9,7 +9,6 @@ L'enregistrement dans la BDD ce fait même si il y a des erreurs!
 tester mot de passe oublié  
 ### première connexion
 Ajouter adresse facturation  
-Ajouter adresse contact  
 Ajouter adresse livraison  
 ## Espace administration
 vérifier si admin  
