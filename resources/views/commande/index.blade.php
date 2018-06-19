@@ -6,7 +6,11 @@
   <h3>Liste des Commandes</h3>
   <ul>
     @foreach($listeCommande as $commande)
-      <li>{{$commande["date"]}} - {{$commande["facture"]}}</li>
+      <li>{{$commande["date"]}} -
+        <a href="{{ URL::route('commande.show', ["commande"=> $commande["numCommande"]] ) }}">
+          {{ $commande["numCommande"] }}
+        </a>
+      </li>
     @endforeach
   </ul>
 </main>

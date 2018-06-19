@@ -115,11 +115,12 @@ class commandeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idCommande)
     {
-        $commande=array();
+        $idClient = session("UserId");
+        $commande= commande::getCommande($idClient, $idCommande);
         return view( 'commande/show' )
-          ->with('id', $id)
+          ->with('id', $idCommande)
           ->with('commande', $commande);
     }
 

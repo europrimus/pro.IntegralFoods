@@ -17,11 +17,11 @@ class commande extends Model
       "Entreprise" => "SAS INTEGRAL FOODS",
       "Siret" => "799 852 934",
       "TVA" => "FR71 799 852 934",
-      "e-mail" => "contact@integralfoods.fr",
+      "email" => "contact@integralfoods.fr",
       "Tel" => "09 72 62 67 18",
       "Adresse" => [
         "Adresse"=>"64 E RUE SULLY, HOPE",
-        "Code postale"=>"21000",
+        "CodePostal"=>"21000",
         "Ville"=>"Dijon",
         ],
     ];
@@ -85,21 +85,21 @@ class commande extends Model
     //les infos de la commande
     $commande["Client"]=[
         "id"=>$idClient,
-        "Civilité"=>$client["civilite"],
+        "Civilite"=>$client["civilite"],
         "Nom"=>$client["nom"],
-        "Prénom"=>$client["prenom"],
+        "Prenom"=>$client["prenom"],
         "Entreprise"=>$client["entreprise"],
-        "Téléphone"=>$client["tel"],
-        "e-mail"=>$client["email"],
+        "Telephone"=>$client["tel"],
+        "email"=>$client["email"],
         "Siret"=>$client["siret"],
         "Facturation"=>[
           "Adresse"=>$adresseFacturation["adresse"],
-          "Code postale"=>$adresseFacturation["codePostal"],
+          "CodePostal"=>$adresseFacturation["codePostal"],
           "Ville"=>$adresseFacturation["ville"],
         ],
         "Livraison"=>[
           "Adresse"=>$adresseLivraison["adresse"],
-          "Code postale"=>$adresseLivraison["codePostal"],
+          "CodePostal"=>$adresseLivraison["codePostal"],
           "Ville"=>$adresseLivraison["ville"],
         ]
       ];
@@ -117,8 +117,12 @@ class commande extends Model
 +"description":
   +"reference
 */
+
+
     // les produits
-    $commande["produits"]=[];
+    $xml=$this->array2xml($commande, new \SimpleXMLElement('<commande/>'));
+// on ajoute les produits
+    $PrixTotalCommande=0;
     foreach ($request["quantity"] as $idCatalogue => $quantite) {
       $article=[
         "Nom"=>$catalogue[$idCatalogue]->nom,
@@ -128,12 +132,17 @@ class commande extends Model
         "PrixUnitaire"=>$catalogue[$idCatalogue]->prix,
         "PrixTotal"=>$catalogue[$idCatalogue]->prix * $quantite,
       ];
-      array_push($commande["produits"], $article);
+      $PrixTotalCommande+=$article["PrixTotal"];
+      $subxml = $this->array2xml( $article, $xml->addChild("produits") );
     }
+
+    $xml->commande->addChild("PrixTotal", $PrixTotalCommande);
+    // status
+    $xml->addChild("Status", "en cours de traitement");
 
     // on créer le xml de la commande
     if(empty($errors)){
-      $xml=$this->array2xml($commande, new \SimpleXMLElement('<commande/>'));
+      session()->forget('panier');
       Storage::put("commandes/".$idClient."/".$numCommande.".xml", $xml->saveXML());
       return $numCommande;
     }else{
@@ -160,9 +169,16 @@ class commande extends Model
     foreach($data as $val){
       //commandes/2/2018-06-14_3e71b8f7.xml
       preg_match( '/(.*)_(.*)/' , basename( $val, ".xml" ), $found  );
-      $ListeFacture[]=["date"=>$found[1],"facture"=>$found[0]];
+      $ListeFacture[]=["date"=>$found[1],"numCommande"=>$found[0]];
     }
-    //dd($ListeFacture);
     return $ListeFacture;
+  }
+
+// affiche la commande
+  public static function getCommande($idClient, $idCommande){
+    $string = Storage::get("commandes/".$idClient."/".$idCommande.".xml");
+    //$xml = new \SimpleXMLElement($string);  //String could not be parsed as XML
+    $xml = simplexml_load_string($string);
+    return $xml;
   }
 }
