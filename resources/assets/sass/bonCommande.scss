@@ -1,0 +1,136 @@
+/*
+Bon de commande
+*/
+
+/*
+impression
+*/
+@media print {
+  header, nav, h1, h2, h3, p, img, footer{
+    display :none;
+  }
+  #bonCommande{
+    display :block;
+  }
+}
+
+
+/*
+ecran
+*/
+
+#bonCommande{
+  display:block;
+  position: relative;
+  width: 190mm;
+  height: 280mm;
+  margin:10mm;
+  padding:5mm;
+  border: 0.2mm solid #00000080;
+
+  h2{
+    display:block;
+    font-family: ralewayregular;
+    font-size:5mm;
+  }
+  p{
+    display:block;
+  }
+
+  header{
+    display:block;
+    position: relative;
+
+    .adresse{
+      display:block;
+      height: 30mm;
+      width: 60mm;
+    }
+
+    #expediteur{
+      display:block;
+      height: 60mm;
+      width: 70mm;
+      position: absolute;
+      top:0mm;
+      left: 10mm;
+
+      img{
+        display:block;
+        width: 30mm;
+      }
+    }
+
+    #adresseFacturation{
+      position: absolute;
+      top:10mm;
+      right: 10mm;
+    }
+    #adresseLivraison{
+      position: absolute;
+      top:50mm;
+      right: 10mm;
+    }
+    #infoCommande{
+      display:block;
+      position: absolute;
+      top:80mm;
+      left: 10mm;
+    }
+  }
+
+  main{
+    position: absolute;
+    top:120mm;
+    font-family: arial;
+
+    table{
+      border:0.2mm solid #000;
+      width:100%;
+      th{
+        border:0.2mm solid #000;
+        text-align: center;
+      }
+      td{
+        border:0.2mm solid #000;
+
+        &.produit{
+          width: auto;
+        }
+        &.ean{
+          width: auto;
+          text-align: center;
+        }
+        &.ref{
+          width: auto;
+          text-align: center;
+        }
+        &.prix{
+          width: 20mm;
+          text-align: right;
+        }
+        &.quantite{
+          width: 10mm;
+          text-align: right;
+        }
+        &.total{
+          width: 26mm;
+          text-align: right;
+        }
+      }
+    }
+
+  }
+
+  footer{
+    display:block;
+    position: absolute;
+    font-family: arial;
+    font-size:4mm;
+    color: #000;
+    height: 10mm;
+    width: 150mm;
+    margin: 0mm 15mm;
+    bottom:0mm;
+  }
+}

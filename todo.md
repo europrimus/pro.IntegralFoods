@@ -4,12 +4,11 @@ Amélioré le visuelle
 gérer les erreurs  
 champ tel, code postale: vérifier nombre  
 commentaire vide  
-L'enregistrement dans la BDD ce fait même si il y a des erreurs!  
+L'enregistrement dans la BDD ce fait même si il y a des erreurs dans l'adresse!  
 ## Connexion
 tester mot de passe oublié  
 ### première connexion
 Ajouter adresse facturation  
-Ajouter adresse contact  
 Ajouter adresse livraison  
 ## Espace administration
 vérifier si admin  
@@ -33,7 +32,6 @@ lister les informations à enregistrer:
  - Liste des produits, quantité et prix
 
 ### liste des commandes
-lien vers le détails  
 état de la commande  
 ### détails d'une commande
 recharger le fichier xml  
