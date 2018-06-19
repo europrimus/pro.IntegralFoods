@@ -36,6 +36,9 @@ body{
   font-family: ralewayregular;
 }
 
+main{
+  min-height: 75vh;
+}
 
 h1, h2, h3 {
   font-family: 'amatic_sc',handwriting;
@@ -225,7 +228,13 @@ article{
 
 /* footer */
 .footer{
+  line-height:4em;
+  min-height:50px;
   text-align: center;
   color: white;
   background-color: #FF9900;
+}
+
+#reseaux{
+  color: white;
 }

@@ -26,7 +26,7 @@ class NouvelleArticleRequest extends FormRequest
         return [
                 'titre' => 'required|min:5|max:191',
                 'description' => 'required|min:5',
-                'reference' => 'required|size:13',
+                'reference' => 'required',
                 'ean' => 'required|size:13',
                 'photo' => 'required'
             ];
@@ -39,9 +39,8 @@ class NouvelleArticleRequest extends FormRequest
           'titre.size' => 'il doit y avoir 5 caractere minimum pour le titre',
           'description.required' => 'Vous devez ajouter un déscription du produit',
           'reference.required' => 'Vous devez ajouter une référence',
-          'reference.size' => 'il doit y avoir 13 caractere minimum pour la reference',
           'ean.required' => 'Vous devez ajouter un EAN',
-          'ean.size' => 'il doit y avoir 13 caractere minimum pour le code EAN',
+          'ean.size' => 'il doit y avoir 13 caractere pour le code EAN',
           'photo.required' => 'Vous devez ajouter une photo',
       ];
     }

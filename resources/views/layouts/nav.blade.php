@@ -32,10 +32,6 @@
         <a href="{{ URL::route('panier') }}" class="nav-link">Mon panier ({{ App\Panier::panierCount() }})</a>
       </li>
 
-      <li class="nav-item">
-        <a href="{{ URL::route('monCompte') }}" class="nav-link">Mon compte</a>
-      </li>
-
     </ul>
 
 
