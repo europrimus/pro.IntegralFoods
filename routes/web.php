@@ -11,8 +11,6 @@
 |
 */
 
-// un id de client fictif
-session(["UserId"=>2]);
 
 // Utilisateurs
 Route::get('/', function () { return view('auth/login'); });

@@ -27,9 +27,9 @@ class NouvelleCommandeRequest extends FormRequest
          return [
              "quantity" => 'bail|required|array',
              "adresseLivraison" => 'bail|required|alpha_num',
-             "adresse" => 'bail|string|present',
-             "codePostal" => 'bail|numeric|present|digits:5',
-             "ville" => 'bail|string|present',
+             "adresse" => 'bail|string|present|nullable',
+             "codePostal" => 'bail|numeric|present|digits:5|nullable',
+             "ville" => 'bail|string|present|nullable',
          ];
      }
 
