@@ -6,7 +6,7 @@
 @section('content')
 
  <h3>Profil</h3>
- <form method="POST" action="{{ action('') }}" enctype="multipart/form-data" class="inscrForm">
+ <form method="POST" action="{{ ('profil') }}" enctype="multipart/form-data" class="inscrForm">
     @csrf
   <dl>
     <dt>Type d'établissement</dt>
@@ -25,8 +25,8 @@
     <label for="civilite" class="">Civilité</label>
 		<select id="civilite" name="civilite" value="{{ old('civilite') }}" required
 		    class="{{ $errors->has('civilite') ? 'invalid' : '' }}">
-			<option value="Monsieur" {{ ( "Monsieur" == $client['civilité'] )? " selected":"" }}>Monsieur</option>
-			<option value="Madame" {{ ( "Madame" == $client['civilité'] )? " selected":"" }}>Madame</option>
+			<option value="Monsieur" {{ ( "Monsieur" == $client['civilite'] )? " selected":"" }}>Monsieur</option>
+			<option value="Madame" {{ ( "Madame" == $client['civilite'] )? " selected":"" }}>Madame</option>
         </select><br>
         
     <label for="nom" class="">Votre nom</label>
@@ -38,10 +38,10 @@
         class="{{ $errors->has('prenom') ? 'invalid' : '' }}">
     
     <dt>Téléphone</dt>
-    <dd><input type="text" value="{{ $client["tel"] }}"></dd>
+    <dd><input id="tel" type="text" name="tel" value="{{ $client["tel"] }}"></dd>
 
     <dt>e-mail</dt>
-    <dd><input type="text" value="{{ $client["email"] }}"></dd>
+    <dd><input id=)"email" type="text" name="email" value="{{ $client["email"] }}"></dd>
 
     <dt>Identifiant</dt>
     <dd>{{ $client["login"] }}</dd>

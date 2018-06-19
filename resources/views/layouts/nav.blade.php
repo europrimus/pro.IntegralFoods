@@ -11,24 +11,31 @@
 
   <div class="collapse navbar-collapse" id="navbarTop">
     <ul class="navbar-nav mr-auto">
+    
       <li class="nav-item active">
         <a href="https://www.integralfoods.fr/" class="nav-link">Site particulier</a>
       </li>
+
       <li class="nav-item">
         <a href="{{ URL::route('produits.index') }}" class="nav-link">Produits (admin)</a>
       </li>
+
       <li class="nav-item">
         <a href="{{ URL::route('admin.client.liste') }}" class="nav-link">clients (admin)</a>
       </li>
+
       <li class="nav-item">
         <a href="{{ URL::route('produitsclient.index') }}" class="nav-link">Produits</a>
       </li>
-      <li class="nav-item">
-        <a href="{{ URL::route('monCompte') }}" class="nav-link">Mon compte</a>
-      </li>
+      
       <li class="nav-item">
         <a href="{{ URL::route('panier') }}" class="nav-link">Mon panier ({{ App\Panier::panierCount() }})</a>
       </li>
+
+      <li class="nav-item">
+        <a href="{{ URL::route('monCompte') }}" class="nav-link">Mon compte</a>
+      </li>
+
     </ul>
     connecté en <strong> {{ App\utilisateur::getEntreprise(session("UserId")) }} </strong>
   </div>
