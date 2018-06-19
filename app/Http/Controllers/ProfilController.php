@@ -8,15 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ProfilController extends Controller
 {
-    public function index()
+    public function index($message="")
     {
         $Client=utilisateur::find(session("UserId"));
-        return view('profil.index')->with('client',$Client);
+        return view('profil.index')->with('client',$Client)
+         ->with('message',$message);
     }
 
     public function store(Request $request)
     {
-        $utilisateur = \App\utilisateur::find(2);
+        $utilisateur = \App\utilisateur::find(session("UserId"));
         $utilisateur->nom = $request->nom;
         $utilisateur->civilite = $request->civilite;
         $utilisateur->prenom = $request->prenom;
@@ -25,6 +26,6 @@ class ProfilController extends Controller
         $utilisateur->save();
 
 		
-		return $this->index();
+		return $this->index("Modification éffectué");
 	}
 }

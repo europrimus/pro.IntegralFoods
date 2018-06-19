@@ -18,14 +18,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Réference :</strong>
-            {!! Form::text('reference', '376028145' , array('class' => 'form-control',)) !!}
+            {!! Form::text('reference', null , array('class' => 'form-control',)) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>EAN :</strong>
-            {!! Form::text('ean', null, array('placeholder' => 'EAN','class' => 'form-control',)) !!}
+            {!! Form::text('ean', '376028145' , array('placeholder' => 'EAN','class' => 'form-control',)) !!}
         </div>
     </div>
 

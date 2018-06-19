@@ -37,6 +37,21 @@
       </li>
 
     </ul>
-    connecté en <strong> {{ App\utilisateur::getEntreprise(session("UserId")) }} </strong>
+
+
+
+
+
+    <ul id="menu-deroulant">
+      <li class="profil"><div><span class="fas fa-user-alt"></span></br>
+      <strong> {{ App\utilisateur::getEntreprise(session("UserId")) }} </strong></div>
+        <ul>
+          <li class="nav-item"><a href="{{ URL::route('monCompte') }}" class="nav-link">Commande</a></li>
+          <li class="nav-item"><a href="{{ URL::route('profil.index') }}" class="nav-link">Profil</a></li>
+
+        </ul>
+      </li>
+    </ul>
+
   </div>
 </nav>
