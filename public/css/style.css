@@ -56,7 +56,22 @@ h2 {
   display: none;
 }
 
-/* la nav bar */
+/*
+ login
+*/
+main.login{
+  max-width: 45rem;
+}
+
+main.login h1,
+main.login .logo {
+  text-align: center;
+}
+
+
+/*
+ la nav bar
+*/
 nav h1{
   color: var(--color-rouge);
   font-size: 1.5rem;
@@ -68,7 +83,9 @@ nav a.nav-link{
   color: var(--color-blanc) !important;
 }
 
-/* les erreurs */
+/*
+ les erreurs
+*/
 span.invalid{
   color:red;
 }
@@ -84,7 +101,9 @@ input.invalid{
   box-shadow: 0 0 1rem red;
 }
 
-/* produit */
+/*
+ produit
+*/
 .nom{
   font-family: 'amatic_sc',handwriting;
   font-size: 2.5rem;
@@ -109,7 +128,9 @@ main.login h1{
 }
 
 
-/* La page panier */
+/*
+ La page panier
+*/
 #panier .thead-light th{
   color: var(--color-blanc);
   background-color: var(--color-gris);
@@ -181,18 +202,10 @@ article{
   font-size: xx-large;
 }
 
-#messages{
-  position: fixed;
-  background-color: green;
-  color:  white;
-  right: 50px;
-  padding: 10px;
-  border-radius: 10px;
-  font-family: 'amatic_sc';
-  font-size: xx-large;
-}
 
-/* menu deroulant */
+/*
+ menu deroulant
+*/
 #menu-deroulant, #menu-deroulant ul {
   padding: 0;
   margin: 0;
@@ -226,7 +239,9 @@ article{
   right: 0;
 }
 
-/* footer */
+/*
+ footer
+*/
 .footer{
   line-height:3em;
   min-height:50px;
