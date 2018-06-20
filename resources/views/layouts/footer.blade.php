@@ -24,5 +24,8 @@
 @else
     <script src="/js/ajouterpanier.js"></script>
 @endempty
+
+    <script src="/js/preInscription.js"></script>
+
   </body>
 </html>
