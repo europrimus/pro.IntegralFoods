@@ -16,11 +16,11 @@
     <h3>Validation d'un client</h3>
     <p>Client : {{ $client["entreprise"] }}</p>
     <label for="loginClient">Identifiant client : </label>
-      <input name="loginClient" id="loginClient" type="text" value=""><br>
+      <input name="loginClient" id="loginClient" type="text" value="{{ old("loginClient") }}"><br>
     <label for="mdpClient">Mot de passe client : </label>
-      <input name="mdpClient" id="mdpClient" type="text" value=""><br>
+      <input name="mdpClient" id="mdpClient" type="text" value="{{ old("mdpClient") }}"><br>
     <label for="Siret">N° Siret : </label>
-      <input name="Siret" id="Siret" type="text" value="">
+      <input name="Siret" id="Siret" type="text" value="{{ old("Siret") }}">
     <h3>Choix des produits</h3>
 
     @empty($listeProduits)
@@ -64,7 +64,8 @@
               <label class="screen-reader-text" for="prix[{{ $produit->id }}]"></label>
               <input id="prix[{{ $produit->id }}]" name="prix[{{ $produit->id }}]"
                 aria-labelledby="prix de {{ $produit->titre }}" title="prix"
-                type="number" inputmode="numeric" step="0.01" min="0" value="" class="prix" />€
+                type="number" inputmode="numeric" step="0.01" min="0"
+                value="{{ old("prix[".$produit->id."]") }}" class="prix" />€
             </td>
           </tr>
           @endforeach

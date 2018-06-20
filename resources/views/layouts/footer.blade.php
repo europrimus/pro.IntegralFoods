@@ -1,7 +1,6 @@
-<br><br><br><br><br>
 <div class="footer">
   <div class="lien">
-    IntegralFoods © 2018 - <a id="reseaux" href="https://www.integralfoods.fr/mentions-legales/">Mentions Légales   </a>	
+    IntegralFoods © 2018 - <a id="reseaux" href="https://www.integralfoods.fr/mentions-legales/">Mentions Légales   </a>
 
     <a id="reseaux" class="fab fa-facebook-f" href="https://www.facebook.com/Integral-Foods-340121856455149/"></a>
 
@@ -10,7 +9,7 @@
 		<a id="reseaux" class="fab fa-instagram" href="https://www.instagram.com/integralfoods/"></a>
 
 		<a id="reseaux" class="fab fa-twitter" href="https://twitter.com/IntegralFoods"></a>
-</div>     				
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

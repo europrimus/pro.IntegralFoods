@@ -18,6 +18,7 @@ class adresse extends Model
       'adresse',
       'codePostal',
       'ville',
+      'users_id',
   ];
 
 }

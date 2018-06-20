@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\utilisateur;
+use App\adresse;
 use App\Article;
 use App\CatalogueProduits;
+use App\commande;
 use App\Http\Requests\ValiderPrixRequest;
 use App\Http\Requests\ModifierPrixRequest;
 use App\Notifications;
@@ -32,9 +34,11 @@ class AdminController extends Controller
       }
       $Client=utilisateur::find($idClient);
       $listeProduits = Article::getCatalogue($idClient);
+      $listeCommande = commande::getListe($idClient);
       session(["idClient"=>$idClient]);
       return view('admin/client/detail')
         ->with('client',$Client)
+        ->with('listeCommande',$listeCommande)
         ->with('listeProduits',$listeProduits);
     }
 
@@ -61,6 +65,7 @@ class AdminController extends Controller
       }
       $idClient = session("idClient");
       $validated = $request->validated();
+// enregistre le catalogue des prix
       foreach ($validated["prix"] as $id => $prix) {
         if( $prix >= 0 && $prix !== null){
           //echo "$id : $prix<br>";
@@ -71,12 +76,22 @@ class AdminController extends Controller
           $produit->save();
         }
       }
+//modifi les info client
       $user = utilisateur::find($idClient);
       $user->role="client";
       $user->login= $validated["loginClient"];
       $user->siret= $validated["Siret"];
       $user->password= password_hash( $validated["mdpClient"] , PASSWORD_DEFAULT );
       $user->save();
+// adresse facturation
+      $adresseContact = adresse::where("users_id" , $idClient)->first();
+      $adresseFacturation = new adresse;
+      $adresseFacturation->type = "facturation";
+      $adresseFacturation->users_id = $idClient;
+      $adresseFacturation->adresse = $adresseContact->adresse;
+      $adresseFacturation->codePostal = $adresseContact->codePostal;
+      $adresseFacturation->ville = $adresseContact->ville;
+      $adresseFacturation->save();
       // envoi d'e-mail
 /*
       Notification::route('mail', $user->email)

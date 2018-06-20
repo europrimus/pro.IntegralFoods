@@ -45,6 +45,7 @@ class NouvelleCommandeRequest extends FormRequest
            'adresseLivraison.alpha_num' => 'Vous devez choisir une adresse de livraison',
            'adresseLivraison.required' => 'Vous devez choisir une adresse de livraison',
            'codePostal.numeric' => 'Le code postale doit etre un nombre',
+           'codePostal.digits' => 'Le code postale doit avoir :digits chiffres'
        ];
      }
 

@@ -46,6 +46,8 @@ class ValiderPrixRequest extends FormRequest
           'loginClient.min' => 'Le login doit faire au moin :min caractères',
           'mdpClient.required' => 'Vous devez définir un mot de passe client',
           'mdpClient.min' => 'Le mot de passe doit faire au moin :min caractères',
+          'Siret.required' => 'Vous devez entrer le numéro de siret du client',
+          'Siret.min' => 'Le numéro de siret du client doit faire au moin :min caractères',
       ];
     }
 }

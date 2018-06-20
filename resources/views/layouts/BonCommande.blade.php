@@ -1,3 +1,5 @@
+<button onclick="window.print();" class="btn">Imprimer</button>
+
 <section id="bonCommande">
   <header>
     <div id="expediteur">
