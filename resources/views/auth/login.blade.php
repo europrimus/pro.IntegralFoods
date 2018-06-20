@@ -41,6 +41,7 @@
     @endif
   <br>
 
+    <label for="remember" class="">Se souvenir de moi</label>
       <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
   <br>
 
