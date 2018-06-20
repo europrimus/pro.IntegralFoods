@@ -69,3 +69,5 @@ Route::prefix('/admin')->group(function () {
 });
 
 Route::resource('profil','ProfilController');
+
+Route::get('deco','ProfilController@deco')->name('deco');
