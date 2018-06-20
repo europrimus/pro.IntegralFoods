@@ -58,8 +58,9 @@ class utilisateur extends Model implements CanResetPasswordContract
 
 	public static function getMyRole($id) {
 		$info = utilisateur::find($id);
+		//dd($info);
 		if( !empty($info) ){
-			return $info->Role;
+			return $info->role;
 		}else{
 			return "gest";
 		}

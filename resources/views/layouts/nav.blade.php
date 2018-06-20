@@ -17,25 +17,22 @@
       </li>
 @if(App\utilisateur::getMyRole(session("UserId")) == "administrateur")
       <li class="nav-item">
-        <a href="{{ URL::route('produits.index') }}" class="nav-link">Produits (admin)</a>
+        <a href="{{ URL::route('produits.index') }}" class="nav-link">Produits</a>
       </li>
 
       <li class="nav-item">
-        <a href="{{ URL::route('admin.client.liste') }}" class="nav-link">clients (admin)</a>
+        <a href="{{ URL::route('admin.client.liste') }}" class="nav-link">clients</a>
       </li>
-@else
+@elseif(App\utilisateur::getMyRole(session("UserId")) == "client")
       <li class="nav-item">
         <a href="{{ URL::route('produitsclient.index') }}" class="nav-link">Produits</a>
       </li>
-      
+
       <li class="nav-item">
         <a href="{{ URL::route('panier') }}" class="nav-link">Mon panier ({{ App\Panier::panierCount() }})</a>
       </li>
 @endif
     </ul>
-
-
-
 
 
     <ul id="menu-deroulant">

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\utilisateur;
 
 class NouvelleCommandeRequest extends FormRequest
 {
@@ -14,7 +15,11 @@ class NouvelleCommandeRequest extends FormRequest
     public function authorize()
     {
         // verifier si l'utilisateur est enregistrer
-        return true;
+        if( utilisateur::getMyRole(session("UserId") ) == "client"){
+          return true;
+        }else{
+          return false;
+        }
     }
 
     /**

@@ -12,8 +12,13 @@ use App\Notifications;
 
 class AdminController extends Controller
 {
+
 // affiche la liste des clients
     public function listeClients(){
+      //vérifi si admin
+      if( utilisateur::getMyRole( session("UserId") ) != "administrateur"){
+        return redirect()->route('login');
+      }
       $listeClients=utilisateur::all();
       return view('admin/client/liste')
         ->with('listeClients',$listeClients);
@@ -21,6 +26,10 @@ class AdminController extends Controller
 
 // affiche les informations du clients et son catalogue de produits
     public function detailClient($idClient){
+      //vérifi si admin
+      if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
+        return redirect()->route('login');
+      }
       $Client=utilisateur::find($idClient);
       $listeProduits = Article::getCatalogue($idClient);
       session(["idClient"=>$idClient]);
@@ -31,6 +40,10 @@ class AdminController extends Controller
 
 // affiche la liste de tout les produits pour choisir les prix
     public function validerClient($idClient){
+      //vérifi si admin
+      if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
+        return redirect()->route('login');
+      }
       $Client=utilisateur::find($idClient);
       $ListeProduits=Article::all();
       session(["idClient"=>$idClient]);
@@ -42,6 +55,10 @@ class AdminController extends Controller
 
 // enregistre les prix dans le catalogue client
     public function validerPrix(ValiderPrixRequest $request){
+      //vérifi si admin
+      if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
+        return redirect()->route('login');
+      }
       $idClient = session("idClient");
       $validated = $request->validated();
       foreach ($validated["prix"] as $id => $prix) {
@@ -78,6 +95,10 @@ class AdminController extends Controller
 
 // modifier les prix dans le catalogue client
     public function modifierPrix(ModifierPrixRequest $request){
+      //vérifi si admin
+      if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
+        return redirect()->route('login');
+      }
       $idClient = session("idClient");
       $validated = $request->validated();
       foreach ($validated["prix"] as $id => $prix) {

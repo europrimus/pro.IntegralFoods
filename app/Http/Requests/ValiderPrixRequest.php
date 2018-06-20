@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\utilisateur;
 
 class ValiderPrixRequest extends FormRequest
 {
@@ -14,7 +15,7 @@ class ValiderPrixRequest extends FormRequest
     public function authorize()
     {
         // si admin
-        if(App\utilisateur::getMyRole(session("UserId")) == "administrateur"){
+        if( utilisateur::getMyRole(session("UserId")) == "administrateur"){
           return true;
         }else{
           return false;
