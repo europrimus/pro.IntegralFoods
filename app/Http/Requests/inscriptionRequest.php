@@ -27,7 +27,7 @@ class inscriptionRequest extends FormRequest
                 'civilite' => 'required',
                 'nom' => 'required',
                 'prenom' => 'required',
-                'email' => 'required',
+                'email' => 'bail|required|email',
                 'entreprise' => 'required',
                 'etablissement' => 'required',
                 'adresse' => 'required',
