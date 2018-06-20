@@ -3,8 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
 
-class utilisateur extends Model
+
+class utilisateur extends Model implements CanResetPasswordContract
 {
 	//use Notifiable;
 	protected $table = 'utilisateur';
@@ -42,14 +46,26 @@ class utilisateur extends Model
       {
         return $this->hasMany('adresse');
       }
-
-		public static function getEntreprise($id) {
-			$info = utilisateur::find($id);
-			if( !empty($info) ){
-				return $info->entreprise;
-			}else{
-				return "non connecté";
-			}
+      
+	public static function getEntreprise($id) {
+		$info = utilisateur::find($id);
+		if( !empty($info) ){
+			return $info->entreprise;
+		}else{
+			return "non connecté";
 		}
-
+	}
+      
+      public function getEmailForPasswordReset()
+      {
+		  
+		  
+	  }
+	  
+	  public function sendPasswordResetNotification($token)
+      {
+		  $this->notify(new ResetPassword($token));
+	  }
 }
+
+
