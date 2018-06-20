@@ -125,4 +125,12 @@ class AdminController extends Controller
       }
       return $this->detailClient($idClient);
     }
+
+
+    // afficher commande client
+    public function commandeClientView($idClient,$idCommande){
+      $commande = commande::getCommande($idClient, $idCommande);
+      return view('admin/client/CommandeDetail')
+        ->with('commande',$commande);
+    }
 }

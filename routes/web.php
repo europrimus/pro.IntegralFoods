@@ -65,7 +65,10 @@ Route::prefix('/admin')->group(function () {
       ->name('admin.client.validerPrix');
     Route::post('modifierPrix','AdminController@modifierPrix')
       ->name('admin.client.modifierPrix');
-  });
+    Route::get('{idClient}/commande/{idCommande}','AdminController@commandeClientView')
+      ->where('idClient','[0-9]+')
+      ->where('idCommande','.*')
+      ->name('admin.client.commande.show');  });
 });
 
 Route::resource('profil','ProfilController');

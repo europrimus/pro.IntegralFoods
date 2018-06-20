@@ -35,6 +35,3 @@ pouvoir modifier l'adresse de contact et de facturation
 ## gestion des erreurs
 
 ## important
-Ajouter déconnexion  
-Filtrer le menu suivant admin ou non  
-Créer adresse de facturation
