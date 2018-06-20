@@ -11,41 +11,55 @@
             @endforeach
       </p>
   @endif
-
-  <h3>{{ $client["entreprise"] }}</h3>
-  <dl>
-    <dt>Type d'établissement</dt>
-    <dd>
-      @isset( $client["etabliementautre"] )
-        {{ $client["etabliementautre"] }}
-      @else
-        {{ $client["etablissement"] }}
-      @endisset
-    </dd>
-    <dt>N° siret</dt>
-    <dd>{{ $client["siret"] }}</dd>
-    <dt>Etat du compte</dt>
-    <dd>
-      {{ $client["role"] }}
-      @if( $client["role"] == "inscription en attente" )
-        <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Valider l'inscription</a>
-      @elseif( $client["role"] == "client" )
-        <!-- <a href="">Résilier l'inscription</a> -->
-      @endif
-    </dd>
-    <dt>Contact</dt>
-    <dd>{{ $client["civilite"] }} {{ $client["nom"] }} {{ $client["prenom"] }}</dd>
-    <dt>Téléphone</dt>
-    <dd>{{ $client["tel"] }}</dd>
-    <dt>E-mail</dt>
-    <dd>{{ $client["email"] }}</dd>
-    <dt>Identifiant</dt>
-    <dd>{{ $client["login"] }} <!--<a href="">Réinitialiser mot de passe</a>--></dd>
-    <dt>Commantaire</dt>
-    <dd>{{ $client["commentaire"] }}</dd>
-  </dl>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>{{ $client["entreprise"] }}</h3>
+      <dl>
+        <dt>Type d'établissement</dt>
+        <dd>
+          @isset( $client["etabliementautre"] )
+            {{ $client["etabliementautre"] }}
+          @else
+            {{ $client["etablissement"] }}
+          @endisset
+        </dd>
+        <dt>N° siret</dt>
+        <dd>{{ $client["siret"] }}</dd>
+        <dt>Etat du compte</dt>
+        <dd>
+          {{ $client["role"] }}
+          @if( $client["role"] == "inscription en attente" )
+            <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Valider l'inscription</a>
+          @elseif( $client["role"] == "client" )
+            <!-- <a href="">Résilier l'inscription</a> -->
+          @endif
+        </dd>
+        <dt>Contact</dt>
+        <dd>{{ $client["civilite"] }} {{ $client["nom"] }} {{ $client["prenom"] }}</dd>
+        <dt>Téléphone</dt>
+        <dd>{{ $client["tel"] }}</dd>
+        <dt>E-mail</dt>
+        <dd>{{ $client["email"] }}</dd>
+        <dt>Identifiant</dt>
+        <dd>{{ $client["login"] }} <!--<a href="">Réinitialiser mot de passe</a>--></dd>
+        <dt>Commantaire</dt>
+        <dd>{{ $client["commentaire"] }}</dd>
+      </dl>
+    </div>
+    <div class="col-md-6">
+      <h3>Liste des Commandes</h3>
+      <ul>
+        @foreach($listeCommande as $commande)
+          <li>{{$commande["date"]}} -
+            <a href="{{ URL::route('admin.client.commande.show', ["idCommande"=> $commande["numCommande"], "idClient"=>$client["id"] ] ) }}">
+              {{ $commande["numCommande"] }}
+            </a>
+          </li>
+        @endforeach
+      </ul>
+    </div>
+  </div>
   <h3>Liste des produits disponibles pour ce client</h3>
-
   @if( count($listeProduits) <= 0 )
     <p>Pas de produit.
     <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Ajouter des produits</a></p>
@@ -98,17 +112,6 @@
       <input type="submit" name="valider" value="Valider">
     </form>
   @endif
-
-<h3>Liste des Commandes</h3>
-<ul>
-  @foreach($listeCommande as $commande)
-    <li>{{$commande["date"]}} -
-      <a href="{{ URL::route('commande.show', ["commande"=> $commande["numCommande"]] ) }}">
-        {{ $commande["numCommande"] }}
-      </a>
-    </li>
-  @endforeach
-</ul>
 
 </main>
 
