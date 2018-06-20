@@ -8,7 +8,7 @@ Ajouter adresse livraison
 ## Espace administration
 ### Validation inscription
 ### Commandes
-valider payement  
+valider payement du client  
 ## liste des produits
 modifier contenu panier dynamiquement
 ## Passer une commande
