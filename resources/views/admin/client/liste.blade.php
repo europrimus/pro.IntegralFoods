@@ -33,6 +33,7 @@
       </tr>
     @endforeach
   </ul>
+  </table>
 </main>
 
 @include("layouts/footer")

@@ -1,11 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-@extends('layout')
-
-@section('content')
-
-
+<main>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -53,4 +49,6 @@
     </table>
 
     {!! $articles->links() !!}
-@endsection
+</main>
+
+@include("layouts/footer")

@@ -2,7 +2,6 @@
 @include("layouts/nav")
 
 
-<br><br><br>
 <h2>Les produits</h2>
 <div class="d-flex justify-content-center flex-wrap">
 
