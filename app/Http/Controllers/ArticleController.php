@@ -84,7 +84,7 @@ class ArticleController extends Controller
       ]);
       Article::find($id)->update($request->all());
       return redirect()->route('produits.index')
-                        ->with('success','Article updated successfully');
+                        ->with('success','Article modifier');
     }
 
 
@@ -96,7 +96,7 @@ class ArticleController extends Controller
       }
       Article::find($id)->delete();
       return redirect()->route('produits.index')
-                        ->with('success','Article deleted successfully');
+                        ->with('success','Article supprimer');
     }
 
 }
