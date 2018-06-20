@@ -104,7 +104,7 @@
   			@endif
   		</div>
 
-		<div class="input-group mb-3 cacher" id="autre">
+		<div class="input-group mb-3 {{ old('etablissement') == "autre" ? "" : "cacher" }}" id="autre">
   		<div class="input-group-prepend">
   			<label for="etablissementautre" class="input-group-text" >Précisez</label>
       </div>
@@ -152,8 +152,10 @@
   		<div class="input-group-prepend">
   			<label for="commentaire" class="input-group-text">Commentaire</label>
       </div>
-			<textarea id="commentaire" type="commentaire"  name="commentaire" value="{{ old('commentaire') }}"
-  			class="form-control {{ $errors->has('commentaire') ? 'invalid' : '' }}" required></textarea>
+			<textarea id="commentaire" type="commentaire"  name="commentaire"
+  			class="form-control {{ $errors->has('commentaire') ? 'invalid' : '' }}" required>
+{{ old('commentaire') }}
+      </textarea>
 			@if ($errors->has('commentaire'))
   			<span class="invalid form-control">{{ $errors->first('commentaire') }}</span>
 			@endif

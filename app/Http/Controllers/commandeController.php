@@ -46,7 +46,7 @@ class commandeController extends Controller
       $prixTotal=0;
       if($panier){
         foreach ($panier as $id => $quantitie) {
-          if( isset($produits[$id]) ){
+          if( isset($produits[$id]) && $quantitie >> 0 ){
             $lignes[]=[
               "catalogue_id"=>$id,
               "produit_id"=>$produits[$id]->produit_id,

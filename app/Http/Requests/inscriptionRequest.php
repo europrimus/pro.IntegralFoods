@@ -47,6 +47,7 @@ class inscriptionRequest extends FormRequest
           'nom.required' => 'Nom requis',
           'prenom.required' => 'Prénom requis',
           'email.required' => 'Email requis',
+          'email.email' => 'Adresse non valide',
           'entreprise.required' => 'Entreprise requis',
           'etablissement.required' => 'Etablisement requis',
           'adresse.required' => 'Adresse requis',
@@ -56,7 +57,7 @@ class inscriptionRequest extends FormRequest
           'codePostal.digits' => ':digits chiffres',
           'ville.required' => 'Ville requis',
           'commentaire.required' => 'Commentaire requis',
-          'commentaire.min' => 'Commentaire de :min caractère min requis',
+          'commentaire.min' => ':min caractère minimum requis',
       ];
     }
 }
