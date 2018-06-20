@@ -31,9 +31,9 @@ class inscriptionRequest extends FormRequest
                 'entreprise' => 'required',
                 'etablissement' => 'required',
                 'adresse' => 'required',
-                'tel' => 'required',
+                'tel' => 'bail|required|digits:10',
                 'etablissementautre' => 'nullable',
-                'codePostal' => 'required',
+                'codePostal' => 'bail|required|digits:5',
                 'ville' => 'required',
                 'commentaire' => 'required|min:20',
             ];
@@ -51,10 +51,12 @@ class inscriptionRequest extends FormRequest
           'etablissement.required' => 'Etablisement requis',
           'adresse.required' => 'Adresse requis',
           'tel.required' => 'Télephone requis',
+          'tel.digits' => ':digits chiffres',
           'codePostal.required' => 'Code postal requis',
+          'codePostal.digits' => ':digits chiffres',
           'ville.required' => 'Ville requis',
           'commentaire.required' => 'Commentaire requis',
-          'commentaire.size' => 'Commentaire de 20 caractère min requis',
+          'commentaire.min' => 'Commentaire de :min caractère min requis',
       ];
     }
 }
