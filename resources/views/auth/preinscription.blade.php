@@ -1,11 +1,14 @@
 @include("layouts/head")
 @include("layouts/nav")
+
+<main class="container login">
+
 <h2>Pre Inscription</h2>
   <form method="POST" action="{{ action('PreinscriptionController@store') }}" enctype="multipart/form-data" class="inscrForm">
     @csrf
     <fieldset>
 		<legend>Formulaire de premier contact :</legend>
-		
+
 		<label for="civilite" class="">Civilité</label>
 		<select id="civilite" name="civilite" value="{{ old('civilite') }}" required
 		    class="{{ $errors->has('civilite') ? 'invalid' : '' }}">
@@ -17,7 +20,7 @@
 		  <span class="invalid">{{ $errors->first('civilite') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="nom" class="">Votre nom</label>
 		<input id="nom" type="text" name="nom" value="{{ old('nom') }}" required autofocus
 		   class="{{ $errors->has('nom') ? 'invalid' : '' }}">
@@ -25,7 +28,7 @@
 		  <span class="invalid">{{ $errors->first('nom') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="prenom" class="">Votre prénom</label>
 		<input id="prenom" type="text" name="prenom" value="{{ old('prenom') }}" required
 		   class="{{ $errors->has('prenom') ? 'invalid' : '' }}">
@@ -33,7 +36,7 @@
 		  <span class="invalid">{{ $errors->first('prenom') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="email" class="">Votre adresse e-mail</label>
 		<input id="email" type="email"  name="email" value="{{ old('email') }}" required
 		class="{{ $errors->has('email') ? 'invalid' : '' }}">
@@ -41,7 +44,7 @@
 		<span class="invalid">{{ $errors->first('email') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="telephone" class="">Votre téléphone</label>
 		<input id="tel" type="tel"  name="tel" value="{{ old('tel') }}" required
 		class="{{ $errors->has('tel') ? 'invalid' : '' }}">
@@ -49,7 +52,7 @@
 		<span class="invalid">{{ $errors->first('tel') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="entreprise" class="">Votre entreprise</label>
 		<input id="entreprise" type="entreprise"  name="entreprise" value="{{ old('entreprise') }}" required
 		class="{{ $errors->has('entreprise') ? 'invalid' : '' }}">
@@ -57,7 +60,7 @@
 		<span class="invalid">{{ $errors->first('entreprise') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="etablissement" class="">Votre type d'établissement</label>
 		<select onchange="ToggleVisibility()" id="etablissement" name="etablissement" value="{{ old('etablissement') }}" required
 		    class="{{ $errors->has('etablissement') ? 'invalid' : '' }}">
@@ -75,7 +78,7 @@
 		  <span class="invalid">{{ $errors->first('etablissement') }}</span>
 		@endif
 		<br>
-		
+
 		<label id="etabAutreLabel" for="etablissementautre" class="" style="visibility:hidden;">Précisez</label>
 		<input id="etablissementautre" type="text"  name="etablissementautre" value="{{ old('etablissementautre') }}"
 		class="{{ $errors->has('etablissementautre') ? 'invalid' : '' }}" style="visibility:hidden;">
@@ -83,7 +86,7 @@
 		<span class="">{{ $errors->first('etablissementautre') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="adresse" class="">Votre adresse</label>
 		<input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}" required
 		class="{{ $errors->has('adresse') ? 'invalid' : '' }}">
@@ -91,7 +94,7 @@
 		<span class="invalid">{{ $errors->first('adresse') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="codePostal" class="">Code postal</label>
 		<input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}" required
 		class="{{ $errors->has('codePostal') ? 'invalid' : '' }}">
@@ -99,7 +102,7 @@
 		<span class="invalid">{{ $errors->first('codePostal') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="ville" class="">Ville</label>
 		<input id="ville" type="text"  name="ville" value="{{ old('ville') }}" required
 		class="{{ $errors->has('ville') ? 'invalid' : '' }}">
@@ -107,7 +110,7 @@
 		<span class="invalid">{{ $errors->first('ville') }}</span>
 		@endif
 		<br>
-		
+
 		<label for="commentaire" class="">Commentaire</label>
 		<textarea id="commentaire" type="commentaire"  name="commentaire" value="{{ old('commentaire') }}"
 		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}" required></textarea>
@@ -115,15 +118,16 @@
 		<span class="invalid">{{ $errors->first('commentaire') }}</span>
 		@endif
 		<br>
-		
+
 		<button type="submit" class="">Envoyer</button>
 	</fieldset>
 
 
   </form>
+</main>
 
 <script>
-	
+
 	function ToggleVisibility()
 	{
 		if(document.getElementById('etablissement').value!='autre')
@@ -138,3 +142,5 @@
 		}
 	}
 </script>
+
+@include("layouts/footer")

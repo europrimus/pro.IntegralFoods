@@ -56,6 +56,5 @@ jQuery("#adresseLivraison").on("change", function() {
   } else {
     console.log("afficher");
     jQuery("#nouvelleAdresse").removeClass( "cacher" ).find("input").prop('required',true);
-
   }
 })

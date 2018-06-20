@@ -1,7 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-
+<main class="container">
 <h2>Les produits</h2>
 <div class="d-flex justify-content-center flex-wrap">
 
@@ -20,27 +20,23 @@
             <p class="ref"><i>Réf : {{ $articleclient->reference }}</i></br>
              <i>EAN : {{ $articleclient->ean }}</i></p>
     <details>
-
         <summary>Voir détails</summary>
-
-    <p>Description du produit : </br> {!!nl2br($articleclient->description)  !!}</p>
-
+        <p>Description du produit : </br> {!!nl2br($articleclient->description)  !!}</p>
     </details>
-    
+
         <img class="imgarticle" height="200" src="/storage/photo/{{ $articleclient->reference }}.png" class="" alt="" /><br>
     <div class="ajout">
         <label id="qte">Quantité : <input class="quantite" placeholder="Qté" aria-labelledby="quantité de {{ $articleclient->nom }}"
             class="" step="1" min="0"  title="Qté" pattern="[0-9]*"
             type="number" inputmode="numeric" data-id="{{ $articleclient->catalogue_id }}"/></label></br>
-        
+
         Prix unitaire : {{ number_format( $articleclient->prix, 2 , "," , " " ) }} €  </br>
 
         <button class="btn btn-light">Ajouter au panier</button>
     </div>
 </article>
 
-
-
 @endforeach
 </div>
+</main>
 @include("layouts/footer")

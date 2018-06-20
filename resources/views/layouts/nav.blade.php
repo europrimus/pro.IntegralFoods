@@ -40,7 +40,9 @@
       <strong> {{ App\utilisateur::getEntreprise(session("UserId")) }} </strong></div>
 @if(App\utilisateur::getMyRole(session("UserId")) != "gest")
         <ul>
-          <li class="nav-item"><a href="{{ URL::route('monCompte') }}" class="nav-link">Commande</a></li>
+  @if(App\utilisateur::getMyRole(session("UserId")) == "client")
+          <li class="nav-item"><a href="{{ URL::route('mesCommandes') }}" class="nav-link">Commande</a></li>
+  @endif
           <li class="nav-item"><a href="{{ URL::route('profil.index') }}" class="nav-link">Profil</a></li>
           <li class="nav-item"><a href="{{ URL::route('deco') }}" class="nav-link">Déconnexion</a></li>
 @endif

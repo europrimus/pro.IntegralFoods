@@ -37,7 +37,7 @@ body{
 }
 
 main{
-  min-height: 50vh;
+  min-height: calc(100vh - 8.7rem);
 }
 
 h1, h2, h3 {

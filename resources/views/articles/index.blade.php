@@ -1,7 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-<main>
+<main class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">

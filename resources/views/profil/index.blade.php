@@ -1,12 +1,12 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-
+<main class="container">
  <h2>Profil</h2>
 
  @empty($message)
  @else
- <div id='messages'> {{ $message }} </div> 
+ <div id='messages'> {{ $message }} </div>
  @endempty
 
  <form method="POST" action="{{ ('profil') }}" enctype="multipart/form-data" class="inscrForm">
@@ -31,7 +31,7 @@
 			<option value="Monsieur" {{ ( "Monsieur" == $client['civilite'] )? " selected":"" }}>Monsieur</option>
 			<option value="Madame" {{ ( "Madame" == $client['civilite'] )? " selected":"" }}>Madame</option>
         </select><br>
-        
+
     <label for="nom" class="">Votre nom : </label>
     <input id="nom" type="text" name="nom" value="{{ $client["nom"] }}" required autofocus
         class="{{ $errors->has('nom') ? 'invalid' : '' }}"><br>
@@ -39,7 +39,7 @@
 
     <input id="prenom" type="text" name="prenom" value="{{ $client["prenom"] }}" required
         class="{{ $errors->has('prenom') ? 'invalid' : '' }}">
-    
+
     <dt>Téléphone : </dt>
     <dd><input id="tel" type="text" name="tel" value="{{ $client["tel"] }}"></dd>
 
@@ -50,6 +50,9 @@
     <dd>{{ $client["login"] }}</dd>
   </dl>
 
-    <button type="submit">Modifier</button>
+    <button type="submit" class="btn">Modifier</button>
 
  </form>
+</main>
+
+@include("layouts/footer")

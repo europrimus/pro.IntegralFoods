@@ -1,10 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-@extends('layout')
-
-
-@section('content')
+<main class="container">
 
 @if($errors->any())
     @foreach($errors->all() as $error)
@@ -15,50 +12,29 @@
 @endif
 
     <div class="row">
-
         <div class="col-lg-12 margin-tb">
-
             <div class="pull-left">
-
                 <h2>Ajout du produit</h2>
-
             </div>
-
             <div class="pull-right">
-
                 <a class="btn btn-primary" href="{{ route('produits.index') }}"> Retour</a>
-
             </div>
-
         </div>
-
     </div>
 
 
     @if (count($errors) < 0)
-
         <div class="alert alert-danger">
-
             <strong>Oups !</strong> Il y a un problème avec votre saisie.<br><br>
-
             <ul>
-
                 @foreach ($errors->all() as $error)
-
                     <li>{{ $error }}</li>
-
                 @endforeach
-
             </ul>
-
         </div>
-
     @endif
 
+@include('articles.form')
 
-
-         @include('articles.form')
-
-
-
-@endsection
+</main>
+@include('layouts.footer')

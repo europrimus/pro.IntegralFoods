@@ -1,6 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
+<main class="container login">
 
 @if($errors->any())
     @foreach($errors->all() as $error)
@@ -9,10 +10,6 @@
         </div>
     @endforeach
 @endif
-
-
-
-<main class="login">
 
 <div class="container">
   <h1>Integral Foods Pro</h2>
