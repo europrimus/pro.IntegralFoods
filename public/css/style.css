@@ -238,3 +238,7 @@ article{
 #reseaux{
   color: white;
 }
+
+.form-control{
+  max-width: 200px;
+}
