@@ -14,7 +14,11 @@ class ModifierPrixRequest extends FormRequest
     public function authorize()
     {
         // si admin
-        return true;
+        if(App\utilisateur::getMyRole(session("UserId")) == "administrateur"){
+          return true;
+        }else{
+          return false;
+        }
     }
 
     /**

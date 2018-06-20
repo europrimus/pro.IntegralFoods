@@ -8,6 +8,7 @@ use App\Article;
 use App\CatalogueProduits;
 use App\Http\Requests\ValiderPrixRequest;
 use App\Http\Requests\ModifierPrixRequest;
+use App\Notifications;
 
 class AdminController extends Controller
 {
@@ -56,8 +57,22 @@ class AdminController extends Controller
       $user = utilisateur::find($idClient);
       $user->role="client";
       $user->login= $validated["loginClient"];
-      $user->password= password_hash ( $validated["mdpClient"] , PASSWORD_DEFAULT );
+      $user->siret= $validated["Siret"];
+      $user->password= password_hash( $validated["mdpClient"] , PASSWORD_DEFAULT );
       $user->save();
+      // envoi d'e-mail
+/*
+      Notification::route('mail', $user->email)
+            ->notify(
+              (new MailMessage)
+                ->greeting('Bonjour!')
+                ->line('Votre compte à été activé!')
+                ->line('Votre identifiant : '.$user->login )
+                ->line('Votre mot de passe : '.$validated["mdpClient"] )
+                ->action('Vous connecter', URL::route('login') )
+                ->line('Merci de commander chez nous.')
+              );
+*/
       return $this->detailClient($idClient);
     }
 

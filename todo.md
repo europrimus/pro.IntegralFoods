@@ -23,24 +23,18 @@ valider payement
 vérifier panier: nombre articles supérieurs à 0  
 vérifier adresse livraison (ajouter message erreur)  
 ### enregistrement commande
-lister les informations à enregistrer:  
- - nom, prénom
- - entreprise
- - siret
- - adresse facturation
- - adresse livraison
- - Liste des produits, quantité et prix
-
 ### liste des commandes
 état de la commande  
 ### détails d'une commande
-recharger le fichier xml  
-afficher les données  
 ## Mon Compte
 ### Mes informations
 pouvoir modifier email, téléphone, nom du contacte
 ### Mes adresses
 pouvoir supprimer et ajouter des adresses de livraisons
 pouvoir modifier l'adresse de contact et de facturation
-
 ## gestion des erreurs
+
+## important
+Ajouter déconnexion  
+Filtrer le menu suivant admin ou non  
+Créer adresse de facturation

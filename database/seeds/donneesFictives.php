@@ -14,21 +14,6 @@ class donneesFictives extends Seeder
     {
 // utilisateurs
       DB::table('utilisateur')->insert([
-        'civilite'=> 'Monsieur',  //['Monsieur','Madame']);
-        'nom' => 'Integral',
-        'prenom' => 'Food',
-        'entreprise' => 'Integral Food',
-        'etablissement'=> 'autre', //['distributeur','restaurant indépendant','chaîne de restaurants','épicerie','collectivité','traiteur','industrie','autre']
-        'tel' => str_pad(mt_rand(), 10, "0", STR_PAD_LEFT),
-        'email' => str_random(5).'@gmail.com',
-        'siret' => str_random(16),
-        'kbis' => '',
-        'login' => 'admin',
-        'password' => bcrypt('secret'),
-        'commentaire' => 'Administateur',
-        'role' => 'administrateur',
-      ]);
-      DB::table('utilisateur')->insert([
         'civilite'=> 'Madame',  //['Monsieur','Madame']);
         'nom' => 'Miam',
         'prenom' => 'Josiane',

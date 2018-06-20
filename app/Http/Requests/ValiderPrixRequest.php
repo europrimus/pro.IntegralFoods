@@ -14,7 +14,12 @@ class ValiderPrixRequest extends FormRequest
     public function authorize()
     {
         // si admin
-        return true;
+        if(App\utilisateur::getMyRole(session("UserId")) == "administrateur"){
+          return true;
+        }else{
+          return false;
+        }
+
     }
 
     /**
@@ -28,6 +33,7 @@ class ValiderPrixRequest extends FormRequest
             "prix" => 'bail|required|array',
             "loginClient" => 'bail|required|string|min:6',
             "mdpClient" => 'bail|required|string|min:6',
+            "Siret" => 'bail|required|string|min:9',
         ];
     }
 
