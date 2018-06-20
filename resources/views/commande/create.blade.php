@@ -1,7 +1,7 @@
 @include("layouts/head")
 @include("layouts/nav")
 
-<div class="container-fluid">
+<main class="container-fluid">
   <h2>Commande</h2>
   <h3>Contenu du panier</h3>
 
@@ -85,5 +85,5 @@
     </form>
     @endempty
   @endempty
-</div>
+</main>
 @include("layouts/footer")

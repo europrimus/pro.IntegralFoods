@@ -1,5 +1,6 @@
 @include("layouts/head")
 @include("layouts/nav")
+<main class="container">
 <h2>Incription</h2>
   <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
     @csrf
@@ -90,3 +91,7 @@
           </div>
       </div>
   </form>
+
+</main>
+
+@include("layouts/footer")
