@@ -40,7 +40,7 @@
     <input id="prenom" type="text" name="prenom" value="{{ $client["prenom"] }}" required
         class="{{ $errors->has('prenom') ? 'invalid' : '' }}">
     
-    <dt>Téléphone</dt>
+    <dt>Téléphone : </dt>
     <dd><input id="tel" type="text" name="tel" value="{{ $client["tel"] }}"></dd>
 
     <dt>e-mail</dt>

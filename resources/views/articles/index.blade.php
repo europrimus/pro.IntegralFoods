@@ -25,7 +25,7 @@
             <th>Photo</th>
             <th>Nom du produit</th>
             <th>Description</th>
-            <th>Réference</th>
+            <th>Référence</th>
             <th>EAN</th>
             <th width="280px">Action</th>
         </tr>

@@ -4,7 +4,7 @@
   <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
     @csrf
     <fieldset>
-      <legend>Entreprise:</legend>
+      <legend>Entreprise :</legend>
       <label for="entreprise" class="">Nom</label>
         <input id="entreprise" type="text" name="entreprise" value="{{ old('entreprise') }}" required autofocus
            class="{{ $errors->has('entreprise') ? 'invalid' : '' }}">
@@ -34,7 +34,7 @@
           <span class="invalid">{{ $errors->first('adresse') }}</span>
         @endif
 <br>
-      <label for="codePostale" class="">Code postale</label>
+      <label for="codePostale" class="">Code postal</label>
         <input id="codePostale" type="text" name="codePostale" value="{{ old('codePostale') }}" required
            class="{{ $errors->has('codePostale') ? 'invalid' : '' }}">
         @if ($errors->has('codePostale'))
@@ -52,7 +52,7 @@
 
     <fieldset>
       <legend>Contact:</legend>
-      <label for="email" class="">Adresse email</label>
+      <label for="email" class="">Adresse e-mail</label>
         <input id="email" type="email"  name="email" value="{{ old('email') }}" required
         class="{{ $errors->has('email') ? 'invalid' : '' }}">
         @if ($errors->has('email'))

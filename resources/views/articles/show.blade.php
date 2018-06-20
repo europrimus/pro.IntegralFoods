@@ -21,8 +21,8 @@
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="form-group">
-          <strong>Réference :</strong> {{ $article->reference}}<br>
-          <strong>Code ean :</strong> {{ $article->ean}}
+          <strong>Référence :</strong> {{ $article->reference}}<br>
+          <strong>Code EAN :</strong> {{ $article->ean}}
       </div>
   </div>
 

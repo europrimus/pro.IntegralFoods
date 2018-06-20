@@ -1,7 +1,9 @@
 @include("layouts/head")
 @include("layouts/nav")
 
+
 <main class="login">
+
 <div class="container">
   <h1>Integral Foods Pro</h2>
   <img src="/img/Logo-integralFoods.png" alt="logo integral food" >
@@ -26,13 +28,13 @@
     @endif
   <br>
 
-    <label for="remember" class="">se souvenir de moi</label>
+    <label for="remember" class="">Se souvenir de moi</label>
       <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
   <br>
 
     <button type="submit" class="">Se connecter</button>
   <br>
-    <!--<a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>-->
+    <a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>
   </form>
   <a href="/preinscription">Inscription</a>
 </div>

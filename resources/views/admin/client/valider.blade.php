@@ -18,8 +18,8 @@
     <label for="loginClient">Identifiant client : </label>
       <input name="loginClient" id="loginClient" type="text" value=""><br>
     <label for="mdpClient">Mot de passe client : </label>
-      <input name="mdpClient" id="mdpClient" type="text" value=""><br>
-    <label for="Siret">N° Siret : </label>
+      <input name="mdpClient" id="mdpClient" type="text" value=""><br> 
+    <label for="Siret">N° Siret : </label> 
       <input name="Siret" id="Siret" type="text" value="">
     <h3>Choix des produits</h3>
 
@@ -32,7 +32,7 @@
           <tr >
             <th scope="col"></th>
             <th scope="col">Produit</th>
-            <th scope="col">Code bare EAN</th>
+            <th scope="col">Code barre EAN</th>
             <th scope="col">Référence</th>
             <th scope="col">Prix</th>
           </tr>

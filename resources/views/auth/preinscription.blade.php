@@ -33,7 +33,7 @@
 		@endif
 		<br>
 		
-		<label for="email" class="">Votre adresse email</label>
+		<label for="email" class="">Votre adresse e-mail</label>
 		<input id="email" type="email"  name="email" value="{{ old('email') }}" required
 		class="{{ $errors->has('email') ? 'invalid' : '' }}">
 		@if ($errors->has('email'))
