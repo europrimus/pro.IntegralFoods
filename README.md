@@ -25,7 +25,6 @@ Créer la base de donnée, puis éditer le fichier .env pour modifier les inform
 >DB_USERNAME=      <= utilisateur  
 >DB_PASSWORD=      <= mot de passe
 
-
 Créer les tables avec la commande suivante
 
     php artisan migrate:refresh
