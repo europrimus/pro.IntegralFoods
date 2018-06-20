@@ -38,4 +38,3 @@ pouvoir modifier l'adresse de contact et de facturation
 Ajouter déconnexion  
 Filtrer le menu suivant admin ou non  
 Créer adresse de facturation
-Num siret

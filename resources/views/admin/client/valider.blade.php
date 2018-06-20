@@ -18,7 +18,9 @@
     <label for="loginClient">Identifiant client : </label>
       <input name="loginClient" id="loginClient" type="text" value=""><br>
     <label for="mdpClient">Mot de passe client : </label>
-      <input name="mdpClient" id="mdpClient" type="text" value="">
+      <input name="mdpClient" id="mdpClient" type="text" value=""><br>
+    <label for="Siret">N° Siret : </label>
+      <input name="Siret" id="Siret" type="text" value="">
     <h3>Choix des produits</h3>
 
     @empty($listeProduits)

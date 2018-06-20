@@ -28,6 +28,7 @@ class ValiderPrixRequest extends FormRequest
             "prix" => 'bail|required|array',
             "loginClient" => 'bail|required|string|min:6',
             "mdpClient" => 'bail|required|string|min:6',
+            "Siret" => 'bail|required|string|min:9',
         ];
     }
 
