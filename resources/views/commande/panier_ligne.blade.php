@@ -13,7 +13,7 @@
     </details>
   </th>
 
-  <td class="" data-title="Code bare EAN">
+  <td class="" data-title="Code barre EAN">
     {{ $ligne["ean"] }}
   </td>
 

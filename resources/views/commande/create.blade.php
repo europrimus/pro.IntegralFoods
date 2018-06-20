@@ -24,7 +24,7 @@
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col">Produit</th>
-        <th scope="col">Code bare EAN</th>
+        <th scope="col">Code barre EAN</th>
         <th scope="col">Référence</th>
         <th scope="col">Prix</th>
         <th scope="col">Quantité</th>
@@ -42,18 +42,18 @@
   <h3>Commandez</h3>
     @empty($adresseFacturation)
       <p>
-        Pas d'adresse de facturation renseigné.<br>
+        Pas d'adresse de facturation renseignée.<br>
         Commande impossible.
       </p>
     @else
-      <h4>Adresse de facturation:</h4>
+      <h4>Adresse de facturation :</h4>
       <p>
         {{$adresseFacturation["adresse"]}}<br>
         {{$adresseFacturation["codePostal"]}} {{$adresseFacturation["ville"]}}
       </p>
-      <label for="adresseLivraison"><h4>Adresse de livraison:</h4></label><br>
+      <label for="adresseLivraison"><h4>Adresse de livraison :</h4></label><br>
       <select name="adresseLivraison" id="adresseLivraison">
-        <option value="false" selected disabled hidden>Choissir une adresse</option>
+        <option value="false" selected disabled hidden>Choisir une adresse</option>
       @foreach( $adresses as $adresse)
         <option value="{{ $adresse->id }}"
           {{ ( $adresse->id == old("adresseLivraison") ) ? " selected" :'' }}

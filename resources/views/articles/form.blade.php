@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Nom du produit:</strong>
+            <strong>Nom du produit :</strong>
             {!! Form::text('titre', null, array('placeholder' => 'Produit','class' => 'form-control')) !!}
         </div>
     </div>
@@ -17,7 +17,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Réference :</strong>
+            <strong>Référence :</strong>
             {!! Form::text('reference', null , array('class' => 'form-control',)) !!}
         </div>
     </div>
@@ -31,7 +31,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Selectionner une image :</strong>
+            <strong>Sélectionner une image :</strong>
             <input type="hidden" name="MAX_FILE_SIZE" value="4000000" />
             <input type="file" name="photo" id="photo" accept="image/*" >
         </div>

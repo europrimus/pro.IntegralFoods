@@ -37,7 +37,7 @@
       <thead>
         <tr >
           <th class="produit">Produit</th>
-          <th class="ean">Code bare EAN</th>
+          <th class="ean">Code barre EAN</th>
           <th class="ref">Référence</th>
           <th class="prix">Prix</th>
           <th class="quantite">Qté</th>

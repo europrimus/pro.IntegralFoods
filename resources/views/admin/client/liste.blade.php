@@ -9,9 +9,9 @@
     <tr >
       <th scope="col">Entreprise</th>
       <th scope="col">Type d'établissement</th>
-      <th scope="col">Contacte</th>
+      <th scope="col">Contact</th>
       <th scope="col">Téléphone</th>
-      <th scope="col">e-mail</th>
+      <th scope="col">E-mail</th>
       <th scope="col">Type</th>
     </tr>
   </thead>

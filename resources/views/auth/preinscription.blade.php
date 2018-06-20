@@ -9,6 +9,7 @@
 		<label for="civilite" class="">Civilité</label>
 		<select id="civilite" name="civilite" value="{{ old('civilite') }}" required
 		    class="{{ $errors->has('civilite') ? 'invalid' : '' }}">
+		    <option value = "" default selected disabled hidden>Sélectionner</option>
 			<option value="Monsieur">Monsieur</option>
 			<option value="Madame">Madame</option>
 		</select>
@@ -33,7 +34,7 @@
 		@endif
 		<br>
 		
-		<label for="email" class="">Votre adresse email</label>
+		<label for="email" class="">Votre adresse e-mail</label>
 		<input id="email" type="email"  name="email" value="{{ old('email') }}" required
 		class="{{ $errors->has('email') ? 'invalid' : '' }}">
 		@if ($errors->has('email'))

@@ -3,4 +3,4 @@
 
 </br></br>
 
-<h2 class="error">La page n'a pas été trouvée</h2>
+<h2 class="error">La page n'a pas été trouvée.</h2>

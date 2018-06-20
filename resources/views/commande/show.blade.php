@@ -5,7 +5,7 @@
   <h2>Commande</h2>
     <h3>Détails d'une Commande</h3>
       <p>Commande N° : {{ $id }}<br>
-        Status de la commande : {{ $commande->Status }}
+        Statut de la commande : {{ $commande->Status }}
       </p>
 
 @include("layouts.BonCommande")

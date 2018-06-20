@@ -37,14 +37,14 @@
     <dd>{{ $client["civilite"] }} {{ $client["nom"] }} {{ $client["prenom"] }}</dd>
     <dt>Téléphone</dt>
     <dd>{{ $client["tel"] }}</dd>
-    <dt>e-mail</dt>
+    <dt>E-mail</dt>
     <dd>{{ $client["email"] }}</dd>
     <dt>Identifiant</dt>
     <dd>{{ $client["login"] }} <a href="">Réinitialiser mot de passe</a></dd>
-    <dt>Commantaire</dt>
+    <dt>Commentaire</dt>
     <dd>{{ $client["commentaire"] }}</dd>
   </dl>
-  <h3>Liste des produits disponible pour ce client</h3>
+  <h3>Liste des produits disponibles pour ce client</h3>
 
   @if( count($listeProduits) <= 0 )
     <p>Pas de produit.
@@ -57,7 +57,7 @@
         <tr >
           <th scope="col"></th>
           <th scope="col">Produit</th>
-          <th scope="col">Code bare EAN</th>
+          <th scope="col">Code barre EAN</th>
           <th scope="col">Référence</th>
           <th scope="col">Prix</th>
         </tr>
