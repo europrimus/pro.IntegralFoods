@@ -10,6 +10,10 @@ class ProfilController extends Controller
 {
     public function index($message="")
     {
+        //vérifi si client
+        if( utilisateur::getMyRole( session("UserId") ) != "client"){
+          return redirect()->route('login');
+        }
         $Client=utilisateur::find(session("UserId"));
         return view('profil.index')->with('client',$Client)
          ->with('message',$message);
@@ -17,6 +21,10 @@ class ProfilController extends Controller
 
     public function store(Request $request)
     {
+        //vérifi si client
+        if( utilisateur::getMyRole( session("UserId") ) != "client"){
+          return redirect()->route('login');
+        }
         $utilisateur = \App\utilisateur::find(session("UserId"));
         $utilisateur->nom = $request->nom;
         $utilisateur->civilite = $request->civilite;
@@ -25,10 +33,10 @@ class ProfilController extends Controller
         $utilisateur->tel = $request->tel;
         $utilisateur->save();
 
-		
+
 		return $this->index("Modification éffectué");
     }
-    
+
     public function deco(){
         session()->flush();
         return redirect()->route('login');
