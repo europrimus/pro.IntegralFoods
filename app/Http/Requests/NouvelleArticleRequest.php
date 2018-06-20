@@ -41,11 +41,11 @@ class NouvelleArticleRequest extends FormRequest
     {
       return [
           'titre.required' => 'Vous devez ajouter un nom de produit',
-          'titre.size' => 'il doit y avoir 5 caractere minimum pour le titre',
+          'titre.size' => 'Il doit y avoir 5 caractere minimum pour le titre',
           'description.required' => 'Vous devez ajouter un déscription du produit',
           'reference.required' => 'Vous devez ajouter une référence',
           'ean.required' => 'Vous devez ajouter un EAN',
-          'ean.size' => 'il doit y avoir 13 caractere pour le code EAN',
+          'ean.size' => 'Il doit y avoir 13 caractere pour le code EAN',
           'photo.required' => 'Vous devez ajouter une photo',
       ];
     }

@@ -1,6 +1,17 @@
 @include("layouts/head")
 @include("layouts/nav")
 
+
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+            <strong>{{ $error }}</strong>
+        </div>
+    @endforeach
+@endif
+
+
+
 <main class="login">
 <div class="container">
   <h1>Integral Foods Pro</h2>

@@ -37,7 +37,7 @@
 		<input id="email" type="email"  name="email" value="{{ old('email') }}" required
 		class="{{ $errors->has('email') ? 'invalid' : '' }}">
 		@if ($errors->has('email'))
-		<span class="">{{ $errors->first('email') }}</span>
+		<span class="invalid">{{ $errors->first('email') }}</span>
 		@endif
 		<br>
 		
@@ -45,7 +45,7 @@
 		<input id="tel" type="tel"  name="tel" value="{{ old('tel') }}" required
 		class="{{ $errors->has('tel') ? 'invalid' : '' }}">
 		@if ($errors->has('tel'))
-		<span class="">{{ $errors->first('tel') }}</span>
+		<span class="invalid">{{ $errors->first('tel') }}</span>
 		@endif
 		<br>
 		
@@ -53,7 +53,7 @@
 		<input id="entreprise" type="entreprise"  name="entreprise" value="{{ old('entreprise') }}" required
 		class="{{ $errors->has('entreprise') ? 'invalid' : '' }}">
 		@if ($errors->has('entreprise'))
-		<span class="">{{ $errors->first('entreprise') }}</span>
+		<span class="invalid">{{ $errors->first('entreprise') }}</span>
 		@endif
 		<br>
 		
@@ -87,7 +87,7 @@
 		<input id="adresse" type="text"  name="adresse" value="{{ old('adresse') }}" required
 		class="{{ $errors->has('adresse') ? 'invalid' : '' }}">
 		@if ($errors->has('adresse'))
-		<span class="">{{ $errors->first('adresse') }}</span>
+		<span class="invalid">{{ $errors->first('adresse') }}</span>
 		@endif
 		<br>
 		
@@ -95,7 +95,7 @@
 		<input id="codePostal" type="text"  name="codePostal" value="{{ old('codePostal') }}" required
 		class="{{ $errors->has('codePostal') ? 'invalid' : '' }}">
 		@if ($errors->has('codePostal'))
-		<span class="">{{ $errors->first('codePostal') }}</span>
+		<span class="invalid">{{ $errors->first('codePostal') }}</span>
 		@endif
 		<br>
 		
@@ -103,7 +103,7 @@
 		<input id="ville" type="text"  name="ville" value="{{ old('ville') }}" required
 		class="{{ $errors->has('ville') ? 'invalid' : '' }}">
 		@if ($errors->has('ville'))
-		<span class="">{{ $errors->first('ville') }}</span>
+		<span class="invalid">{{ $errors->first('ville') }}</span>
 		@endif
 		<br>
 		
@@ -111,7 +111,7 @@
 		<textarea id="commentaire" type="commentaire"  name="commentaire" value="{{ old('commentaire') }}"
 		class="{{ $errors->has('commentaire') ? 'invalid' : '' }}" required></textarea>
 		@if ($errors->has('commentaire'))
-		<span class="">{{ $errors->first('commentaire') }}</span>
+		<span class="invalid">{{ $errors->first('commentaire') }}</span>
 		@endif
 		<br>
 		
