@@ -46,7 +46,7 @@ class utilisateur extends Model implements CanResetPasswordContract
       {
         return $this->hasMany('adresse');
       }
-      
+
 	public static function getEntreprise($id) {
 		$info = utilisateur::find($id);
 		if( !empty($info) ){
@@ -55,17 +55,24 @@ class utilisateur extends Model implements CanResetPasswordContract
 			return "non connecté";
 		}
 	}
-      
+
+	public static function getMyRole($id) {
+		$info = utilisateur::find($id);
+		if( !empty($info) ){
+			return $info->Role;
+		}else{
+			return "gest";
+		}
+	}
+
       public function getEmailForPasswordReset()
       {
-		  
-		  
+
+
 	  }
-	  
+
 	  public function sendPasswordResetNotification($token)
       {
 		  $this->notify(new ResetPassword($token));
 	  }
 }
-
-
