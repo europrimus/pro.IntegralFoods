@@ -2,7 +2,6 @@
 @include("layouts/nav")
 
 
-<br><br><br>
 <h2>Les produits</h2>
 <div class="d-flex justify-content-center flex-wrap">
 
@@ -11,7 +10,7 @@
 </div>
 
 <input type = 'submit' value = 'Rechercher' OnClick="recherche()"> -->
-<div id='message'>Article ajouter</div>
+<div id='message'>Article ajouté</div>
 
 @foreach($articleclients as $articleclient)
 
@@ -22,9 +21,9 @@
              <i>EAN : {{ $articleclient->ean }}</i></p>
     <details>
 
-        <summary>Voir detail</summary>
+        <summary>Voir détails</summary>
 
-    <p>Description du produit :</br> {!!nl2br($articleclient->description)  !!}</p>
+    <p>Description du produit : </br> {!!nl2br($articleclient->description)  !!}</p>
 
     </details>
     

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\utilisateur;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\inscriptionRequest;
 
 class PreinscriptionController extends Controller
 {
@@ -28,7 +29,7 @@ class PreinscriptionController extends Controller
 	}
 
 
-    public function store(Request $request)
+    public function store(inscriptionRequest $request)
     {
 
 
@@ -58,6 +59,7 @@ class PreinscriptionController extends Controller
 			'users_id' => $id[0]->id,
 		]);
 		return view('auth/preinscriptionAttente');
+		$validation->validated();
 	}
 
 

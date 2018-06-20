@@ -37,7 +37,7 @@ body{
 }
 
 main{
-  min-height: 75vh;
+  min-height: 50vh;
 }
 
 h1, h2, h3 {
@@ -228,7 +228,7 @@ article{
 
 /* footer */
 .footer{
-  line-height:4em;
+  line-height:3em;
   min-height:50px;
   text-align: center;
   color: white;

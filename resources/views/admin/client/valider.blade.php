@@ -32,7 +32,7 @@
           <tr >
             <th scope="col"></th>
             <th scope="col">Produit</th>
-            <th scope="col">Code bare EAN</th>
+            <th scope="col">Code barre EAN</th>
             <th scope="col">Référence</th>
             <th scope="col">Prix</th>
           </tr>

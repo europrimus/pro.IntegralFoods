@@ -30,7 +30,7 @@ class ArticleController extends Controller
         Article::create($request->all());
         $request->photo->storeAs('public/photo',$request->reference.".".$request->photo->extension());
         return redirect()->route('produits.index')
-                        ->with('success','Article created successfully');
+                        ->with('success','Article crée');
         
     }
 

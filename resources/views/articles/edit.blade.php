@@ -31,7 +31,7 @@
 
         <div class="alert alert-danger">
 
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Oups !</strong> Il y a un problème avec votre saisie.<br><br>
 
             <ul>
 

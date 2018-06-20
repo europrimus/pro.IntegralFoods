@@ -1,7 +1,22 @@
 @include("layouts/head")
 @include("layouts/nav")
 
+
+<<<<<<< HEAD
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+            <strong>{{ $error }}</strong>
+        </div>
+    @endforeach
+@endif
+
+
+
+=======
+>>>>>>> f089ab3a07b95de37e83afd7a71f94514f71f8e5
 <main class="login">
+
 <div class="container">
   <h1>Integral Foods Pro</h2>
   <img src="/img/Logo-integralFoods.png" alt="logo integral food" >
@@ -26,13 +41,13 @@
     @endif
   <br>
 
-    <label for="remember" class="">se souvenir de moi</label>
+    <label for="remember" class="">Se souvenir de moi</label>
       <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
   <br>
 
     <button type="submit" class="">Se connecter</button>
   <br>
-    <!--<a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>-->
+    <a class="" href="{{ route('password.request') }}">Mot de passe oublié</a>
   </form>
   <a href="/preinscription">Inscription</a>
 </div>
