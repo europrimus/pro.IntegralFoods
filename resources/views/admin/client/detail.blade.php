@@ -30,7 +30,7 @@
       @if( $client["role"] == "inscription en attente" )
         <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Valider l'inscription</a>
       @elseif( $client["role"] == "client" )
-        <a href="">Résilier l'inscription</a>
+        <!-- <a href="">Résilier l'inscription</a> -->
       @endif
     </dd>
     <dt>Contact</dt>
@@ -40,7 +40,7 @@
     <dt>e-mail</dt>
     <dd>{{ $client["email"] }}</dd>
     <dt>Identifiant</dt>
-    <dd>{{ $client["login"] }} <a href="">Réinitialiser mot de passe</a></dd>
+    <dd>{{ $client["login"] }} <!--<a href="">Réinitialiser mot de passe</a>--></dd>
     <dt>Commantaire</dt>
     <dd>{{ $client["commentaire"] }}</dd>
   </dl>
