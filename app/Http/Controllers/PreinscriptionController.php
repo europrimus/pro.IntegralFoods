@@ -59,6 +59,7 @@ class PreinscriptionController extends Controller
 			'users_id' => $id[0]->id,
 		]);
 		return view('auth/preinscriptionAttente');
+		
 		$validation->validated();
 	}
 

@@ -27,5 +27,10 @@ class ProfilController extends Controller
 
 		
 		return $this->index("Modification éffectué");
-	}
+    }
+    
+    public function deco(){
+        session()->flush();
+        return redirect()->route('login');
+    }
 }

@@ -41,6 +41,7 @@
         <ul>
           <li class="nav-item"><a href="{{ URL::route('monCompte') }}" class="nav-link">Commande</a></li>
           <li class="nav-item"><a href="{{ URL::route('profil.index') }}" class="nav-link">Profil</a></li>
+          <li class="nav-item"><a href="{{ URL::route('deco') }}" class="nav-link">Déconnexion</a></li>
 
         </ul>
       </li>

@@ -2,7 +2,6 @@
 @include("layouts/nav")
 
 
-<<<<<<< HEAD
 @if($errors->any())
     @foreach($errors->all() as $error)
         <div class="alert alert-danger" role="alert">
@@ -13,8 +12,6 @@
 
 
 
-=======
->>>>>>> f089ab3a07b95de37e83afd7a71f94514f71f8e5
 <main class="login">
 
 <div class="container">
