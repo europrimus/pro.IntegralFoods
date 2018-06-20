@@ -9,6 +9,7 @@
 		<label for="civilite" class="">Civilité</label>
 		<select id="civilite" name="civilite" value="{{ old('civilite') }}" required
 		    class="{{ $errors->has('civilite') ? 'invalid' : '' }}">
+		    <option value = "" default selected disabled hidden>Sélectionner</option>
 			<option value="Monsieur">Monsieur</option>
 			<option value="Madame">Madame</option>
 		</select>
