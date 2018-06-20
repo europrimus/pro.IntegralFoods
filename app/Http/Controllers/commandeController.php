@@ -89,7 +89,14 @@ class commandeController extends Controller
     {
         // on envois la commande au model
         $valid = $request->validated();
-        //dd($valid);
+        //dd($valid["quantity"]);
+        foreach( $valid["quantity"] as $quantity ){
+          if($quantity<=0){
+            return view('commande.erreurs')
+              ->with('erreurs', ["Quantité invalide"] );
+          }
+        }
+// nouvelle adresse
         if( $valid["adresseLivraison"] == "nouvelleAdresse" ){
           $adresse = new adresse;
           $adresse->users_id = session("UserId");
