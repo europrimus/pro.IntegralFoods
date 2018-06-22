@@ -3,7 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\utilisateur;
+    
 class NouvelleArticleRequest extends FormRequest
 {
     /**
@@ -14,7 +15,7 @@ class NouvelleArticleRequest extends FormRequest
     public function authorize()
     {
       // si admin
-      if(App\utilisateur::getMyRole(session("UserId")) == "administrateur"){
+      if(utilisateur::getMyRole(session("UserId")) == "administrateur"){
         return true;
       }else{
         return false;
