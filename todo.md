@@ -6,8 +6,12 @@ tester mot de passe oublié
 Ajouter adresse facturation  
 Ajouter adresse livraison  
 ## Espace administration
+### Ajouter articles
+erreur *App\ ...* not found
 ### Validation inscription
+erreur *Array to string conversion* du a la validation
 ### Commandes
+pouvoir modifier ou supprimer la commande
 valider payement du client  
 ## liste des produits
 modifier contenu panier dynamiquement
