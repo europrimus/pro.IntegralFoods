@@ -31,7 +31,7 @@ class ValiderPrixRequest extends FormRequest
     public function rules()
     {
         return [
-            "prix" => 'bail|required|array|digits_between:0,90000',
+            "prix" => 'bail|required|array',
             "loginClient" => 'bail|required|string|min:6',
             "mdpClient" => 'bail|required|string|min:6',
             "Siret" => 'bail|required|string|min:9',
@@ -42,7 +42,7 @@ class ValiderPrixRequest extends FormRequest
     {
       return [
           'prix.required' => 'Vous devez choisir au moins un prix',
-          'prix.digits_between' => 'Le prix doit être compris entre 0 et 90 000',
+          //'prix.digits_between' => 'Le prix doit être compris entre 0 et 90 000',
           'loginClient.required' => 'Vous devez définir un login client',
           'loginClient.min' => 'Le login doit faire au moin :min caractères',
           'mdpClient.required' => 'Vous devez définir un mot de passe client',

@@ -33,8 +33,9 @@ class AdminController extends Controller
         return redirect()->route('login');
       }
       $Client=utilisateur::find($idClient);
-      $listeProduits = Article::getCatalogue($idClient);
+      $listeProduits = Article::getAll($idClient);
       $listeCommande = commande::getListe($idClient);
+      //dd($listeProduits);
       session(["idClient"=>$idClient]);
       return view('admin/client/detail')
         ->with('client',$Client)
@@ -116,11 +117,22 @@ class AdminController extends Controller
       }
       $idClient = session("idClient");
       $validated = $request->validated();
+      //dd($validated);
       foreach ($validated["prix"] as $id => $prix) {
-        if( $prix >= 0 && $prix !== null){
-          CatalogueProduits::where('users_id', $idClient)
-            ->where("produit_id", $id)
-            ->update(["prix"=>$prix]);
+        if( $prix >> 0 ){
+          // ajoute ou met à jour le prix
+          CatalogueProduits::updateOrCreate(
+            [
+              'users_id' => $idClient,
+              'produit_id' => $id
+            ],
+            [ 'prix' => $prix ]
+          );
+        }else{
+          // supprime le produit du catalogue client
+          $produit = CatalogueProduits::where('users_id', $idClient)
+            ->where('produit_id', $id);
+          $produit->delete();
         }
       }
       return $this->detailClient($idClient);

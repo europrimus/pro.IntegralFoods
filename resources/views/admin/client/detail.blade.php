@@ -60,6 +60,7 @@
     </div>
   </div>
   <h3>Liste des produits disponibles pour ce client</h3>
+  <p>Si le prix est à 0 le client ne peut pas le voir.</p>
   @if( count($listeProduits) <= 0 )
     <p>Pas de produit.
     <a href="{{  URL::route('admin.client.valider', [ "idClient" =>$client["id"] ] ) }}">Ajouter des produits</a></p>
@@ -81,29 +82,29 @@
         @foreach ($listeProduits as $produit)
         <tr class="">
           <td class="">
-              <img height="100" src="/storage/photo/{{ $produit->reference }}.png" class="" alt="" />
+              <img height="100" src="/storage/photo/{{ $produit["reference"] }}.png" class="" alt="" />
           </td>
 
           <th class="" data-title="Produit" scope="row">
-            <details><summary>{{ $produit->nom }}</summary>
-              {{ $produit->description }}
+            <details><summary>{{ $produit["titre"] }}</summary>
+              {{ $produit["description"] }}
             </details>
           </th>
 
           <td class="" data-title="Code bare EAN">
-            {{ $produit->ean }}
+            {{ $produit["ean"] }}
           </td>
 
           <td class="" data-title="Référence">
-            {{ $produit->reference }}
+            {{ $produit["reference"] }}
           </td>
 
 
           <td class="" data-title="Prix">
-            <label class="screen-reader-text" for="prix[{{ $produit->produit_id }}]"></label>
-            <input id="prix[{{ $produit->produit_id }}]" name="prix[{{ $produit->produit_id }}]"
-              aria-labelledby="prix de {{ $produit->nom }}" title="prix"
-              type="number" inputmode="numeric" step="0.01" min="0" value="{{ $produit->prix }}"
+            <label class="screen-reader-text" for="prix[{{ $produit["id"] }}]"></label>
+            <input id="prix[{{ $produit["id"] }}]" name="prix[{{ $produit["id"] }}]"
+              aria-labelledby="prix de {{ $produit["titre"] }}" title="prix"
+              type="number" inputmode="numeric" step="0.01" min="0" value="{{ empty($produit["prix"]) ? 0 : $produit["prix"] }}"
               class="prix" /> €
           </td>
         </tr>
