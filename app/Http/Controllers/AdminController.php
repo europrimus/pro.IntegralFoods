@@ -93,19 +93,20 @@ class AdminController extends Controller
       $adresseFacturation->codePostal = $adresseContact->codePostal;
       $adresseFacturation->ville = $adresseContact->ville;
       $adresseFacturation->save();
-      // envoi d'e-mail
-/*
-      Notification::route('mail', $user->email)
-            ->notify(
-              (new MailMessage)
-                ->greeting('Bonjour!')
-                ->line('Votre compte à été activé!')
-                ->line('Votre identifiant : '.$user->login )
-                ->line('Votre mot de passe : '.$validated["mdpClient"] )
-                ->action('Vous connecter', URL::route('login') )
-                ->line('Merci de commander chez nous.')
-              );
-*/
+
+// envoi d'e-mail
+      $msg = "Bonjour ".$user->civilite." ".$user->prenom." ".$user->nom.",<br><br>".
+      "Votre inscription a été validée. Vos identifiants sont :<br>".
+      "Identifiant : ".$user->login."<br>".
+      "Mot de passe : ".$validated["mdpClient"]."<br>".
+      "Bonne journée.<br><br>
+      Ce message a été envoyé par un programme, merci de ne pas y répondre.";
+	  $headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
+	  $headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;
+	  $headers .='Content-Transfer-Encoding: 8bit'.PHP_EOL;
+
+	  mail($user->email,"Confirmation d'inscription",$msg,$headers);
+
       return $this->detailClient($idClient);
     }
 

@@ -1,30 +1,40 @@
 # todo
+
+-----------------------------
+## Administration
+### Validation inscription
+### Commandes
+valider payement du client  
+pouvoir modifié l'état de la commande  
+
+-------------------------------
+## Clients
 ## Pre-inscription
 ## Connexion
 tester mot de passe oublié  
 ### première connexion
-Ajouter adresse facturation  
+Ajouter adresse facturation (actuellement copie de l'adresse de contact lors de la validation du compte)  
 Ajouter adresse livraison  
-## Espace administration
-### Ajouter articles
-erreur *App\ ...* not found
-### Validation inscription
-erreur *Array to string conversion* du a la validation
-### Commandes
-pouvoir modifier ou supprimer la commande
-valider payement du client  
-## liste des produits
-modifier contenu panier dynamiquement
-## Passer une commande
+### liste des produits
+modifier contenu panier dynamiquement  
+### Passer une commande
 ### enregistrement commande
 ### liste des commandes
-état de la commande  
+voir l'état des commandes  
 ### détails d'une commande
 ## Mon Compte
 ### Mes informations
 ### Mes adresses
-pouvoir supprimer et ajouter des adresses de livraisons
-pouvoir modifier l'adresse de contact et de facturation
-## gestion des erreurs
+pouvoir supprimer et ajouter des adresses de livraisons  
+pouvoir modifier l'adresse de contact et de facturation  
 
-## important
+-----------------------------
+## Générale
+### gestion des erreurs
+### fichier de configuration
+créer un fichier de configuration pour les info sur le vendeur:
+ - nom entrprise
+ - num siret
+ - adresse mail
+ - ...  
+certaine pourait être reprise de la base de donnée (compte admin), mais pour l'instant, elles sont écritent en dur dans les diférents fichiers (`CommandesController.php` et dans les fonctions envoyant les mails)
