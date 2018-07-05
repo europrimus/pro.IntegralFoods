@@ -8,7 +8,7 @@
     @csrf
     <fieldset>
 		<legend>Formulaire de premier contact :</legend>
-<div class="row">
+<div class="row" id="premierContact">
     <div class="col"><!-- colone gauche -->
       <div class="input-group mb-3">
     		<div class="input-group-prepend">

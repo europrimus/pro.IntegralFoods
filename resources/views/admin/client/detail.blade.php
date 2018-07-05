@@ -59,6 +59,7 @@
       </ul>
     </div>
   </div>
+@if( $client["role"] == "client" )
   <h3>Liste des produits disponibles pour ce client</h3>
   <p>Si le prix est à 0 le client ne peut pas le voir.</p>
   @if( count($listeProduits) <= 0 )
@@ -113,7 +114,7 @@
       <input type="submit" name="valider" value="Valider">
     </form>
   @endif
-
+@endif
 </main>
 
 @include("layouts/footer")

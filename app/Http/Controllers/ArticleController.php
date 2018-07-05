@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\utilisateur;
+use App\CatalogueProduits;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\NouvelleArticleRequest;
 
@@ -30,7 +31,8 @@ class ArticleController extends Controller
       if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
         return redirect()->route('login');
       }
-     return view('articles.create');
+      $article =["titre"=>"", "description"=>"", "reference"=>"", "ean"=>"376028145"];
+     return view('articles.create',compact('article'));
     }
 
 
@@ -94,9 +96,19 @@ class ArticleController extends Controller
       if(utilisateur::getMyRole(session("UserId")) != "administrateur"){
         return redirect()->route('login');
       }
-      Article::find($id)->delete();
+// on regarde si le produit est dans un catalogue client
+      if( CatalogueProduits::where('produit_id', $id)->count() > 0 )
+// si oui on redirige vers un message erreur
+        {
+        $message = 'Imposssible de supprimer l\'article car il fait partie du catalogue d\'un client.';
+        }
+// si non on supprimie
+      else{
+        Article::find($id)->delete();
+        $message = 'Article supprimer';
+      }
       return redirect()->route('produits.index')
-                        ->with('success','Article supprimer');
+                       ->with('success',$message);
     }
 
 }

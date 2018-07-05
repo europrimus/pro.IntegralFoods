@@ -26,8 +26,7 @@
         </div>
     @endif
 
-
-
+<form action="{{ route('produits.update', $article['id']) }}" method="PATCH" enctype="multipart/form-data">
 @include('articles.form')
 
 </main>

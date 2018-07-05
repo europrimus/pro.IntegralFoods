@@ -34,6 +34,7 @@
         </div>
     @endif
 
+<form action="{{ route('produits.store') }}" method="post" enctype="multipart/form-data">
 @include('articles.form')
 
 </main>

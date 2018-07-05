@@ -1,31 +1,31 @@
-<form action="/produits" method="post" enctype="multipart/form-data">
+
   @csrf
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nom du produit :</strong>
-            {!! Form::text('titre', null, array('placeholder' => 'Produit','class' => 'form-control')) !!}
+            {!! Form::text('titre', $article['titre'], array('placeholder' => 'Produit','class' => 'form-control')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Description :</strong>
-            {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:150px')) !!}
+            {!! Form::textarea('description', $article['description'], array('placeholder' => 'Description','class' => 'form-control','style'=>'height:150px')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Référence :</strong>
-            {!! Form::text('reference', null , array('class' => 'form-control',)) !!}
+            {!! Form::text('reference', $article['reference'] , array('class' => 'form-control',)) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>EAN :</strong>
-            {!! Form::text('ean', '376028145' , array('placeholder' => 'EAN','class' => 'form-control',)) !!}
+            {!! Form::text('ean', $article['ean'] , array('placeholder' => 'EAN','class' => 'form-control',)) !!}
         </div>
     </div>
 

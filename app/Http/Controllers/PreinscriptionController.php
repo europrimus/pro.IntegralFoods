@@ -58,19 +58,20 @@ class PreinscriptionController extends Controller
 			'type'=>'contact',
 			'users_id' => $id[0]->id,
 		]);
-		
+
 		$msg = "Votre demande d'inscription a bien été enregistrée, ".$request->civilite." ".$request->prenom." ".$request->nom.". Nous vous contacterons pour la suite de la procédure. Bonne journée.<br><br>Ce message a été envoyé par un programme, merci de ne pas y répondre.";
 		$headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
 		$headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;
 		$headers .='Content-Transfer-Encoding: 8bit'.PHP_EOL;
-		
+
 		mail($request->email,"Confirmation de demande d'inscripiton",$msg,$headers);
-		
+
 		$msg = "".$request->civilite." ".$request->prenom." ".$request->nom." vient d'effectuer une demande d'inscription.";
-		mail("labrigade@integralfoods.fr", "Demande d'inscription", $msg,$headers);
-		
+		//mail("labrigade@integralfoods.fr", "Demande d'inscription", $msg,$headers);
+		mail("integral@yopmail.com", "Demande d'inscription", $msg,$headers);
+
 		return view('auth/preinscriptionAttente');
-		
+
 		$validation->validated();
 	}
 
