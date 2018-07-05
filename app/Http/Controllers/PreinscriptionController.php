@@ -66,9 +66,11 @@ class PreinscriptionController extends Controller
 
 		mail($request->email,"Confirmation de demande d'inscripiton",$msg,$headers);
 
+    // on récupère les info d'administrateur
+    $administrateur = utilisateur::find(1);
+
 		$msg = "".$request->civilite." ".$request->prenom." ".$request->nom." vient d'effectuer une demande d'inscription.";
-		//mail("labrigade@integralfoods.fr", "Demande d'inscription", $msg,$headers);
-		mail("integral@yopmail.com", "Demande d'inscription", $msg,$headers);
+		mail("<".$administrateur["email"].">".$administrateur["entreprise"], "Demande d'inscription", $msg,$headers);
 
 		return view('auth/preinscriptionAttente');
 

@@ -33,8 +33,8 @@ pouvoir modifier l'adresse de contact et de facturation
 ### gestion des erreurs
 ### fichier de configuration
 créer un fichier de configuration pour les info sur le vendeur:
- - nom entrprise
- - num siret
- - adresse mail
+ - num TVA
  - ...  
-certaine pourait être reprise de la base de donnée (compte admin), mais pour l'instant, elles sont écritent en dur dans les diférents fichiers (`CommandesController.php` et dans les fonctions envoyant les mails)
+le nom et l'adresse mail est repris dans la base de donnée
+### e-mail
+Pouvoir modifier les modèles d'e-mail (elles sont en dur dans le code)

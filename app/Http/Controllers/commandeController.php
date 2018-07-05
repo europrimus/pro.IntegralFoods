@@ -117,7 +117,7 @@ class commandeController extends Controller
           $administrateur = utilisateur::find(1);
 
           // on envois un mail
-          $msg = 'Bonjour,'.PHP_EOL.
+          $msg = 'Bonjour,<br>'.PHP_EOL.
 'Nouvelle commande : <a href="'.route('admin.client.commande.show', ["idCommande"=> $id, "idClient"=>session("UserId") ] ).'">'.$id.'</a>';
           $headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
           $headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;

@@ -96,11 +96,11 @@ class AdminController extends Controller
 
 // envoi d'e-mail
       $msg = "Bonjour ".$user->civilite." ".$user->prenom." ".$user->nom.",<br><br>".
-      "Votre inscription a été validée. Vos identifiants sont :<br>".
-      "Identifiant : ".$user->login."<br>".
-      "Mot de passe : ".$validated["mdpClient"]."<br>".
-      "Bonne journée.<br><br>
-      Ce message a été envoyé par un programme, merci de ne pas y répondre.";
+"Votre inscription a été validée. Vos identifiants sont :<br>".
+"Identifiant : ".$user->login."<br>".
+"Mot de passe : ".$validated["mdpClient"]."<br>".
+"Bonne journée.<br><br>
+Ce message a été envoyé par un programme, merci de ne pas y répondre.";
 	  $headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
 	  $headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;
 	  $headers .='Content-Transfer-Encoding: 8bit'.PHP_EOL;
