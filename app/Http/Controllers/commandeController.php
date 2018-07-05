@@ -111,6 +111,13 @@ class commandeController extends Controller
         if(is_array($id)){
           return view('commande.erreurs')->with('erreurs', $id);
         }else{
+          // on envois un mail
+          $msg = 'Nouvelle commande : <a href="'.route('admin.client.commande.show', ["idCommande"=> $id, "idClient"=>$adresse->users_id ] ).'">$id</a>';
+          $headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
+          $headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;
+          $headers .='Content-Transfer-Encoding: 8bit'.PHP_EOL;
+
+          mail("integral@yopmail.com","Nouvelle commande",$msg,$headers);
           // on affiche la commande
           return $this->show($id);
         }
