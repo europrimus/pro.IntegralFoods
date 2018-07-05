@@ -8,6 +8,7 @@ use App\Article;
 use App\commande;
 use App\CatalogueProduits;
 use App\adresse;
+use App\utilisateur;
 use App\Http\Requests\NouvelleCommandeRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -65,7 +66,8 @@ class commandeController extends Controller
       // les adresses de livraisons
       // SELECT * FROM `adresse` WHERE `users_id` = 2 AND `type` = 'livraison'
       $adresses = adresse::where('users_id', $idClient)
-        ->where('type', 'livraison')
+        //->where('type', "=", 'livraison' )
+        ->where('type', "!=", 'contact' )
         ->get();
       $adresseFacturation = adresse::where('users_id', $idClient)
         ->where('type', 'facturation')
@@ -111,13 +113,17 @@ class commandeController extends Controller
         if(is_array($id)){
           return view('commande.erreurs')->with('erreurs', $id);
         }else{
+          // on récupère les info d'administrateur
+          $administrateur = utilisateur::find(1);
+
           // on envois un mail
-          $msg = 'Nouvelle commande : <a href="'.route('admin.client.commande.show', ["idCommande"=> $id, "idClient"=>$adresse->users_id ] ).'">$id</a>';
+          $msg = 'Bonjour,'.PHP_EOL.
+'Nouvelle commande : <a href="'.route('admin.client.commande.show', ["idCommande"=> $id, "idClient"=>session("UserId") ] ).'">'.$id.'</a>';
           $headers = "From: ne_pas_repondre@integralfoods.fr".PHP_EOL;
           $headers .='Content-Type: text/html; charset="UTF-8"'.PHP_EOL;
           $headers .='Content-Transfer-Encoding: 8bit'.PHP_EOL;
 
-          mail("integral@yopmail.com","Nouvelle commande",$msg,$headers);
+          mail("<".$administrateur["email"].">".$administrateur["entreprise"],"Nouvelle commande",$msg,$headers);
           // on affiche la commande
           return $this->show($id);
         }

@@ -37,6 +37,23 @@ class commande extends Model
       'adresseFacturation',
   ];
 
+  public function __construct(){
+    // on récupère les info d'administrateur
+    $administrateur = utilisateur::find(1);
+
+    $this->infoGeneral["Entreprise"] = $administrateur["entreprise"];
+    $this->infoGeneral["Siret"] = $administrateur["siret"];
+    $this->infoGeneral["email"] = $administrateur["email"];
+    $this->infoGeneral["Tel"] = $administrateur["tel"];
+
+    // on récupère l'adresse
+    $adresseAdmin = adresse::where('users_id', 1)
+        ->where('type',"contact")->first();
+    $this->infoGeneral["Adresse"]["Adresse"] = $adresseAdmin['adresse'];
+    $this->infoGeneral["Adresse"]["CodePostal"] = $adresseAdmin["codePostal"];
+    $this->infoGeneral["Adresse"]["Ville"] = $adresseAdmin["ville"];
+  }
+
 // créer une commande
   public function new($request){
     // on verifie la commande

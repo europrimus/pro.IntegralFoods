@@ -27,6 +27,14 @@ class DatabaseSeeder extends Seeder
         'commentaire' => 'Administateur',
         'role' => 'administrateur',
       ]);
+
+      DB::table('adresse')->insert([
+        'users_id'=> '1',  //['Monsieur','Madame']);
+        'adresse' => '64 E RUE SULLY, HOPE',
+        'codePostal' => '21000',
+        'ville' => 'Dijon',
+        'type' => 'contact',
+      ]);
       $this->call([donneesFictives::class]);
     }
 }

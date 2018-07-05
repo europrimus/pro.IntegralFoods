@@ -66,8 +66,8 @@ class utilisateur extends Model implements CanResetPasswordContract
 		}
 	}
 
-      public function getEmailForPasswordReset()
-      {
+  public function getEmailForPasswordReset()
+    {
 
 
 	  }
