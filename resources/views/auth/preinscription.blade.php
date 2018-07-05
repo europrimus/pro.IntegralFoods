@@ -8,6 +8,7 @@
     @csrf
     <fieldset>
 		<legend>Formulaire de premier contact :</legend>
+    <p>Tout les champs sont obligatoires.</p>
 <div class="row" id="premierContact">
     <div class="col"><!-- colone gauche -->
       <div class="input-group mb-3">
