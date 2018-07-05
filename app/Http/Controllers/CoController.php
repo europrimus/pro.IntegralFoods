@@ -35,7 +35,14 @@ class CoController extends Controller
 		{
 			session()->flush();
 			session(["UserId"=>$userCo[0]->id]);
-			return redirect()->action('ArticleClientController@index');
+
+			if(utilisateur::getMyRole(session("UserId")) == "administrateur"){
+        return redirect()->action('AdminController@listeClients');
+      }elseif (utilisateur::getMyRole(session("UserId")) == "client") {
+        return redirect()->action('ArticleClientController@index');
+      }else{
+        return view('auth/errlogin');
+      }
 		}
 		else
 		{
