@@ -4,7 +4,7 @@ Projet de fin de formation webforce3 Dijon2 réalisé par Didier, Julien et Henr
 
 ## Dépendance
 Laravel 5.6  
-PHP 7.2  
+PHP 7.1  
 composer  
 
 ## Installation
